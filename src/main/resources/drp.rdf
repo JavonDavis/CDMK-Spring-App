@@ -1,0 +1,2450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns="http://vocab.cdmk-caribbean.net/cdmk#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:skosxl="http://www.w3.org/2008/05/skos-xl#"
+	xmlns:ann="http://art.uniroma2.it/ontologies/annotation#">
+	
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<skos:prefLabel xml:lang="en">Disaster Recovery Management</skos:prefLabel>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:topConceptOf rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879">
+	<skos:prefLabel xml:lang="en">CDMK</skos:prefLabel>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-30T21:08:54Z</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-30T21:09:33Z</dct:modified>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac10">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac10">
+	<skos:prefLabel xml:lang="en">Acceptable risk</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The level of potential losses that a society or community considers acceptable given existing social, economic, political, cultural, technical and environmental conditions. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac11">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac11">
+	<skos:prefLabel xml:lang="en">Adaptation</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The adjustment in natural or human systems in response to actual or expected climatic stimuli or their effects, which moderates harm or exploits beneficial opportunities. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac12">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac12">
+	<skos:prefLabel xml:lang="en">Biological hazard</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Process or phenomenon of organic origin or conveyed by biological vectors, including exposure to pathogenic micro-organisms, toxins and bioactive substances that may cause loss of life, injury, illness or other health impacts, property damage, loss of livelihoods and services, social and economic disruption, or environmental damage. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac13">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac13">
+	<skos:prefLabel xml:lang="en">Building code</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A set of ordinances or regulations and associated standards intended to control aspects of the design, construction, materials, alteration and occupancy of structures that are necessary to ensure human safety and welfare, including resistance to collapse and damage. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac14">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac14">
+	<skos:prefLabel xml:lang="en">Capacity</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The combination of all the strengths, attributes and resources available within a community, society or organization that can be used to achieve agreed goals. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac15">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac15">
+	<skos:prefLabel xml:lang="en">Capacity development</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The process by which people, organizations and society systematically stimulate and develop their capacities over time to achieve social and economic goals, including through improvement of knowledge, skills, systems, and institutions. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac16">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac16">
+	<skos:prefLabel xml:lang="en">Climate change</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">(a) The Inter-governmental Panel on Climate Change (IPCC) defines climate change as: 'a change in the state of the climate that can be identified (e.g., by using statistical tests) by changes in the mean and/or the variability of its properties, and that persists for an extended period, typically decades or longer. Climate change may be due to natural internal processes or external forcings, or to persistent anthropogenic changes in the composition of the atmosphere or in land use'. (b) The United Nations Framework Convention on Climate Change (UNFCCC) defines climate change as 'a change of climate which is attributed directly or indirectly to human activity that alters the composition of the global atmosphere and which is in addition to natural climate variability observed over comparable time periods'. 
+(b) The United Nations Framework Convention on Climate Change (UNFCCC) defines climate change as 'a change of climate which is attributed directly or indirectly to human activity that alters the composition of the global atmosphere and which is in addition to natural climate variability observed over comparable time periods'. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac17">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac17">
+	<skos:prefLabel xml:lang="en">Comprehensive Disaster Management</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The development of disaster arrangements to embrace the aspects of prevention, preparedness, response and recovery</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac18">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac18">
+	<skos:prefLabel xml:lang="en">Contingency planning</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A management process that analyses specific potential events or emerging situations that might threaten society or the environment and establishes arrangements in advance to enable timely, effective and appropriate responses to such events and situations. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac19">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac19">
+	<skos:prefLabel xml:lang="en">Coordination</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The bringing together of organizations and resources in accordance with the requirements imposed by the threat or impact of the emergency.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac110">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac110">
+	<skos:prefLabel xml:lang="en">Coping capacity</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The ability of people, organizations and systems, using available skills and resources, to face and manage adverse conditions, emergencies or disasters. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac111">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac111">
+	<skos:prefLabel xml:lang="en">Corrective disaster risk management</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Management activities that address and seek to correct or reduce disaster risks which are already present. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac112">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac112">
+	<skos:prefLabel xml:lang="en">Critical facilities</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The primary physical structures, technical facilities and systems which are socially, economically or operationally essential to the functioning of a society or community, both in routine circumstances and in the extreme circumstances of an emergency. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac113">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac113">
+	<skos:prefLabel xml:lang="en">Disaster</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A serious disruption of the functioning of a community or a society involving widespread human, material, economic or environmental losses and impacts, which exceeds the ability of the affected community or society to cope using its own resources. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac114">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac114">
+	<skos:prefLabel xml:lang="en">Disaster Recovery Plan</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A disaster recovery plan (DRP) - sometimes referred to as a business continuity plan (BCP) or business process contingency plan (BPCP) - describes how an organization is to deal with potential disasters. Just as a disaster is an event that makes the continuation of normal functions impossible, a disaster recovery plan consists of the precautions taken so that the effects of a disaster will be minimized and the organization will be able to either maintain or quickly resume mission-critical functions. Typically, disaster recovery planning involves an analysis of business processes and continuity needs; it may also include a significant focus on disaster prevention.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac115">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac115">
+	<skos:prefLabel xml:lang="en">Disaster risk</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The potential disaster losses, in lives, health status, livelihoods, assets and services, which could occur to a particular community or a society over some specified future time period. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac116">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac116">
+	<skos:prefLabel xml:lang="en">Disaster risk management</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The systematic process of using administrative directives, organizations, and operational skills and capacities to implement strategies, policies and improved coping capacities in order to lessen the adverse impacts of hazards and the possibility of disaster. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac117">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac117">
+	<skos:prefLabel xml:lang="en">Disaster risk reduction</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The concept and practice of reducing disaster risks through systematic efforts to analyse and manage the causal factors of disasters, including through reduced exposure to hazards, lessened vulnerability of people and property, wise management of land and the environment, and improved preparedness for adverse events.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac118">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac118">
+	<skos:prefLabel xml:lang="en">Disaster risk reduction plan</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A document prepared by an authority, sector, organization or enterprise that sets out goals and specific objectives for reducing disaster risks together with related actions to accomplish these objectives. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac119">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac119">
+	<skos:prefLabel xml:lang="en">Early warning system</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The set of capacities needed to generate and disseminate timely and meaningful warning information to enable individuals, communities and organizations threatened by a hazard to prepare and to act appropriately and in sufficient time to reduce the possibility of harm or loss. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac120">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac120">
+	<skos:prefLabel xml:lang="en">Ecosystem services</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The benefits that people and communities obtain from ecosystems. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac121">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac121">
+	<skos:prefLabel xml:lang="en">El Niño-Southern Oscillation</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A complex interaction of the tropical Pacific Ocean and the global atmosphere that results in irregularly occurring episodes of changed ocean and weather patterns in many parts of the world, often with significant impacts over many months, such as altered marine habitats, rainfall changes, floods, droughts, and changes in storm patterns. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac122">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac122">
+	<skos:prefLabel xml:lang="en">Emergency management</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The organization and management of resources and responsibilities for addressing all aspects of emergencies, in particular preparedness, response and initial recovery steps. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac123">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac123">
+	<skos:prefLabel xml:lang="en">Emergency services</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The set of specialized agencies that have specific responsibilities and objectives in serving and protecting people and property in emergency situations. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac124">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac124">
+	<skos:prefLabel xml:lang="en">Environmental degradation</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The reduction of the capacity of the environment to meet social and ecological objectives and needs. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac125">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac125">
+	<skos:prefLabel xml:lang="en">Environmental impact assessment</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Process by which the environmental consequences of a proposed project or programme are evaluated, undertaken as an integral part of planning and decision-making processes with a view to limiting or reducing the adverse impacts of the project or programme. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac126">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac126">
+	<skos:prefLabel xml:lang="en">Exposure</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">People, property, systems, or other elements present in hazard zones that are thereby subject to potential losses. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac127">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac127">
+	<skos:prefLabel xml:lang="en">Extensive risk</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The widespread risk associated with the exposure of dispersed populations to repeated or persistent hazard conditions of low or moderate intensity, often of a highly localized nature, which can lead to debilitating cumulative disaster impacts. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac128">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac128">
+	<skos:prefLabel xml:lang="en">Forecast</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Definite statement or statistical estimate of the likely occurrence of a future event or conditions for a specific area. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac129">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac129">
+	<skos:prefLabel xml:lang="en">Geological hazard</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Geological process or phenomenon that may cause loss of life, injury or other health impacts, property damage, loss of livelihoods and services, social and economic disruption, or environmental damage. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac130">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac130">
+	<skos:prefLabel xml:lang="en">Greenhouse gases</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Gaseous constituents of the atmosphere, both natural and anthropogenic, that absorb and emit radiation of thermal infrared radiation emitted by the Earth’s surface, the atmosphere itself, and by clouds. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac131">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac131">
+	<skos:prefLabel xml:lang="en">Hazard</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A dangerous phenomenon, substance, human activity or condition that may cause loss of life, injury or other health impacts, property damage, loss of livelihoods and services, social and economic disruption, or environmental damage. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac132">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac132">
+	<skos:prefLabel xml:lang="en">Hydrometeorological hazard</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Process or phenomenon of atmospheric, hydrological or oceanographic nature that may cause loss of life, injury or other health impacts, property damage, loss of livelihoods and services, social and economic disruption, or environmental damage. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac133">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac133">
+	<skos:prefLabel xml:lang="en">Intensive risk</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The risk associated with the exposure of large concentrations of people and economic activities to intense hazard events, which can lead to potentially catastrophic disaster impacts involving high mortality and asset loss. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac134">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac134">
+	<skos:prefLabel xml:lang="en">Land-use planning</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The process undertaken by public authorities to identify, evaluate and decide on different options for the use of land, including consideration of long term economic, social and environmental objectives and the implications for different communities and interest groups, and the subsequent formulation and promulgation of plans that describe the permitted or acceptable uses. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac135">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac135">
+	<skos:prefLabel xml:lang="en">Livelihood</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The means by which an individual or household obtains assets for survival and self-development. Livelihood assets are the tools (skills, objects, rights, knowledge, social capital) applied to enacting the livelihood.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac136">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac136">
+	<skos:prefLabel xml:lang="en">Mitigation</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The lessening or limitation of the adverse impacts of hazards and related disasters. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac137">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac137">
+	<skos:prefLabel xml:lang="en">National Platform for Disaster Risk Reduction</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A generic term for national mechanisms for coordination and policy guidance on disaster risk reduction that are multi-sectoral and inter-disciplinary in nature, with public, private and civil society participation involving all concerned entities within a country. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac138">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac138">
+	<skos:prefLabel xml:lang="en">Natural hazard</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Natural process or phenomenon that may cause loss of life, injury or other health impacts, property damage, loss of livelihoods and services, social and economic disruption, or environmental damage. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac139">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac139">
+	<skos:prefLabel xml:lang="en">Preparedness</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The knowledge and capacities developed by governments, professional response and recovery organizations, communities and individuals to effectively anticipate, respond to, and recover from, the impacts of likely, imminent or current hazard events or conditions. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac140">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac140">
+	<skos:prefLabel xml:lang="en">Prevention</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The outright avoidance of adverse impacts of hazards and related disasters. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac141">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac141">
+	<skos:prefLabel xml:lang="en">Prospective disaster risk management</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Management activities that address and seek to avoid the development of new or increased disaster risks. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac142">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac142">
+	<skos:prefLabel xml:lang="en">Public awareness</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The extent of common knowledge about disaster risks, the factors that lead to disasters and the actions that can be taken individually and collectively to reduce exposure and vulnerability to hazards. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac143">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac143">
+	<skos:prefLabel xml:lang="en">Recovery</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The restoration, and improvement where appropriate, of facilities, livelihoods and living conditions of disaster-affected communities, including efforts to reduce disaster risk factors. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac144">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac144">
+	<skos:prefLabel xml:lang="en">Residual risk</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The risk that remains in unmanaged form, even when effective disaster risk reduction measures are in place, and for which emergency response and recovery capacities must be maintained. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac145">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac145">
+	<skos:prefLabel xml:lang="en">Resilience</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The ability of a system, community or society exposed to hazards to resist, absorb, accommodate to and recover from the effects of a hazard in a timely and efficient manner, including through the preservation and restoration of its essential basic structures and functions. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac146">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac146">
+	<skos:prefLabel xml:lang="en">Response</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The provision of emergency services and public assistance during or immediately after a disaster in order to save lives, reduce health impacts, ensure public safety and meet the basic subsistence needs of the people affected. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac147">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac147">
+	<skos:prefLabel xml:lang="en">Retrofitting</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Reinforcement or upgrading of existing structures to become more resistant and resilient to the damaging effects of hazards. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac148">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac148">
+	<skos:prefLabel xml:lang="en">Risk management</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The systematic approach and practice of managing uncertainty to minimize potential harm and loss. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac149">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac149">
+	<skos:prefLabel xml:lang="en">Risk transfer</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The process of formally or informally shifting the financial consequences of particular risks from one party to another whereby a household, community, enterprise or state authority will obtain resources from the other party after a disaster occurs, in exchange for ongoing or compensatory social or financial benefits provided to that other party. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac150">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac150">
+	<skos:prefLabel xml:lang="en">Socio-natural hazard</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The phenomenon of increased occurrence of certain geophysical and hydrometeorological hazard events, such as landslides, flooding, land subsidence and drought, that arise from the interaction of natural hazards with overexploited or degraded land and environmental resources. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac151">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac151">
+	<skos:prefLabel xml:lang="en">Structural measures</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Structural measures: Any physical construction to reduce or avoid possible impacts of hazards, or application of engineering techniques to achieve hazard-resistance and resilience in structures or systems;</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac152">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac152">
+	<skos:prefLabel xml:lang="en">Non-structural measures</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Non-structural measures: Any measure not involving physical construction that uses knowledge, practice or agreement to reduce risks and impacts, in particular through policies and laws, public awareness raising, training and education. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac153">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac153">
+	<skos:prefLabel xml:lang="en">Sustainable development</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Development that meets the needs of the present without compromising the ability of future generations to meet their own needs. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac154">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac154">
+	<skos:prefLabel xml:lang="en">Technological hazards</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A hazard originating from technological or industrial conditions, including accidents, dangerous procedures, infrastructure failures or specific human activities, that may cause loss of life, injury, illness or other health impacts, property damage, loss of livelihoods and services, social and economic disruption, or environmental damage. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac155">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac155">
+	<skos:prefLabel xml:lang="en">Vulnerability</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The characteristics and circumstances of a community, system or asset that make it susceptible to the damaging effects of a hazard. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac156">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac156">
+	<skos:prefLabel xml:lang="en">Avalanche</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The sudden, drastic flow of snow down a slope, occurring when either natural triggers, such as loading from new snow or rain, or artificial triggers, such as explosives or backcountry skiers, overload the snowpack</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac157">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac157">
+	<skos:prefLabel xml:lang="en">Blizzard</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A severe snowstorm characterized by very strong winds and low temperatures</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac158">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac158">
+	<skos:prefLabel xml:lang="en">Drought</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Drought can be defined as a period of acute weather shortage mainly due to inadequate rainfall. When the rainfall becomes relatively scant or infrequent, it can disrupt the normal balance between the precipitation and the evaporation process and drought can begin. It can also be defined as a moisture deficiency that has serious, adverse effects on a community usually by reducing food production or surface water supplies.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac159">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac159">
+	<skos:prefLabel xml:lang="en">Hydrological Drought</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Hydrological Drought looks at the inadequacy of water by measuring stream flows and water levels in reservoirs and streams. Hydrological drought occurs out of phase with meteorological and agricultural drought because it takes longer for the deficiencies to show up in lakes and streams.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac160">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac160">
+	<skos:prefLabel xml:lang="en">Agricultural Drought </skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Agricultural Drought examines the levels of moisture in plants while factoring in the elements such as sparse rainfall or low water supply levels. In areas experiencing drought, plant life is severely damaged</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac161">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac161">
+	<skos:prefLabel xml:lang="en">Socio-Economic Drought</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Socio-Economic Drought, a new phenomenon, occurs where the demand for an economic good exceeds the supply because of a weather related shortfall in the water supply. An example of this phenomenon is the availability of rice, a Caribbean staple.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac162">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac162">
+	<skos:prefLabel xml:lang="en">Meteorological Drought</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Meteorological Drought is generally defined by the degree of dryness compared to an average amount of rainfall usually measured over a thirty-year period.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac163">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac163">
+	<skos:prefLabel xml:lang="en">Earthquake</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The shaking of the earth’s crust, caused by underground volcanic forces of breaking and shifting rock beneath the earth’s surface</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac164">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac164">
+	<skos:prefLabel xml:lang="en">Surface Wave (Ms)</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Scale used for Small/Local Scale Earthquake Measurement.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac165">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac165">
+	<skos:prefLabel xml:lang="en">Local Magnitude (ML) AKA Richter</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Scale used for Small/Local Scale Earthquake Measurement. Great 8 or more. Major 7 - 7.9. Strong 6 - 6.9. Moderate 5 - 5.9. Light 4 - 4.9. Minor 3 -3.9</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac166">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac166">
+	<skos:prefLabel xml:lang="en">Body Wave  Magnitude (Mb)</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Scale used for Small/Local Scale Earthquake Measurement.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac167">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac167">
+	<skos:prefLabel xml:lang="en">Moment Magnitude (Mw)</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Scale used for Large/Widespread as well as Small/Local Scale Earthquake Measurement.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac168">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac168">
+	<skos:prefLabel xml:lang="en">Fire</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A process in which substances combine chemically with oxygen from the air and typically give out bright light, heat, and smoke; combustion or burning.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac169">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac169">
+	<skos:prefLabel xml:lang="en">Wild Fire</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Wild - originate in uninhabited areas and which pose the risk to spread to inhabited areas</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac170">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac170">
+	<skos:prefLabel xml:lang="en">Grass Fire</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Grass fires are fast moving, passing in five to ten seconds and smouldering for minutes. They have a low to medium intensity and primarily damage crops, livestock and farming infrastructure, such as fences. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac171">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac171">
+	<skos:prefLabel xml:lang="en">Bush Fire</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Bush fires are generally slower moving, but have a higher heat output. This means they pass in two to five minutes, but they can smoulder for days. Fire in the crown of the tree canopy can move rapidly.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac172">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac172">
+	<skos:prefLabel xml:lang="en">Flood</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Flash flooding: Small creeks, gullies, dry streambeds, ravines, culverts or even low lying round frequently flood quickly.  In such situations, people are endangered before any warning can be given.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac173">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac173">
+	<skos:prefLabel xml:lang="en">Freezing Rain</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Rain occurring when outside surface temperature is below freezing</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac174">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac174">
+	<skos:prefLabel xml:lang="en">Heat wave</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A prolonged period of excessively hot weather relative to the usual weather pattern of an area and relative to normal temperatures for the season</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac175">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac175">
+	<skos:prefLabel xml:lang="en">Tropical Disturbances</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Tropical Wave, Tropical Depression, Tropical Storm, Hurricane. Characterised by heavy rains and high winds.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac176">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac176">
+	<skos:prefLabel xml:lang="en">Tropical Wave</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A trough or cyclonic curvature maximum in the trade-wind easterlies. The wave may reach maximum amplitude in the lower middle troposphere. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac177">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac177">
+	<skos:prefLabel xml:lang="en">Tropical Depression</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A tropical depression is designated when the first appearance of a lowered pressure and organized circulation in the centre of the thunderstorm complex occurs. A tropical cyclone with maximum sustained winds of 38 mph (33 knots) or less. Assigned a season number</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac178">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac178">
+	<skos:prefLabel xml:lang="en">Tropical Storm</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Once a tropical depression has intensified to the point where its maximum sustained winds are between 35-64 knots (39-73 mph), it becomes a tropical storm. It is at this time that it is assigned a name. During this time, the storm itself becomes more organized and begins to become more circular in shape -- resembling a hurricane. A tropical cyclone with maximum sustained winds of 39 to 73 mph (34 to 63 knots). Assigned a name.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac179">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac179">
+	<skos:prefLabel xml:lang="en">Hurricane</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A tropical cyclone with maximum sustained winds of 74 mph (64 knots) or higher. In the western North Pacific, hurricanes are called typhoons; similar storms in the Indian Ocean and South Pacific Ocean are called cyclones.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac180">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac180">
+	<skos:prefLabel xml:lang="en">Major Hurricane</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A tropical cyclone with maximum sustained winds of 111 mph (96 knots) or higher, corresponding to a Category 3, 4 or 5 on the Saffir-Simpson Hurricane Wind Scale.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac181">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac181">
+	<skos:prefLabel xml:lang="en">Category 1</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">74-95 mph
+64-82 kt
+119-153 km/h
+Very dangerous winds will produce some damage: Well-constructed frame homes could have damage to roof, shingles, vinyl siding and gutters. Large branches of trees will snap and shallowly rooted trees may be toppled. Extensive damage to power lines and poles likely will result in power outages that could last a few to several days.
+</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac182">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac182">
+	<skos:prefLabel xml:lang="en">Category 2</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">96-110 mph
+83-95 kt
+154-177 km/h
+Extremely dangerous winds will cause extensive damage: Well-constructed frame homes could sustain major roof and siding damage. Many shallowly rooted trees will be snapped or uprooted and block numerous roads. Near-total power loss is expected with outages that could last from several days to weeks.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac183">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac183">
+	<skos:prefLabel xml:lang="en">Category 3</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">111-129 mph
+96-112 kt
+178-208 km/h
+Devastating damage will occur: Well-built framed homes may incur major damage or removal of roof decking and gable ends. Many trees will be snapped or uprooted, blocking numerous roads. Electricity and water will be unavailable for several days to weeks after the storm passes.
+</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac184">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac184">
+	<skos:prefLabel xml:lang="en">Category 4</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">130-156 mph
+113-136 kt
+209-251 km/h
+Catastrophic damage will occur: Well-built framed homes can sustain severe damage with loss of most of the roof structure and/or some exterior walls. Most trees will be snapped or uprooted and power poles downed. Fallen trees and power poles will isolate residential areas. Power outages will last weeks to possibly months. Most of the area will be uninhabitable for weeks or months.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac185">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac185">
+	<skos:prefLabel xml:lang="en">Category 5</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">157 mph or higher
+137 kt or higher
+252 km/h or higher
+Catastrophic damage will occur: A high percentage of framed homes will be destroyed, with total roof failure and wall collapse. Fallen trees and power poles will isolate residential areas. Power outages will last for weeks to possibly months. Most of the area will be uninhabitable for weeks or months
+</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac186">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac186">
+	<skos:prefLabel xml:lang="en">Hurricane - Eye</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The relatively calm area near the center around which the strongest winds blow. As the eye passes, light winds rapidly give way to very severe winds from the opposite direction.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac187">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac187">
+	<skos:prefLabel xml:lang="en">Hurricane - Eye Wall</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Surrounding the eye is the region of most intense winds and rainfall called the eye wall.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac188">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac188">
+	<skos:prefLabel xml:lang="en">Hurricane - Spiral Rain Bands</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Large bands of clouds and precipitation spiral from the eye wall and are thusly called spiral rain bands.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac189">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac189">
+	<skos:prefLabel xml:lang="en">Hurricane Watch</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">An announcement that sustained winds of 64 knots (74 mph or 119 km/hr) or higher are possible within the specified area in association with a tropical, subtropical, or post-tropical cyclone. Because hurricane preparedness activities become difficult once winds </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac190">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac190">
+	<skos:prefLabel xml:lang="en">Tropical Storm Watch</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">An announcement that sustained winds of 34 to 63 knots (39 to 73 mph or 63 to 118 km/hr) are possible within the specified area within 48 hours in association with a tropical, subtropical, or post-tropical cyclone</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac191">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac191">
+	<skos:prefLabel xml:lang="en">Hurricane Warning</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">An announcement that sustained winds of 64 knots (74 mph or 119 km/hr) or higher are expected somewhere within the specified area in association with a tropical, subtropical, or post-tropical cyclone. Because hurricane preparedness activities become difficult once winds reach tropical storm force, the warning is issued 36 hours in advance of the anticipated onset of tropical-storm-force winds. The warning can remain in effect when dangerously high water or a combination of dangerously high water and waves continue, even though winds may be less than hurricane force.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac192">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac192">
+	<skos:prefLabel xml:lang="en">Tropical Storm Warning</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">An announcement that sustained winds of 34 to 63 knots (39 to 73 mph or 63 to 118 km/hr) are expected somewhere within the specified area within 36 hours in association with a tropical, subtropical, or post-tropical cyclone</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac193">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac193">
+	<skos:prefLabel xml:lang="en">Storm Surge</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The rise of water (as high as 10 to 20) above sea level brought on by the strong winds and low pressure in the storm centre.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac194">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac194">
+	<skos:prefLabel xml:lang="en">Storm Tide</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The actual level of sea water resulting from the astronomic tide combined with the storm surge</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac195">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac195">
+	<skos:prefLabel xml:lang="en">Landslide</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">1-Geological phenomenon which includes a range of ground movement, such as rock falls, deep failure of slopes and shallow debris flows
+
+2-A landslide is a mass movement of material, such as rock, earth or debris, down the slope of a hill or cliff. They can happen suddenly or move slowly over long periods of time. Landslides are classified by their type of movement. The four main types of movement are falls, topples, rotational slides, translational slides and flows. Landslides can be classified as just one of these movements or, more commonly, can be a mixture of several.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac196">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac196">
+	<skos:prefLabel xml:lang="en">Flows</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Flows are landslides that involve the movement of material down a slope in the form of a fluid. When material on a slope becomes saturated with water, making it much heavier, it may develop into a debris flow or mud flow.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac197">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac197">
+	<skos:prefLabel xml:lang="en">Debris Flow</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A debris flow is a moving mass of loose mud, sand, soil, rock, water and air that travels down a slope under the influence of gravity. To be considered a debris flow the moving material must be loose and capable of 'flow', and, at least 50% of the material must be sand-size particles or larger.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac198">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac198">
+	<skos:prefLabel xml:lang="en">Mud Flow</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A mud flow is composed of mud and water.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac199">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac199">
+	<skos:prefLabel xml:lang="en">Falls</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Falls are landslides that involve the collapse of material from a cliff or steep slope. Falls usually involve a mixture of free fall through the air, bouncing or rolling. A fall type landslide results in the collection of rock or debris near the base of a slope.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1100">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1100">
+	<skos:prefLabel xml:lang="en">Topples</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Topple failures involve the forward rotation and movement of a mass of rock, earth or debris out of a slope. This kind of slope failure generally occurs around an axis (or point) at or near the base of the block of rock</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1101">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1101">
+	<skos:prefLabel xml:lang="en">Slides</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A slide type landslide is a down-slope movement of material that occurs along a distinctive surface of weakness such as a fault, joint or bedding plane.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1102">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1102">
+	<skos:prefLabel xml:lang="en">Rotational Slide</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">If the slip surface is curved the slide said to be rotational. The slip surface of a rotational landslide tends to be deep. Blocks of failed material can rotate as they fail and can at times be seen to tilt backwards towards the slope.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1103">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1103">
+	<skos:prefLabel xml:lang="en">Translational Slide</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">If the slip surface is straight then it is termed translational or planar. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1104">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1104">
+	<skos:prefLabel xml:lang="en">Submarine Landslide</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en"> The sea bed can fail when physical conditions change, just as on land, creating an underwater landslide. These mass movements of vast amounts of sediment are called submarine landslides or just slides</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1105">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1105">
+	<skos:prefLabel xml:lang="en">Lightning strike</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">An electrical discharge caused by lightning, typically during thunderstorms</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1106">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1106">
+	<skos:prefLabel xml:lang="en">Limnic eruption</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The sudden eruption of carbon dioxide from deep lake water</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1107">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1107">
+	<skos:prefLabel xml:lang="en">Tornado</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A series of water waves caused by the displacement of a large volume of a body of water, typically an ocean or a large lake, usually caused by earthquakes, volcanic eruptions, underwater explosions, landslides, glacier calvings, meteorite impacts and other disturbances above or below water</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1108">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1108">
+	<skos:prefLabel xml:lang="en">Tsunami</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A series of water waves caused by the displacement of a large volume of a body of water, typically an ocean or a large lake, usually caused by earthquakes, volcanic eruptions, underwater explosions, landslides, glacier calvings, meteorite impacts and other disturbances above or below water</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1109">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1109">
+	<skos:prefLabel xml:lang="en">Stratovolcanoes</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Stratovolcanoes are majestic giants with steep sides and a symmetrical cone shape. They form from very thick, viscous, or sticky, lava that won't flow easily. The lava therefore builds up around the vent forming a volcano with steep sides – we call this a stratovolcano and it has a familar triangular shape</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1110">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1110">
+	<skos:prefLabel xml:lang="en">Shield Volcano</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Where a volcano produces low viscosity, runny, lava it spreads far from the source forming a volcano with gentle slopes. This type is called a shield volcano.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1111">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1111">
+	<skos:prefLabel xml:lang="en">Fissure Vent Eruption</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">As magma rises, it will find the easiest route to reach the surface. If it rises up through a long fracture, fountains of lava can form a ‘curtain of fire’ which we call a fissure vent eruption</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1112">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1112">
+	<skos:prefLabel xml:lang="en">Spatter Cone Volcano</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">When magma contains too much gas to form an effusive lava flow, but too little to form an explosive eruption, it erupts from the volcano as blobs of magma which fall close to the vent forming a low, steep-sided cone that we call a spatter cone.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1113">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1113">
+	<skos:prefLabel xml:lang="en">Calders</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Magma is stored beneath a volcano in a magma chamber. When a very large explosive eruption occurs which empties the magma chamber, the roof of the magma chamber can collapse forming a depression, or bowl on the surface which has very steep walls. These are calderas and can be tens of miles across.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1114">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1114">
+	<skos:prefLabel xml:lang="en">Eruption</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The release of hot magma, volcanic ash and/or gases from a volcano</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1115">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1115">
+	<skos:prefLabel xml:lang="en">Explosive eruptions</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">If a magma has a lot of gas which becomes trapped in the magma, the pressure will build and build until eventually the magma erupts explosively out of the volcano.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1116">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1116">
+	<skos:prefLabel xml:lang="en">Phreatomagmatic eruptions </skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Phreatomagmatic eruptions are a type of explosive eruption that results from the magma erupting through water.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1117">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1117">
+	<skos:prefLabel xml:lang="en">Explosive</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Explosive eruptions can form pyroclastic flows which sweep down valleys destroying everything in their path. They also send ash high into the atmosphere forming plumes.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1118">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1118">
+	<skos:prefLabel xml:lang="en">Effusive eruptions</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">If a magma has low viscosity (it is runny), gas can escape easily, therefore, when the magma erupts at the surface, it forms lava flows. These eruptions are gentle effusive eruptions.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1119">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1119">
+	<skos:prefLabel xml:lang="en">Lava Dome</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">If a magma rises very slowly within the conduit. or throat of the volcano, all the gas can escape. When the magma is viscous (or sticky), it can't flow when it reaches the surface, so it builds up forming a lava dome.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1120">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1120">
+	<skos:prefLabel xml:lang="en">Bioterrorism</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The intentional release or dissemination of biological agents as a means of coercion</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1121">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1121">
+	<skos:prefLabel xml:lang="en">Civil unrest</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A disturbance caused by a group of people that may include sit-ins and other forms of obstructions, riots, sabotage and other forms of crime, and which is intended to be a demonstration to the public and the government, but can escalate into general chaos</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1122">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1122">
+	<skos:prefLabel xml:lang="en">Fire (urban)</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Even with strict building fire codes, people still perish needlessly in fires </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1123">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1123">
+	<skos:prefLabel xml:lang="en">Hazardous material spills</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The escape of solids, liquids, or gases that can harm people, other living organisms, property or the environment, from their intended controlled environment such as a container.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1124">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1124">
+	<skos:prefLabel xml:lang="en">Nuclear and Radiation Accidents</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">An event involving significant release of radioactivity to the environment or a reactor core meltdown and which leads to major undesirable consequences to people, the environment, or the facility</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1125">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1125">
+	<skos:prefLabel xml:lang="en">Power Failure</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Caused by summer or winter storms, lightning or construction equipment digging in the wrong location</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1126">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1126">
+	<skos:prefLabel xml:lang="en">Tsunami</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A series of water waves caused by the displacement of a large volume of a body of water, typically an ocean or a large lake, usually caused by earthquakes, volcanic eruptions, underwater explosions, landslides, glacier calvings, meteorite impacts and other disturbances above or below water</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1127">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1127">
+	<skos:prefLabel xml:lang="en">Community</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">A community can be defined as people living in one geographical area, who are exposed to common hazards due to their location. They may have common experience in responding to hazards and disasters. However, they may have different perceptions of and exposure to risk. Groups within the locality will have a stake in risk reduction measures (either in favour or against). D. W.McMillan and D. W. Chavis, (1986) defined community as 'a feeling that members have of belonging, a feeling that members matter to one another and to the group, and a shared faith that members’ needs will be met through their commitment to be together'.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1128">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1128">
+	<skos:prefLabel xml:lang="en">Community Organisation</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Community based organizations are formal or informal groups organised at a local level, within a community, as close as possible to the individuals they serve. They provide services to people living in the community. The leaders of community based organizations are lay people, not doctors or government officials, although many have physicians as advisers and have a paid professional staff as well as volunteers. Funding usually comes from state governments, private donations, and local fund-raising events. They may or may not be registered.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1129">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1129">
+	<skos:prefLabel xml:lang="en">Evacuees</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">All persons removed or moving from areas threatened or struck by a disaster.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1130">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1130">
+	<skos:prefLabel xml:lang="en">Evacuation:</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Organized, phased, and supervised dispersal of people from dangerous or potentially dangerous areas.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1131">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1131">
+	<skos:prefLabel xml:lang="en">Spontaneous Evacuation</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">· Spontaneous Evacuation. Residents or citizens in the threatened areas observe an emergency event or receive unofficial word of an actual or perceived threat and without receiving instructions to do so, elect to evacuate the area. Their movement means, and direction of travel is unorganized and unsupervised.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1132">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1132">
+	<skos:prefLabel xml:lang="en">Voluntary Evacuation</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">· Voluntary Evacuation. This is a warning to persons within a designated area that a threat to life and property exists or is likely to exist in the immediate future. Individuals issued this type of waning or order are NOT required to evacuate, however it would be to their advantage to do so.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1133">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1133">
+	<skos:prefLabel xml:lang="en">Mandatory or Directed Evacuation</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">· Mandatory or Directed Evacuation. This is a warning to persons within the designated area that an imminent threat to life and property exists and individuals MUST evacuate in accordance with the instructions of local officials.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1134">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1134">
+	<skos:prefLabel xml:lang="en">Non-structural mitigations</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Any measure not involving physical construction that uses knowledge, practice or agreement to reduce risks and impacts, in particular through policies and laws, public awareness raising, training and education.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1135">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1135">
+	<skos:prefLabel xml:lang="en">Public awareness:</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The processes of informing the general population, increasing levels of consciousness about risks and how people can act to reduce their exposure to hazards. This is particularly important for public officials in fulfilling their responsibilities to save lives and property in the event of a disaster. Public awareness activities foster changes in behaviour leading towards a culture of risk reduction. This involves public information, dissemination, education, radio or television broadcasts, use of printed media, as well as, the establishment of information centres and networks and community and participation actions.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1136">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1136">
+	<skos:prefLabel xml:lang="en">Reconstruction</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">refers to the full restoration of all services, and local infrastructure, replacement of damaged physical structures, the revitalization of economy and the restoration of social and cultural life.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1137">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1137">
+	<skos:prefLabel xml:lang="en">Structural mitigation:</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Any physical construction to reduce or avoid possible impacts of hazards, or application of engineering techniques to achieve hazard-resistance and resilience in structures or systems.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1138">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1138">
+	<skos:prefLabel xml:lang="en">Warning </skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">the analysis and forecasting of the nature of potential emergencies and the development and operation of systems designed to maximizes warning time and precision for the benefit of both victims and helpers</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1139">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1139">
+	<skos:prefLabel xml:lang="en">Co-ordination </skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">the development of systems to enable resources to be effectively applied to emergencies.A145- the development of systems to enable resources to be effectively applied to emergencies.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1140">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1140">
+	<skos:prefLabel xml:lang="en">Providing </skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">the provision and maintenance, when necessary, of extra-ordinary resources as well as the diversion of normal resources to meet emergency needs</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1141">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1141">
+	<skos:prefLabel xml:lang="en">Evaluation </skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">the review of the performance of the Organisation with a view to its improvement.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1142">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1142">
+	<skos:prefLabel xml:lang="en">Informing </skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">the development and dissemination of information which will enhance the capability of the individual or the private organisation to cope with or to get help when needed.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1143">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1143">
+	<skos:prefLabel xml:lang="en">Recovery activities</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">emergency management actions that begin after the disaster, as urgent needs are met. These actions are designed to put the community back together and include repairs to roads, bridges and other public facilities, restoration of power, water and other municipal services and other activities that help restore normal operations to a community</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1144">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1144">
+	<skos:prefLabel xml:lang="en">Mitigation activities </skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">reduce or eliminate the damages from hazardous events. These activities can occur before, during and after a disaster and overlap all phases of emergency management.  Mitigation also includes education programs for members of the public about the hazards to which their community is vulnerable, as well as the importance of mitigation and how to prepare their property to withstand a disaster.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1145">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1145">
+	<skos:prefLabel xml:lang="en">Structural mitigation</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Theses pertain to actions such as dam and levee projects to protect against flooding, constructing disaster-resistant structures, and retrofitting existing structures to withstand events. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1146">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1146">
+	<skos:prefLabel xml:lang="en">Non-structural mitigation</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">These activities development of land use plans, zoning ordinances, subdivision regulations and tax incentives and disincentives to discourage development in certain high-hazard areas.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1147">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1147">
+	<skos:prefLabel xml:lang="en">Preparedness activities</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">involve at least two types of activities. Structural activities include actions to prepare for the imminent arrival of a hazard event, such as putting up storm shutters and sandbagging. Non-structural activities involve taking steps to minimize damage to personal property and to minimize harm to individuals. For instance, anchoring boats and storing outdoor furniture in sheds prior to the arrival of a hurricane will lessen the chance of damage to personal property. Following recommendations to evacuate an area will lessen the chance of harm to individuals. Preparedness activities include development of response procedures, design and installation of warning systems, exercises to test emergency operational procedures and training of emergency personnel</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1148">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1148">
+	<skos:prefLabel xml:lang="en">Response activities </skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">occur during or immediately following the disaster and include time-sensitive activities such as search and rescue operations, evacuation, emergency medical care, food and shelter programs. Response activities are designed to meet the urgent needs of disaster victims. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1149">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1149">
+	<skos:prefLabel xml:lang="en">Recovery activities </skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">are emergency management actions that begin after the disaster, as urgent needs are met. These actions are designed to put the community back together and include repairs to roads, bridges and other public facilities, restoration of power, water and other municipal services and other activities that help restore normal operations to a community.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1150">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1150">
+	<skos:prefLabel xml:lang="en">Vulnerability analysis </skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">indicates what is likely to be damaged by the identified hazards and how severely. The vulnerability analysis is an assessment of the number of lives and the value of the property in those areas that may be affected</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1151">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1151">
+	<skos:prefLabel xml:lang="en">Capability analysis </skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">is an important component of the hazard mitigation planning process because it identifies and evaluates existing systems of policies and practices that either reduce or increase a jurisdiction’s vulnerability to natural hazards. The capability analysis also provides critical information on which types of actions are feasible— in terms of financial resources, political willpower, institutional framework, technical ability and legal authority. Furthermore, the capability assessment can provide a mechanism to cite and take credit for those systems that already exist and are successful in the jurisdiction.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1152">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1152">
+	<skos:prefLabel xml:lang="en">Monitoring</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Monitoring is an important component of the implementation process. Care should be taken to monitor mitigation activities and their effects. It is important to be able to discern if the actions being taken are resulting in the desired objective of lessening the exposure to the hazard. Additionally, overall exposure to hazards needs to be continually monitored to ensure that while this exposure is being decreased in one location, it is not increasing in another. Periodic meetings of the planning committee or other group involved in the plan formulation process may be necessary to review progress to date and recommend changes to the mitigation program based on the results of their monitoring</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1153">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1153">
+	<skos:prefLabel xml:lang="en">Evaluation</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">No plan is perfect. As implementation proceeds, flaws will be discerned and changes will be needed. The effectiveness of the programs and actions should be evaluated to determine whether the goals and objectives articulated in the plan are still applicable. The original problem statement made in the introduction to the hazard mitigation plan should be assessed for current accuracy. Perhaps the situation has changed. The adequacy of available resources to carry out the plan should be examined. Is there any redundancy that can be eliminated, thereby freeing up funds from one area? Are funds for certain programs or projects inadequate; if so, should more funding be sought? The evaluation section should also trouble-shoot any problems being experienced with implementation, including technical, political, legal and coordination. Finally, the plan should be checked against its time frame— has it been implemented on schedule? Are all windows of opportunity being fully taken advantage of?</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1154">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1154">
+	<skos:prefLabel xml:lang="en">Updates/Revisions</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">The updating and revising step recognizes that hazard mitigation planning is a continuing process and provides an opportunity to measure and evaluate previous mitigation efforts. An updated or revised plan might include a re-evaluation of the hazards and the jurisdiction’s exposure to them, a further examination and refining of policies and issues, a reassessment of existing mitigation capabilities and new or additional mitigation recommendations </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1155">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1155">
+	<skos:prefLabel xml:lang="en">Multi-Hazard</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">An 'all-hazards' basis for a mitigation plan makes the most efficient use of limited resources The hazard mitigation plan should incorporate environmental principles. Care must be taken that policies intended to foster mitigation are not undertaken at the expense of the area’s environmental integrity. The plan should strictly adhere to all applicable laws, regulations and ordinances regarding the environment.</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1156">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1156">
+	<skos:prefLabel xml:lang="en">Post-disaster Plans. </skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Governments have traditionally prepared stand-alone mitigation plans in the wake of a disaster, a practice that has the advantage of generating public support for mitigation while the obvious need for it is so readily apparent. Unfortunately, these post-disaster plans are often prepared without adequate background studies and under tremendous time pressures and may not adequately address mitigation issues outside the context of the immediate disaster. </skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1157">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1157">
+	<skos:prefLabel xml:lang="en">Emergency Management Plan</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Some jurisdictions may include the hazard mitigation plan as a component of the emergency management plan. These plans deal with all four components of emergency management and include directions for the government’s responsibilities during preparation, response, recovery and mitigation phases. These plans tend to be programmatic in nature and focus on specific courses of action to be taken in the event of a disaster. Emergency management plans can also emphasize policy, however, and provide guidelines for implementing particular plan components</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1158">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1158">
+	<skos:prefLabel xml:lang="en">Comprehensive Plan.</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">Still other areas may decide to make the mitigation plan part of a comprehensive plan. Comprehensive plans tend to have a wider scope than stand-alone plans, setting general principles to guide future activity. This type of plan tends to be policy oriented, and deals with a whole range of issues, including land use, economic development, capital improvements, transportation, housing, natural resource protection and emergency management. Mitigation concepts can either be included in the comprehensive plan as a separate element or chapter or can be incorporated into the other plan components. This latter approach has the advantage of highlighting mitigation as a necessary component of all other government operations and calling for integration of mitigation into day-to-day decision making processes</skos:definition>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1159">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:inScheme rdf:resource="http://vocab.cdmk-caribbean.net/cdmk"/>
+	<skos:broader rdf:resource="http://vocab.cdmk-caribbean.net/cdmk/c_e34f6879"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://vocab.cdmk-caribbean.net/cdmk#c_893a08ac1159">
+	<skos:prefLabel xml:lang="en">Natural Infrastructure</skos:prefLabel>
+	<dct:created rdf:datatype="xsd:http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:created>
+	<hasStatus xmlns="http://art.uniroma2.it/ontologies/vocbench#">Proposed</hasStatus>
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-03-31T04:32:05Z</dct:modified>
+	<skos:definition xml:lang="en">As the connection between networks of streams, rivers, adjacent wetlands, soils, vegetation, dunes, beaches and other features of the natural environment are increasingly studied and understood, natural resource and environmental management are being recognized as vital for emergency management. This 'natural infrastructure' can perform a mitigative function in the human environment, protecting lives and structures from the full impact of natural hazards by providing flood control, wind resistance, minimization of storm surge, etc. The hazard mitigation plan must promote efforts to enhance rather than hinder the mitigative ability of the natural environment before all such areas are developed and their mitigative value destroyed.</skos:definition>
+</rdf:Description>
+
+</rdf:RDF>
