@@ -1,5 +1,11 @@
 package com.cdmk.app;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
@@ -10,6 +16,7 @@ import java.net.MalformedURLException;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletRequest;
+import javax.xml.bind.DatatypeConverter;
 
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.context.ServletContextAware;
@@ -64,14 +71,20 @@ public class CdmkController implements ServletContextAware {
 			HttpServletResponse response
 		) {
 
+		request.setAttribute("concepts", mauiExtractor(text));
+		return new ModelAndView("extraction");
+	}
+
+	private Map<String, String> mauiExtractor(String text)
+	{
 		String modelName = this.context.getRealPath("/WEB-INF/classes/output_model");
 
 		String vocabularyName = this.context.getRealPath("/WEB-INF/classes/drp.rdf");
-		
+
 		String vocabularyFormat = "skos";
-		
+
 		int topicsPerDocument = 10;
-		
+
 		MauiWrapper mauiWrapper = null;
 
 		try {
@@ -79,11 +92,11 @@ public class CdmkController implements ServletContextAware {
 			// MauiWrapper also can be initalized with a pre-loaded vocabulary
 			// and a pre-loaded MauiFilter (model) objects
 			mauiWrapper = new MauiWrapper(modelName, vocabularyName, "skos");
-			
+
 			// the last three items should match what was used in the wrapper constructor
 			// i.e. null if the defaults were used
-			mauiWrapper.setModelParameters(vocabularyName, new PorterStemmer(), null, null); 
-			
+			mauiWrapper.setModelParameters(vocabularyName, new PorterStemmer(), null, null);
+
 		} catch (Exception e) {
 			log.error(e.getClass().getName() + ": " + e.getMessage());
 		}
@@ -91,11 +104,11 @@ public class CdmkController implements ServletContextAware {
 		Map<String, String> concepts = new HashMap<String, String>();
 		ArrayList<Topic> keywords = new ArrayList<Topic>();
 
-        try {
-        	keywords = mauiWrapper.extractTopicsFromText(text, topicsPerDocument);
-        	log.info("KEYWORDS: " + keywords.toString());
-        }
-       	catch (MauiFilterException e) {
+		try {
+			keywords = mauiWrapper.extractTopicsFromText(text, topicsPerDocument);
+			log.info("KEYWORDS: " + keywords.toString());
+		}
+		catch (MauiFilterException | NullPointerException e) {
 			log.error(e.getClass().getName() + ": " + e.getMessage());
 		}
 		DecimalFormat df = new DecimalFormat("0.##");
@@ -104,9 +117,51 @@ public class CdmkController implements ServletContextAware {
 			String probability = df.format(keyword.getProbability() * 100);
 			concepts.put(keyword.getTitle(), probability);
 		}
-
-		request.setAttribute("concepts", concepts);
-		return new ModelAndView("extraction");
+		return concepts;
 	}
 
+	private Map<String, String> poolPartyExtractoy(String text)
+	{
+		String projectId = "1DDFC367-E4BD-0001-E4F4-483115961E7F";
+		String EXTRACTOR_URL = "https://cdmk.poolparty.biz/extractor/api/extract";
+
+		URL urlObject = null;
+		try {
+			urlObject = new URL(EXTRACTOR_URL);
+
+			HttpURLConnection connection = (HttpURLConnection) urlObject.openConnection();
+			connection.setRequestMethod("POST");
+
+			String b64val = DatatypeConverter.printBase64Binary("mona-superadmin:rashoB4o".getBytes("UTF-8"));
+			connection.setRequestProperty("Authorization","Basic "+b64val+"=");
+
+			String parameters = "projectId="+projectId+"&text="+text+"&language=en";
+
+			connection.setDoOutput(true);
+			DataOutputStream stream = new DataOutputStream((connection.getOutputStream()));
+			stream.writeBytes(parameters);
+			stream.flush();
+			stream.close();
+
+			BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+			String line;
+			StringBuilder response = new StringBuilder();
+			while ((line = reader.readLine()) != null)
+			{
+				response.append(line);
+			}
+			reader.close();
+
+			log.info("Successfully retrieved concepts from url");
+
+
+		} catch (MalformedURLException e) {
+			log.error(e.getClass().getName() + ": " + e.getMessage());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		Map<String, String> concepts = new HashMap<>();
+		return concepts;
+	}
 }
