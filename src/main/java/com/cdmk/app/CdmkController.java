@@ -18,6 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.bind.DatatypeConverter;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -71,7 +75,8 @@ public class CdmkController implements ServletContextAware {
 			HttpServletResponse response
 		) {
 
-		request.setAttribute("concepts", mauiExtractor(text));
+		//request.setAttribute("concepts", mauiExtractor(text));
+		request.setAttribute("concepts", poolPartyExtractor(text));
 		return new ModelAndView("extraction");
 	}
 
@@ -120,8 +125,9 @@ public class CdmkController implements ServletContextAware {
 		return concepts;
 	}
 
-	private Map<String, String> poolPartyExtractoy(String text)
+	private Map<String, String> poolPartyExtractor(String text)
 	{
+		HashMap<String, String> concepts = new HashMap<>();
 		String projectId = "1DDFC367-E4BD-0001-E4F4-483115961E7F";
 		String EXTRACTOR_URL = "https://cdmk.poolparty.biz/extractor/api/extract";
 
@@ -154,6 +160,17 @@ public class CdmkController implements ServletContextAware {
 
 			log.info("Successfully retrieved concepts from url");
 
+			JsonParser parser = new JsonParser();
+			JsonObject result = (JsonObject) parser.parse(response.toString());
+
+			JsonElement conceptData = result.get("concepts");
+			Gson gson = new Gson();
+			Concept[] conceptArray = gson.fromJson(conceptData, Concept[].class);
+
+			for(Concept concept: conceptArray)
+			{
+				concepts.put(concept.prefLabel, Integer.toString(concept.score));
+			}
 
 		} catch (MalformedURLException e) {
 			log.error(e.getClass().getName() + ": " + e.getMessage());
@@ -161,7 +178,6 @@ public class CdmkController implements ServletContextAware {
 			e.printStackTrace();
 		}
 
-		Map<String, String> concepts = new HashMap<>();
 		return concepts;
 	}
 }
