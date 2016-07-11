@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,7 +78,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <form id="getConceptsForm" role="form" action="share" method="POST">
+                <form:form id="getConceptsForm" role="form" action="share" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-xs-12">
                           <div class="form-group">
@@ -91,19 +93,19 @@
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="filebutton">Upload a File</label>
                           <div class="col-md-4">
-                            <input id="filebutton" name="file" class="input-file" type="file">
+                            <input id="filebutton" name="file" class="input-file" type="file"/>
                           </div>
                         </div>
                     </div>
 
                     <br />
                     <button class="btn btn-default" type="submit">Extract Concepts</button>
-                    <br />
-                </form>
+                </form:form>
             </div>
         </div>
     </div>
 
+    <br />
     <div class="push"></div>
 
     </div>

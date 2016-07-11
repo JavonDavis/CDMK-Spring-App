@@ -1,12 +1,10 @@
 package com.cdmk.app;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
 import java.text.DecimalFormat;
@@ -22,6 +20,18 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.message.BasicNameValuePair;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -70,13 +80,14 @@ public class CdmkController implements ServletContextAware {
 
 	@RequestMapping(value = "/share", method = RequestMethod.POST) 
 	public ModelAndView share(
-			@RequestParam(value="text", required=true) String text,
+			@RequestParam(value="text", required=false) String text,
+			@RequestParam(value="file", required = false) MultipartFile file,
 			HttpServletRequest request,
 			HttpServletResponse response
 		) {
 
 		//request.setAttribute("concepts", mauiExtractor(text));
-		request.setAttribute("concepts", poolPartyExtractor(text));
+		request.setAttribute("concepts", poolPartyExtractor(text.trim(), file));
 		return new ModelAndView("extraction");
 	}
 
@@ -124,53 +135,141 @@ public class CdmkController implements ServletContextAware {
 		return (Concept[]) concepts.toArray();
 	}
 
-	private Concept[] poolPartyExtractor(String text)
+	private Concept[] poolPartyExtractor(String text, MultipartFile file)
 	{
 		String projectId = "1DDFC367-E4BD-0001-E4F4-483115961E7F";
-		String EXTRACTOR_URL = "https://cdmk.poolparty.biz/extractor/api/extract";
+		String url = "https://cdmk.poolparty.biz/extractor/api/extract";
 
-		URL urlObject = null;
+		if(file != null)
+			return poolPartyExtractFromFile(file, projectId, url);
+		else if(text != null && !text.isEmpty())
+			return poolPartyExtractFromText(text,projectId, url);
+		else
+			return new Concept[]{};
+	}
+
+	private Concept[] poolPartyExtractFromText(String text, String projectId, String url)
+	{
+		Concept[] concepts = null;
+
+		HttpClient httpClient = HttpClientBuilder.create().build();
+		HttpPost httpPost = new HttpPost(url);
+
+		List<NameValuePair> params = new ArrayList<>();
+		params.add(new BasicNameValuePair("text",text));
+		params.add(new BasicNameValuePair("projectId",projectId));
+		params.add(new BasicNameValuePair("language","en"));
+		params.add(new BasicNameValuePair("numberOfConcepts",Integer.toString(10)));
+		params.add(new BasicNameValuePair("numberOfTerms",Integer.toString(10)));
+
+		String b64val = null;
 		try {
-			urlObject = new URL(EXTRACTOR_URL);
+			b64val = DatatypeConverter.printBase64Binary("apiuser:Msbm2016".getBytes("UTF-8"));
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
 
-			HttpURLConnection connection = (HttpURLConnection) urlObject.openConnection();
-			connection.setRequestMethod("POST");
+		if(b64val != null)
+			httpPost.setHeader("Authorization","Basic "+b64val+"=");
 
-			// Note: these credentials are available for public use and have read only access to the API
-			String b64val = DatatypeConverter.printBase64Binary("apiuser:Msbm2016".getBytes("UTF-8"));
-			connection.setRequestProperty("Authorization","Basic "+b64val+"=");
+		try {
+			httpPost.setEntity(new UrlEncodedFormEntity(params));
 
-			String parameters = "projectId="+projectId+"&text="+text+"&language=en&numberOfConcepts=10&numberOfTerms=10";
+			HttpResponse httpResponse = httpClient.execute(httpPost);
 
-			connection.setDoOutput(true);
-			DataOutputStream stream = new DataOutputStream((connection.getOutputStream()));
-			stream.writeBytes(parameters);
-			stream.flush();
-			stream.close();
-
-			BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));
 			String line;
-			StringBuilder response = new StringBuilder();
+			StringBuilder result = new StringBuilder();
 			while ((line = reader.readLine()) != null)
 			{
-				response.append(line);
+				result.append(line);
 			}
 			reader.close();
 
-			log.info("Successfully retrieved concepts from url");
+			System.out.println("Successfully retrieved concepts from url");
 
 			JsonParser parser = new JsonParser();
-			JsonObject result = (JsonObject) parser.parse(response.toString());
+			JsonObject conceptResult = (JsonObject) parser.parse(result.toString());
 
-			JsonElement conceptData = result.get("concepts");
+			JsonElement conceptData = conceptResult.get("concepts");
+
 			Gson gson = new Gson();
+			concepts = gson.fromJson(conceptData, Concept[].class);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return concepts;
+	}
 
-			return gson.fromJson(conceptData, Concept[].class);
+	private Concept[] poolPartyExtractFromFile(MultipartFile multipartFile, String projectId, String url)
+	{
+		Concept[] concepts = null;
 
-		} catch (Exception e) {
-			log.error(e.getClass().getName() + ": " + e.getMessage());
+		File file = new File(multipartFile.getOriginalFilename());
+
+		try {
+			InputStream inputStream = multipartFile.getInputStream();
+
+			OutputStream outputStream = new FileOutputStream(file);
+
+			int read = 0;
+			byte[] bytes = new byte[1024];
+			while ((read = inputStream.read(bytes)) != -1)
+			{
+				outputStream.write(bytes, 0, read);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 
-		return new Concept[]{};
+
+		HttpClient httpClient = HttpClientBuilder.create().build();
+		HttpPost httpPost = new HttpPost(url);
+
+		String b64val = null;
+		try {
+			b64val = DatatypeConverter.printBase64Binary("apiuser:Msbm2016".getBytes("UTF-8"));
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+
+		if(b64val != null)
+			httpPost.setHeader("Authorization","Basic "+b64val+"=");
+
+		MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+		FileBody fileBody = new FileBody(file);
+		builder.addPart("file", fileBody);
+		builder.addPart("projectId",new StringBody(projectId, ContentType.TEXT_PLAIN));
+		builder.addPart("language",new StringBody("en", ContentType.TEXT_PLAIN));
+		builder.addPart("numberOfConcepts",new StringBody(Integer.toString(10), ContentType.TEXT_PLAIN));
+		builder.addPart("numberOfTerms",new StringBody(Integer.toString(10), ContentType.TEXT_PLAIN));
+		try {
+			httpPost.setEntity(builder.build());
+
+			HttpResponse httpResponse = httpClient.execute(httpPost);
+
+			BufferedReader reader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));
+			String line;
+			StringBuilder result = new StringBuilder();
+			while ((line = reader.readLine()) != null)
+			{
+				result.append(line);
+			}
+			reader.close();
+
+			System.out.println("Successfully retrieved concepts from url");
+
+			JsonParser parser = new JsonParser();
+			JsonObject conceptResult = (JsonObject) parser.parse(result.toString());
+
+			JsonElement conceptData = conceptResult.getAsJsonObject("document").get("concepts");
+
+			Gson gson = new Gson();
+			concepts = gson.fromJson(conceptData, Concept[].class);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return concepts;
 	}
+
 }
