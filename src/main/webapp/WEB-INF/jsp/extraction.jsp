@@ -42,7 +42,7 @@
                 <div class="dropdown">
                     <button class="btn nav-btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">CDMK TOOLS <span class="caret"></span></button>
                     <ul class="dropdown-menu">
-                        <li><a href="http://thesaurus.cdmk-caribbean.net/">CDMK Thesaurus</a></li>
+                        <li><a href="http://cdmk-caribbean.net:8080/skosmos/cdmk/en/">CDMK Thesaurus</a></li>
                         <li><a href="api">CDMK API</a></li>
                         <li><a href="http://skos.cdmk-caribbean.net/">CDMK Tree View</a></li>
                     </ul>
@@ -64,7 +64,7 @@
 
         <div class="row">
             <div class="col-xs-6">
-                <h2>Related Concepts:</h2>
+                <h2>Concepts from the CDM Knowledge Base:</h2>
                 <table class="table table-condensed">
                     <thead>
                     <tr>
@@ -74,7 +74,7 @@
                     </thead>
                     <c:forEach items="${concepts}" var="concept">
                         <tr>
-                            <td>${concept.key}</td><td>${concept.value}%</td>
+                            <td>${concept.prefLabel}</td><td><meter value="${concept.score/100}">${concept.score}%</meter></td>
                         </tr>
                     </c:forEach>
                 </table>

@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,7 +48,7 @@
                 <div class="dropdown">
                     <button class="btn nav-btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">CDMK TOOLS <span class="caret"></span></button>
                     <ul class="dropdown-menu">
-                        <li><a href="http://thesaurus.cdmk-caribbean.net/">CDMK Thesaurus</a></li>
+                        <li><a href="http://cdmk-caribbean.net:8080/skosmos/cdmk/en/">CDMK Thesaurus</a></li>
                         <li><a href="api">CDMK API</a></li>
                         <li><a href="http://skos.cdmk-caribbean.net/">CDMK Tree View</a></li>
                     </ul>
@@ -76,21 +78,34 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <form id="getConceptsForm" role="form" action="share" method="POST">
+                <form:form id="getConceptsForm" role="form" action="share" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-xs-12">
                           <div class="form-group">
                                 <label for="text">Text</label> <br>
-                                <textarea class="form-control" name="text" id="text"></textarea>
+                                <textarea class="form-control" name="text" id="text" rows="10"></textarea>
                             </div>
                         </div>
                     </div>
+
+                    <h4>OR</h4>
+                    <div class="row">
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="filebutton">Upload a File</label>
+                          <div class="col-md-4">
+                            <input id="filebutton" name="file" class="input-file" type="file"/>
+                          </div>
+                        </div>
+                    </div>
+
+                    <br />
                     <button class="btn btn-default" type="submit">Extract Concepts</button>
-                </form>
+                </form:form>
             </div>
         </div>
     </div>
 
+    <br />
     <div class="push"></div>
 
     </div>
