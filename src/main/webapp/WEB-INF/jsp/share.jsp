@@ -81,22 +81,24 @@
                         <div class="col-xs-12">
                           <div class="form-group">
                                 <label for="text">Text</label> <br>
-                                <textarea class="form-control" name="text" id="text"></textarea>
+                                <textarea class="form-control" name="text" id="text" rows="10"></textarea>
                             </div>
                         </div>
                     </div>
 
-                    <h3>OR</h3>
-
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="filebutton">Upload a File</label>
-                      <div class="col-md-4">
-                        <input id="filebutton" name="file" class="input-file" type="file">
-                      </div>
+                    <h4>OR</h4>
+                    <div class="row">
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="filebutton">Upload a File</label>
+                          <div class="col-md-4">
+                            <input id="filebutton" name="file" class="input-file" type="file">
+                          </div>
+                        </div>
                     </div>
 
-
+                    <br />
                     <button class="btn btn-default" type="submit">Extract Concepts</button>
+                    <br />
                 </form>
             </div>
         </div>
