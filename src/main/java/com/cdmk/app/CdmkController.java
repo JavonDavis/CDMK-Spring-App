@@ -136,10 +136,11 @@ public class CdmkController implements ServletContextAware {
 			HttpURLConnection connection = (HttpURLConnection) urlObject.openConnection();
 			connection.setRequestMethod("POST");
 
+			// Note: these credentials are available for public use and have read only access to the API
 			String b64val = DatatypeConverter.printBase64Binary("apiuser:Msbm2016".getBytes("UTF-8"));
 			connection.setRequestProperty("Authorization","Basic "+b64val+"=");
 
-			String parameters = "projectId="+projectId+"&text="+text+"&language=en";
+			String parameters = "projectId="+projectId+"&text="+text+"&language=en&numberOfConcepts=10&numberOfTerms=10";
 
 			connection.setDoOutput(true);
 			DataOutputStream stream = new DataOutputStream((connection.getOutputStream()));
@@ -166,10 +167,8 @@ public class CdmkController implements ServletContextAware {
 
 			return gson.fromJson(conceptData, Concept[].class);
 
-		} catch (MalformedURLException e) {
+		} catch (Exception e) {
 			log.error(e.getClass().getName() + ": " + e.getMessage());
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 
 		return new Concept[]{};

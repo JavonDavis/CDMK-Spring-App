@@ -85,6 +85,17 @@
                             </div>
                         </div>
                     </div>
+
+                    <h3>OR</h3>
+
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="filebutton">Upload a File</label>
+                      <div class="col-md-4">
+                        <input id="filebutton" name="file" class="input-file" type="file">
+                      </div>
+                    </div>
+
+
                     <button class="btn btn-default" type="submit">Extract Concepts</button>
                 </form>
             </div>
