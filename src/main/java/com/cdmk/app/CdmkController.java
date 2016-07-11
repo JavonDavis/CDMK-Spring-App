@@ -80,8 +80,9 @@ public class CdmkController implements ServletContextAware {
 		return new ModelAndView("extraction");
 	}
 
-	private Map<String, String> mauiExtractor(String text)
+	private Concept[] mauiExtractor(String text)
 	{
+		ArrayList<Concept> concepts = new ArrayList<>();
 		String modelName = this.context.getRealPath("/WEB-INF/classes/output_model");
 
 		String vocabularyName = this.context.getRealPath("/WEB-INF/classes/drp.rdf");
@@ -105,8 +106,6 @@ public class CdmkController implements ServletContextAware {
 		} catch (Exception e) {
 			log.error(e.getClass().getName() + ": " + e.getMessage());
 		}
-
-		Map<String, String> concepts = new HashMap<String, String>();
 		ArrayList<Topic> keywords = new ArrayList<Topic>();
 
 		try {
@@ -120,14 +119,13 @@ public class CdmkController implements ServletContextAware {
 
 		for (Topic keyword : keywords) {
 			String probability = df.format(keyword.getProbability() * 100);
-			concepts.put(keyword.getTitle(), probability);
+			concepts.add(new Concept(keyword.getTitle(), Integer.parseInt(probability)));
 		}
-		return concepts;
+		return (Concept[]) concepts.toArray();
 	}
 
-	private Map<String, String> poolPartyExtractor(String text)
+	private Concept[] poolPartyExtractor(String text)
 	{
-		HashMap<String, String> concepts = new HashMap<>();
 		String projectId = "1DDFC367-E4BD-0001-E4F4-483115961E7F";
 		String EXTRACTOR_URL = "https://cdmk.poolparty.biz/extractor/api/extract";
 
@@ -138,7 +136,7 @@ public class CdmkController implements ServletContextAware {
 			HttpURLConnection connection = (HttpURLConnection) urlObject.openConnection();
 			connection.setRequestMethod("POST");
 
-			String b64val = DatatypeConverter.printBase64Binary("mona-superadmin:rashoB4o".getBytes("UTF-8"));
+			String b64val = DatatypeConverter.printBase64Binary("apiuser:Msbm2016".getBytes("UTF-8"));
 			connection.setRequestProperty("Authorization","Basic "+b64val+"=");
 
 			String parameters = "projectId="+projectId+"&text="+text+"&language=en";
@@ -165,12 +163,8 @@ public class CdmkController implements ServletContextAware {
 
 			JsonElement conceptData = result.get("concepts");
 			Gson gson = new Gson();
-			Concept[] conceptArray = gson.fromJson(conceptData, Concept[].class);
 
-			for(Concept concept: conceptArray)
-			{
-				concepts.put(concept.prefLabel, Integer.toString(concept.score));
-			}
+			return gson.fromJson(conceptData, Concept[].class);
 
 		} catch (MalformedURLException e) {
 			log.error(e.getClass().getName() + ": " + e.getMessage());
@@ -178,6 +172,6 @@ public class CdmkController implements ServletContextAware {
 			e.printStackTrace();
 		}
 
-		return concepts;
+		return new Concept[]{};
 	}
 }

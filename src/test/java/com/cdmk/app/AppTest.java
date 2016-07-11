@@ -62,7 +62,7 @@ public class AppTest extends TestCase
             HttpURLConnection connection = (HttpURLConnection) urlObject.openConnection();
             connection.setRequestMethod("GET");
 
-            String b64val = DatatypeConverter.printBase64Binary("mona-superadmin:rashoB4o".getBytes("UTF-8"));
+            String b64val = DatatypeConverter.printBase64Binary("apiuser:Msbm2016".getBytes("UTF-8"));
             connection.setRequestProperty("Authorization","Basic "+b64val+"=");
 
             responseCode = connection.getResponseCode();
@@ -114,7 +114,7 @@ public class AppTest extends TestCase
             HttpURLConnection connection = (HttpURLConnection) urlObject.openConnection();
             connection.setRequestMethod("POST");
 
-            String b64val = DatatypeConverter.printBase64Binary("mona-superadmin:rashoB4o".getBytes("UTF-8"));
+            String b64val = DatatypeConverter.printBase64Binary("apiuser:Msbm2016".getBytes("UTF-8"));
             connection.setRequestProperty("Authorization","Basic "+b64val+"=");
 
             String parameters = "projectId="+projectId+"&text="+sample+"&language=en";
@@ -143,7 +143,6 @@ public class AppTest extends TestCase
 
             Gson gson = new Gson();
             Concept[] concepts = gson.fromJson(conceptData, Concept[].class);
-            System.out.println(concepts[0].prefLabel+"-"+concepts[0].score);
             assertTrue(concepts.length > 0);
 
         } catch (IOException e) {

@@ -64,7 +64,7 @@
 
         <div class="row">
             <div class="col-xs-6">
-                <h2>Related Concepts:</h2>
+                <h2>Concepts from the CDM Knowledge Base:</h2>
                 <table class="table table-condensed">
                     <thead>
                     <tr>
@@ -74,7 +74,7 @@
                     </thead>
                     <c:forEach items="${concepts}" var="concept">
                         <tr>
-                            <td>${concept.key}</td><td>${concept.value}%</td>
+                            <td>${concept.prefLabel}</td><td><meter value="${concept.score/100}">${concept.score}%</meter></td>
                         </tr>
                     </c:forEach>
                 </table>
