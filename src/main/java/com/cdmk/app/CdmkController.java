@@ -140,12 +140,10 @@ public class CdmkController implements ServletContextAware {
 		String projectId = "1DDFC367-E4BD-0001-E4F4-483115961E7F";
 		String url = "https://cdmk.poolparty.biz/extractor/api/extract";
 
-		if(file != null)
-			return poolPartyExtractFromFile(file, projectId, url);
-		else if(text != null && !text.isEmpty())
+		if(text != null && !text.isEmpty())
 			return poolPartyExtractFromText(text,projectId, url);
 		else
-			return new Concept[]{};
+			return poolPartyExtractFromFile(file, projectId, url);
 	}
 
 	private Concept[] poolPartyExtractFromText(String text, String projectId, String url)
@@ -230,7 +228,7 @@ public class CdmkController implements ServletContextAware {
 		try {
 			b64val = DatatypeConverter.printBase64Binary("apiuser:Msbm2016".getBytes("UTF-8"));
 		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
+			log.error(e.getClass().getName() + ": " + e.getMessage());
 		}
 
 		if(b64val != null)
