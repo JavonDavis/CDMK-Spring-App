@@ -203,7 +203,7 @@ public class CdmkController implements ServletContextAware {
 	{
 		Concept[] concepts = null;
 
-		File file = new File(multipartFile.getOriginalFilename());
+		File file = new File("/cdmk/"+multipartFile.getOriginalFilename());
 
 		try {
 			InputStream inputStream = multipartFile.getInputStream();
