@@ -166,7 +166,7 @@ public class CdmkController implements ServletContextAware {
 		try {
 			b64val = DatatypeConverter.printBase64Binary("apiuser:Msbm2016".getBytes("UTF-8"));
 		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
+			log.error(e.getClass().getName() + ": " + e.getMessage());
 		}
 
 		if(b64val != null)
@@ -196,7 +196,7 @@ public class CdmkController implements ServletContextAware {
 			Gson gson = new Gson();
 			concepts = gson.fromJson(conceptData, Concept[].class);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.error(e.getClass().getName() + ": " + e.getMessage());
 		}
 		return concepts;
 	}
@@ -219,7 +219,7 @@ public class CdmkController implements ServletContextAware {
 				outputStream.write(bytes, 0, read);
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.error(e.getClass().getName() + ": " + e.getMessage());
 		}
 
 
@@ -267,7 +267,7 @@ public class CdmkController implements ServletContextAware {
 			Gson gson = new Gson();
 			concepts = gson.fromJson(conceptData, Concept[].class);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.error(e.getClass().getName() + ": " + e.getMessage());
 		}
 		return concepts;
 	}
