@@ -98,6 +98,16 @@
                         </div>
                     </div>
 
+                    <h4>OR</h4>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="text">Extract from text at a URL</label> <br>
+                                <input id="url" name="url" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+
                     <br />
                     <button class="btn btn-default" type="submit">Extract Concepts</button>
                 </form:form>
