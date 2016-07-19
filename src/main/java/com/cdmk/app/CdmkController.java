@@ -82,12 +82,13 @@ public class CdmkController implements ServletContextAware {
 	public ModelAndView share(
 			@RequestParam(value="text", required=false) String text,
 			@RequestParam(value="file", required = false) MultipartFile file,
+			@RequestParam(value="url", required = false) String url,
 			HttpServletRequest request,
 			HttpServletResponse response
 		) {
 
 		//request.setAttribute("concepts", mauiExtractor(text));
-		request.setAttribute("concepts", poolPartyExtractor(text.trim(), file));
+		request.setAttribute("concepts", poolPartyExtractor(text.trim(), file, url));
 		return new ModelAndView("extraction");
 	}
 
@@ -135,18 +136,20 @@ public class CdmkController implements ServletContextAware {
 		return (Concept[]) concepts.toArray();
 	}
 
-	private Concept[] poolPartyExtractor(String text, MultipartFile file)
+	private Concept[] poolPartyExtractor(String text, MultipartFile file, String urlToExtract)
 	{
 		String projectId = "1DDFC367-E4BD-0001-E4F4-483115961E7F";
 		String url = "https://cdmk.poolparty.biz/extractor/api/extract";
 
 		if(text != null && !text.isEmpty())
-			return poolPartyExtractFromText(text,projectId, url);
+			return poolPartyExtractFromText(text,projectId, url, false);
+		else if (urlToExtract != null && !urlToExtract.isEmpty())
+			return poolPartyExtractFromText(urlToExtract,projectId, url, true);
 		else
 			return poolPartyExtractFromFile(file, projectId, url);
 	}
 
-	private Concept[] poolPartyExtractFromText(String text, String projectId, String url)
+	private Concept[] poolPartyExtractFromText(String text, String projectId, String url, boolean isURL)
 	{
 		Concept[] concepts = null;
 
@@ -154,7 +157,12 @@ public class CdmkController implements ServletContextAware {
 		HttpPost httpPost = new HttpPost(url);
 
 		List<NameValuePair> params = new ArrayList<>();
-		params.add(new BasicNameValuePair("text",text));
+		if(isURL) {
+			params.add(new BasicNameValuePair("url",text));
+		} else {
+			params.add(new BasicNameValuePair("text",text));
+		}
+
 		params.add(new BasicNameValuePair("projectId",projectId));
 		params.add(new BasicNameValuePair("language","en"));
 		params.add(new BasicNameValuePair("numberOfConcepts",Integer.toString(10)));
