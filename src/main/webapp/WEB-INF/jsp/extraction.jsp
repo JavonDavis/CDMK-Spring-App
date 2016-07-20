@@ -42,7 +42,7 @@
                 <div class="dropdown">
                     <button class="btn nav-btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">CDMK TOOLS <span class="caret"></span></button>
                     <ul class="dropdown-menu">
-                        <li><a href="http://cdmk-caribbean.net:8080/skosmos/cdmk/en/">CDMK Thesaurus</a></li>
+                        <li><a href="http://cdmk.poolparty.biz/CDMK.html">CDMK Thesaurus</a></li>
                         <li><a href="api">CDMK API</a></li>
                         <li><a href="http://skos.cdmk-caribbean.net/">CDMK Tree View</a></li>
                     </ul>
