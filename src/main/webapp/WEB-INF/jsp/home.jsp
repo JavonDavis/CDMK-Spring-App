@@ -48,7 +48,7 @@
                 <div class="dropdown">
                     <button class="btn nav-btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">CDMK TOOLS <span class="caret"></span></button>
                     <ul class="dropdown-menu">
-                        <li><a href="http://cdmk-caribbean.net:8080/skosmos/cdmk/en/">CDMK Thesaurus</a></li>
+                        <li><a href="http://cdmk.poolparty.biz/CDMK.html">CDMK Thesaurus</a></li>
                         <li><a href="api">CDMK API</a></li>
                         <li><a href="http://skos.cdmk-caribbean.net/">CDMK Tree View</a></li>
                     </ul>
@@ -74,7 +74,7 @@
             <div class="inner-text text-center">
                 <h3><strong>DISCOVERING WHAT WE KNOW ABOUT</strong></h3>
                 <h2>COMPREHENSIVE DISASTER MANAGEMENT IN THE CARIBBEAN</h2>
-                <a href="#" class="unimplemented"><button class="btn btn-default search-btn">SEARCH</button></a>
+                <a href="search"><button class="btn btn-default search-btn">SEARCH</button></a>
             </div>
         </div>
     </div>

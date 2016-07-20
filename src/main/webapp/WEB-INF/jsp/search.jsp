@@ -1,4 +1,8 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by javon on 20/07/2016
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Caribbean Disaster Management Knowledge Broker - API</title>
+    <title>Caribbean Disaster Management Knowledge Broker - Search</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -19,11 +23,17 @@
 
     <link href="css/business-frontpage.css" rel="stylesheet">
 
+    <style>
+        .footer {
+            position:;
+        }
+    </style>
+
 </head>
 
 <body>
 
-    <div class="wrapper">
+<div class="wrapper">
 
     <!-- Page Content -->
     <div class="container">
@@ -61,62 +71,67 @@
                 <button class="btn nav-btn"><a href="">CONTACT US</a></button>
             </div>
         </div>
-    </div>
 
-    <div class="container">
-        <div class="text-center">
-            <h2>API Guide</h2>
-            <h4>There are two ways to access the knowledge base programmatically: via SPARQL and REST.</h4>
-        </div>
         <div class="row">
-            <div class="col-xs-6">
-                <h3>SPARQL</h3>
-                <p>The SPARQL endpoint is provided using <a href="https://jena.apache.org/documentation/serving_data/">Apache Jena - Fuseki</a> and supports JSON, XML, CSV and TSV</p>
-                <p>The CDMK SPARQL endpoint is located at <a href="http://cdmk-caribbean.net:3030/cdmk/sparql">http://cdmk-caribbean.net:3030/cdmk/sparql.</a>
-                </p>
+            <div class="col-xs-12">
+                <h2>Search the Content Pool</h2>
+                <h4>Demo</h4>
+                <p>Input a tag and click search to get results based on tagged resources.</p>
             </div>
+        </div>
 
-            <div class="col-xs-6">
-                <h3>REST</h3>
-                <p>The REST API is provided by Skosmos and supports JSON and JSONP callbacks. For a full reference, visit the: <a href="https://github.com/NatLibFi/Skosmos/wiki/REST-API">Skosmos documentation.</a></p>
-                <p>The CDMK Skosmos page is located at <a href="http://thesaurus.cdmk-caribbean.net/">http://thesaurus.cdmk-caribbean.net/</a></p>
+        <div class="row">
+            <div class="col-xs-12">
+                <form:form id="getConceptsForm" role="form" action="search" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="text">Search our CDMK content pool by a tag(e.g. Hurricane)</label> <br>
+                                <input id="text" name="text" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <button class="btn btn-default" type="submit">Search</button>
+                </form:form>
             </div>
         </div>
     </div>
 
+    <br />
     <div class="push"></div>
 
-    </div>
+</div>
 
-    <!-- Footer -->
-    <div class="footer footer-logos">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-5">
-                    <img src="images/IDRC_Canada.png" alt="IDRC Canada">
-                </div>
-                <div class="col-xs-2">
-                    <img src="images/ukaid.png" alt="UK aid">
-                </div>
-                <div class="col-xs-2">
-                    <img src="images/MSBM_logo.png" alt="">
-                </div>
-                <div class="col-xs-3">
-                    <h4><a href="www.ocsdnet.org">www.ocsdnet.org</a></h4>
-                    <h4><a href="http://twitter.com/ocsdnet">http://twitter.com/ocsdnet</a></h4>
-                    <h4><a href="https://facebook.com/OCSDNet">https://facebook.com/OCSDNet</a></h4>
-                </div>
+<!-- Footer -->
+<div class="footer footer-logos">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-5">
+                <img src="images/IDRC_Canada.png" alt="IDRC Canada">
+            </div>
+            <div class="col-xs-2">
+                <img src="images/ukaid.png" alt="UK aid">
+            </div>
+            <div class="col-xs-2">
+                <img src="images/MSBM_logo.png" alt="">
+            </div>
+            <div class="col-xs-3">
+                <h4><a href="www.ocsdnet.org">www.ocsdnet.org</a></h4>
+                <h4><a href="http://twitter.com/ocsdnet">http://twitter.com/ocsdnet</a></h4>
+                <h4><a href="https://facebook.com/OCSDNet">https://facebook.com/OCSDNet</a></h4>
             </div>
         </div>
-        <!-- /.row -->
     </div>
+    <!-- /.row -->
+</div>
 
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 
 </body>
 

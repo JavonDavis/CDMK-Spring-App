@@ -3,10 +3,7 @@ package com.cdmk.app;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.ArrayList;
+import java.util.*;
 import java.text.DecimalFormat;
 
 import java.net.MalformedURLException;
@@ -20,6 +17,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.google.gson.stream.MalformedJsonException;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -31,6 +29,12 @@ import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrServer;
+import org.apache.solr.client.solrj.SolrServerException;
+import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
+import org.apache.solr.client.solrj.response.QueryResponse;
+import org.apache.solr.common.SolrDocumentList;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.context.ServletContextAware;
@@ -56,6 +60,7 @@ import com.entopix.maui.util.Topic;
 public class CdmkController implements ServletContextAware {
 
 	protected ServletContext context;
+    private static String SOLR_URL = "http://localhost:8983/solr/cdmk-test";
 
 	private Logger log = LoggerFactory.getLogger(this.getClass().getName());
 
@@ -74,9 +79,64 @@ public class CdmkController implements ServletContextAware {
 	}
 
 	@RequestMapping(value = "/api", method = RequestMethod.GET)
-	public String apiPage(HttpServletRequest request) {
-		return "api";
-	}
+    public String apiPage(HttpServletRequest request) {
+        return "api";
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.POST)
+    public ModelAndView searchPage(@RequestParam(value="text", required=false) String text,
+                             HttpServletRequest request,
+                             HttpServletResponse response) {
+        List<Item> results = new ArrayList<>();
+        try {
+            SolrServer server = new CommonsHttpSolrServer( SOLR_URL );
+
+            SolrQuery query = new SolrQuery();
+            query.setQuery(text);
+
+            QueryResponse rsp = server.query( query );
+
+            ArrayList<Item> queryResult = (ArrayList<Item>) rsp.getBeans(Item.class);
+            for(Item item: queryResult)
+            {
+                item.concepts = new ArrayList<>();
+                String tags = item.tags.get(0);
+                String[] conceptStrings = tags.split(",");
+
+                ArrayList<Concept> concepts = new ArrayList<>();
+                for(String conceptAndValueString: conceptStrings)
+                {
+                    String[] conceptAndValue = conceptAndValueString.split("-");
+                    concepts.add(new Concept(conceptAndValue[0],Integer.parseInt(conceptAndValue[1])));
+                }
+                item.concepts.addAll(concepts);
+                results.add(item);
+            }
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (SolrServerException e) {
+            e.printStackTrace();
+        }
+
+        Set<Item> resultSet = new TreeSet<>(new Comparator<Item>() {
+            @Override
+            public int compare(Item item1, Item item2) {
+                if (item1.equals(item2)) {
+                    return 0;
+                }
+                return 1;
+            }
+        });
+        resultSet.addAll(results);
+        request.setAttribute("items", resultSet);
+        return new ModelAndView("results");
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public String search(HttpServletRequest request) {
+        return "search";
+    }
 
 	@RequestMapping(value = "/share", method = RequestMethod.POST) 
 	public ModelAndView share(
@@ -201,10 +261,13 @@ public class CdmkController implements ServletContextAware {
 
 			Gson gson = new Gson();
 			concepts = gson.fromJson(conceptData, Concept[].class);
-		} catch (IOException e) {
+		} catch (MalformedJsonException e)
+        {
+            log.error(e.getClass().getName() + ": " + e.getMessage());
+        } catch (IOException e) {
 			log.error(e.getClass().getName() + ": " + e.getMessage());
 		}
-		return concepts;
+        return concepts;
 	}
 
 	private Concept[] poolPartyExtractFromFile(MultipartFile multipartFile, String projectId, String url)

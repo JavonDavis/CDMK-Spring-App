@@ -23,6 +23,7 @@
 		<url-pattern>/home</url-pattern>
         <url-pattern>/api</url-pattern>
 		<url-pattern>/share</url-pattern>
+		<url-pattern>/search</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>
