@@ -78,7 +78,21 @@
                     </thead>
                     <c:forEach items="${items}" var="item">
                         <tr>
-                            <td>${item.url.get(0)}</td><td>
+                            <c:choose>
+                                <c:when test="${item.url!=null}">
+                                    <td>${item.url.get(0)}</td>
+                                </c:when>
+                                <c:when test="${item.file!=null}">
+                                    <td><a href="${item.file.get(0)}" target="_blank">Download File</a></td>
+                                    <%--<td><iframe src="${item.file.get(0)}"></iframe></td>--%>
+                                    <%--<a href="/ViewerJS/#..${item.file.get(0)}">--%>
+                                </c:when>
+                                <c:otherwise>
+                                    <td>${item.text.get(0)}</td>
+                                    <br />
+                                </c:otherwise>
+                            </c:choose>
+                            <td>
 
                             <table class="table table-condensed">
                                 <thead>
