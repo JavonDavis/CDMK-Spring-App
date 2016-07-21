@@ -80,7 +80,7 @@
                         <tr>
                             <c:choose>
                                 <c:when test="${item.url!=null}">
-                                    <td><a href="${item.url.get(0)}">Go to URL</a></td>
+                                    <td><a href="${item.url.get(0)}">${item.url.get(0)}</a></td>
                                 </c:when>
                                 <c:when test="${item.file!=null}">
                                     <td><a href="${item.file.get(0)}" target="_blank">Download File</a></td>
