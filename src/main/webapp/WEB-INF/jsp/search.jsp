@@ -82,7 +82,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <form:form id="getConceptsForm" role="form" action="search" method="POST" enctype="multipart/form-data">
+                <form:form id="getConceptsForm" role="form" action="search" method="POST">
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="form-group">
