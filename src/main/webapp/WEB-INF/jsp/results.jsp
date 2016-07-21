@@ -68,7 +68,7 @@
 
         <div class="row">
             <div class="col-xs-6">
-                <h2>Resources from the CDM Content Pool:</h2>
+                <h2>Resources related to '${concept}' from the CDM Content Pool:</h2>
                 <table class="table table-condensed">
                     <thead>
                     <tr>
@@ -80,7 +80,7 @@
                         <tr>
                             <c:choose>
                                 <c:when test="${item.url!=null}">
-                                    <td>${item.url.get(0)}</td>
+                                    <td><a href="${item.url.get(0)}">Go to URL</a></td>
                                 </c:when>
                                 <c:when test="${item.file!=null}">
                                     <td><a href="${item.file.get(0)}" target="_blank">Download File</a></td>
@@ -103,7 +103,7 @@
                                 </thead>
                                 <c:forEach items="${item.concepts}" var="concept">
                                     <tr>
-                                        <td>${concept.prefLabel}</td><td><meter value="${concept.score/100}">${concept.score}%</meter></td>
+                                        <td><a href="/search?q=${concept.prefLabel}">${concept.prefLabel}</a></td><td><meter value="${concept.score/100}">${concept.score}%</meter></td>
                                     </tr>
                                 </c:forEach>
                             </table>

@@ -1,12 +1,9 @@
 package com.cdmk.app;
 
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.net.*;
 import java.util.*;
 import java.text.DecimalFormat;
-
-import java.net.MalformedURLException;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
@@ -22,7 +19,9 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.entity.mime.content.FileBody;
@@ -88,55 +87,22 @@ public class CdmkController implements ServletContextAware {
     public ModelAndView searchPage(@RequestParam(value="text", required=false) String text,
                              HttpServletRequest request,
                              HttpServletResponse response) {
-        List<Item> results = new ArrayList<>();
-        try {
-            SolrServer server = new CommonsHttpSolrServer( SOLR_URL );
 
-            SolrQuery query = new SolrQuery();
-            query.setQuery(text);
-
-            QueryResponse rsp = server.query( query );
-
-            ArrayList<Item> queryResult = (ArrayList<Item>) rsp.getBeans(Item.class);
-            for(Item item: queryResult)
-            {
-                item.concepts = new ArrayList<>();
-                String tags = item.tags.get(0);
-                String[] conceptStrings = tags.split(",");
-
-                ArrayList<Concept> concepts = new ArrayList<>();
-                for(String conceptAndValueString: conceptStrings)
-                {
-                    String[] conceptAndValue = conceptAndValueString.split("-");
-                    concepts.add(new Concept(conceptAndValue[0],Integer.parseInt(conceptAndValue[1])));
-                }
-                item.concepts.addAll(concepts);
-                results.add(item);
-            }
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (SolrServerException e) {
-            e.printStackTrace();
-        }
-
-        Set<Item> resultSet = new TreeSet<>(new Comparator<Item>() {
-            @Override
-            public int compare(Item item1, Item item2) {
-                if (item1.equals(item2)) {
-                    return 0;
-                }
-                return 1;
-            }
-        });
-        resultSet.addAll(results);
-        request.setAttribute("items", resultSet);
+        request.setAttribute("items", searchForConcept(text));
+        request.setAttribute("concept", text);
         return new ModelAndView("results");
     }
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public String search(HttpServletRequest request) {
-        return "search";
+    public ModelAndView search(HttpServletRequest request) {
+        if(request.getParameterMap().containsKey("q"))
+        {
+            String concept = request.getParameter("q");
+            request.setAttribute("concept", concept);
+            request.setAttribute("items", searchForConcept(concept));
+            return new ModelAndView("results");
+        }
+        return new ModelAndView("search");
     }
 
 	@RequestMapping(value = "/share", method = RequestMethod.POST) 
@@ -215,59 +181,57 @@ public class CdmkController implements ServletContextAware {
 		Concept[] concepts = null;
 
 		HttpClient httpClient = HttpClientBuilder.create().build();
-		HttpPost httpPost = new HttpPost(url);
 
-		List<NameValuePair> params = new ArrayList<>();
-		if(isURL) {
-			params.add(new BasicNameValuePair("url",text));
-		} else {
-			params.add(new BasicNameValuePair("text",text));
-		}
+        try {
+            URIBuilder builder = new URIBuilder(url);
+            builder.addParameter("projectId",projectId);
 
-		params.add(new BasicNameValuePair("projectId",projectId));
-		params.add(new BasicNameValuePair("language","en"));
-		params.add(new BasicNameValuePair("numberOfConcepts",Integer.toString(10)));
-		params.add(new BasicNameValuePair("numberOfTerms",Integer.toString(10)));
+            if(isURL) {
+                builder.addParameter("url",text);
+            } else {
+                builder.addParameter("text",text);
+            }
+            builder.addParameter("url",text);
+            builder.addParameter("numberOfConcepts",Integer.toString(10));
+            builder.addParameter("language","en");
+            builder.addParameter("numberOfTerms",Integer.toString(10));
 
-		String b64val = null;
-		try {
-			b64val = DatatypeConverter.printBase64Binary("apiuser:Msbm2016".getBytes("UTF-8"));
-		} catch (UnsupportedEncodingException e) {
-			log.error(e.getClass().getName() + ": " + e.getMessage());
-		}
 
-		if(b64val != null)
-			httpPost.setHeader("Authorization","Basic "+b64val+"=");
+            HttpGet httpGet = new HttpGet(String.valueOf(builder.build().toURL()));
 
-		try {
-			httpPost.setEntity(new UrlEncodedFormEntity(params));
+            String b64val;
 
-			HttpResponse httpResponse = httpClient.execute(httpPost);
+            b64val = DatatypeConverter.printBase64Binary("apiuser:Msbm2016".getBytes("UTF-8"));
 
-			BufferedReader reader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));
-			String line;
-			StringBuilder result = new StringBuilder();
-			while ((line = reader.readLine()) != null)
-			{
-				result.append(line);
-			}
-			reader.close();
 
-			System.out.println("Successfully retrieved concepts from url");
+            if (b64val != null)
+                httpGet.setHeader("Authorization", "Basic " + b64val + "=");
 
-			JsonParser parser = new JsonParser();
-			JsonObject conceptResult = (JsonObject) parser.parse(result.toString());
+            HttpResponse httpResponse = httpClient.execute(httpGet);
 
-			JsonElement conceptData = conceptResult.get("concepts");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));
+            String line;
+            StringBuilder result = new StringBuilder();
+            while ((line = reader.readLine()) != null) {
+                result.append(line);
+            }
+            reader.close();
 
-			Gson gson = new Gson();
-			concepts = gson.fromJson(conceptData, Concept[].class);
-		} catch (MalformedJsonException e)
+            System.out.println("Successfully retrieved concepts from url");
+
+            JsonParser parser = new JsonParser();
+            JsonObject conceptResult = (JsonObject) parser.parse(result.toString());
+
+            JsonElement conceptData = conceptResult.get("concepts");
+
+            Gson gson = new Gson();
+            concepts = gson.fromJson(conceptData, Concept[].class);
+        } catch (URISyntaxException | IOException e)
         {
             log.error(e.getClass().getName() + ": " + e.getMessage());
-        } catch (IOException e) {
-			log.error(e.getClass().getName() + ": " + e.getMessage());
-		}
+        }
+        if (concepts == null)
+            return new Concept[]{};
         return concepts;
 	}
 
@@ -341,5 +305,52 @@ public class CdmkController implements ServletContextAware {
 		}
 		return concepts;
 	}
+
+    private Set<Item> searchForConcept(String concept)
+    {
+        List<Item> results = new ArrayList<>();
+        try {
+            SolrServer server = new CommonsHttpSolrServer( SOLR_URL );
+
+            SolrQuery query = new SolrQuery();
+            query.setQuery(concept);
+
+            QueryResponse rsp = server.query( query );
+
+            ArrayList<Item> queryResult = (ArrayList<Item>) rsp.getBeans(Item.class);
+            for(Item item: queryResult)
+            {
+                item.concepts = new ArrayList<>();
+                String tags = item.tags.get(0);
+                String[] conceptStrings = tags.split(",");
+
+                ArrayList<Concept> concepts = new ArrayList<>();
+                for(String conceptAndValueString: conceptStrings)
+                {
+                    String[] conceptAndValue = conceptAndValueString.split("-");
+                    concepts.add(new Concept(conceptAndValue[0],Integer.parseInt(conceptAndValue[1])));
+                }
+                item.concepts.addAll(concepts);
+                results.add(item);
+            }
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (SolrServerException e) {
+            e.printStackTrace();
+        }
+
+        Set<Item> resultSet = new TreeSet<>(new Comparator<Item>() {
+            @Override
+            public int compare(Item item1, Item item2) {
+                if (item1.equals(item2)) {
+                    return 0;
+                }
+                return 1;
+            }
+        });
+        resultSet.addAll(results);
+        return resultSet;
+    }
 
 }
