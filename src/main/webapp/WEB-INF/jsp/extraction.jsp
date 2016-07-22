@@ -45,6 +45,8 @@
                         <li><a href="http://cdmk.poolparty.biz/CDMK.html">CDMK Thesaurus</a></li>
                         <li><a href="api">CDMK API</a></li>
                         <li><a href="http://skos.cdmk-caribbean.net/">CDMK Tree View</a></li>
+                        <li><a href="share">Share Your Knowledge</a></li>
+                        <li><a href="search">Search the Index</a></li>
                     </ul>
                 </div>
             </div>
@@ -74,7 +76,7 @@
                     </thead>
                     <c:forEach items="${concepts}" var="concept">
                         <tr>
-                            <td>${concept.prefLabel}</td><td><meter value="${concept.score/100}">${concept.score}%</meter></td>
+                            <td><a href="/search?q=${concept.prefLabel}">${concept.prefLabel}</a></td><td><meter value="${concept.score/100}">${concept.score}%</meter></td>
                         </tr>
                     </c:forEach>
                 </table>

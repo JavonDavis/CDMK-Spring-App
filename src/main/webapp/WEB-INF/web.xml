@@ -30,6 +30,7 @@
         <url-pattern>/api</url-pattern>
 		<url-pattern>/share</url-pattern>
 		<url-pattern>/search</url-pattern>
+        <url-pattern>/cdmk/*</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>

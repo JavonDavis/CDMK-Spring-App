@@ -2,6 +2,7 @@ package com.cdmk.app;
 
 import java.io.*;
 import java.net.*;
+import java.nio.charset.Charset;
 import java.util.*;
 import java.text.DecimalFormat;
 
@@ -34,13 +35,12 @@ import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocumentList;
+import org.apache.solr.common.SolrInputDocument;
+import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.context.ServletContextAware;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.stereotype.Controller;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,10 +61,18 @@ public class CdmkController implements ServletContextAware {
 	protected ServletContext context;
    // private static String SOLR_URL = "http://localhost:8983/solr/cdmk-test";
     private static String SOLR_URL = "http://cdmk-caribbean.net:8983/solr/cdmk";
+    private static SolrServer server;
+    private Logger log = LoggerFactory.getLogger(this.getClass().getName());
 
-	private Logger log = LoggerFactory.getLogger(this.getClass().getName());
+    static {
+        try {
+            server = new CommonsHttpSolrServer(SOLR_URL);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
 
-	public void setServletContext(ServletContext servletContext) {
+    public void setServletContext(ServletContext servletContext) {
 		this.context = servletContext;
 	}
 
@@ -115,9 +123,83 @@ public class CdmkController implements ServletContextAware {
 		) {
 
 		//request.setAttribute("concepts", mauiExtractor(text));
-		request.setAttribute("concepts", poolPartyExtractor(text.trim(), file, url));
+        Concept[] concepts = poolPartyExtractor(text.trim(), file, url);
+        String filePath = "/cdmk/"+file.getOriginalFilename();
+
+        if(concepts.length > 0)
+            addToIndex(text, filePath, url, concepts);
+
+		request.setAttribute("concepts", concepts);
 		return new ModelAndView("extraction");
 	}
+
+    @RequestMapping(value="/cdmk/{file:.*}", method = RequestMethod.GET)
+    public void downloadFile(HttpServletResponse response, @PathVariable("file") String fileName) throws IOException {
+
+        File file = new File("/cdmk/"+fileName);
+
+        if(!file.exists()){
+            String errorMessage = "Sorry. The file you are looking for does not exist in the index";
+            System.out.println(errorMessage);
+            OutputStream outputStream = response.getOutputStream();
+            outputStream.write(errorMessage.getBytes(Charset.forName("UTF-8")));
+            outputStream.close();
+            return;
+        }
+
+        String mimeType= URLConnection.guessContentTypeFromName(file.getName());
+        if(mimeType==null){
+            System.out.println("mimetype is not detectable, will take default");
+            mimeType = "application/octet-stream";
+        }
+
+        System.out.println("mimetype : "+mimeType);
+
+        response.setContentType(mimeType);
+
+        /* "Content-Disposition : inline" will show viewable types [like images/text/pdf/anything viewable by browser] right on browser
+            while others(zip e.g) will be directly downloaded [may provide save as popup, based on your browser setting.]*/
+        response.setHeader("Content-Disposition", String.format("inline; filename=\"" + file.getName() +"\""));
+
+
+        /* "Content-Disposition : attachment" will be directly download, may provide save as popup, based on your browser setting*/
+        //response.setHeader("Content-Disposition", String.format("attachment; filename=\"%s\"", file.getName()));
+
+        response.setContentLength((int)file.length());
+
+        InputStream inputStream = new BufferedInputStream(new FileInputStream(file));
+
+        //Copy bytes from source to destination(outputstream in this example), closes both streams.
+        FileCopyUtils.copy(inputStream, response.getOutputStream());
+    }
+
+	private void addToIndex(String text, String filePath, String url, Concept[] concepts)
+    {
+        SolrInputDocument document = new SolrInputDocument();
+        document.addField( "text", text);
+        document.addField( "url", url );
+        document.addField( "file", filePath );
+
+        String tags = "";
+
+        for(Concept concept: concepts)
+        {
+            String conceptStr = concept.getPrefLabel()+"-"+concept.getScore()+",";
+            tags += conceptStr;
+        }
+
+        tags = tags.substring(0, tags.length() -1);
+
+        document.addField("tags", tags);
+        try {
+            server.add(document);
+            server.commit();
+        } catch (SolrServerException e) {
+            log.error(e.getClass().getName() + ": " + e.getMessage());
+        } catch (IOException e) {
+            log.error(e.getClass().getName() + ": " + e.getMessage());
+        }
+    }
 
 	private Concept[] mauiExtractor(String text)
 	{
@@ -310,7 +392,6 @@ public class CdmkController implements ServletContextAware {
     {
         List<Item> results = new ArrayList<>();
         try {
-            SolrServer server = new CommonsHttpSolrServer( SOLR_URL );
 
             SolrQuery query = new SolrQuery();
             query.setQuery(concept);
@@ -340,8 +421,6 @@ public class CdmkController implements ServletContextAware {
                 results.add(item);
             }
 
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (SolrServerException e) {
             e.printStackTrace();
         }

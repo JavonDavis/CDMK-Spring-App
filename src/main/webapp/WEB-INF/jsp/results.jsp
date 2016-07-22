@@ -49,6 +49,8 @@
                         <li><a href="http://cdmk.poolparty.biz/CDMK.html">CDMK Thesaurus</a></li>
                         <li><a href="api">CDMK API</a></li>
                         <li><a href="http://skos.cdmk-caribbean.net/">CDMK Tree View</a></li>
+                        <li><a href="share">Share Your Knowledge</a></li>
+                        <li><a href="search">Search the Index</a></li>
                     </ul>
                 </div>
             </div>
@@ -65,6 +67,8 @@
                 <button class="btn nav-btn"><a href="">CONTACT US</a></button>
             </div>
         </div>
+
+        <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
         <div class="row">
             <div class="col-xs-6">
@@ -83,7 +87,7 @@
                                     <td><a href="${item.url.get(0)}">${item.url.get(0)}</a></td>
                                 </c:when>
                                 <c:when test="${item.file!=null}">
-                                    <td><a href="${item.file.get(0)}" target="_blank">${item.fileName}</a></td>
+                                    <td><a href="<c:url value="/cdmk${item.file.get(0)}"/>">${item.fileName}</a></td>
                                     <%--<td><iframe src="${item.file.get(0)}"></iframe></td>--%>
                                     <%--<a href="/ViewerJS/#..${item.file.get(0)}">--%>
                                 </c:when>
