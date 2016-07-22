@@ -24,6 +24,8 @@ public class Item {
 
     public List<Concept> concepts;
 
+    public String fileName;
+
     public List<String> getUrl() {
         return url;
     }
@@ -62,6 +64,14 @@ public class Item {
 
     public void setConcepts(List<Concept> concepts) {
         this.concepts = concepts;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     @Override

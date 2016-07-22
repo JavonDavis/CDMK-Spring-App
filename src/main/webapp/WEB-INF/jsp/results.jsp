@@ -83,7 +83,7 @@
                                     <td><a href="${item.url.get(0)}">${item.url.get(0)}</a></td>
                                 </c:when>
                                 <c:when test="${item.file!=null}">
-                                    <td><a href="${item.file.get(0)}" target="_blank">Download File</a></td>
+                                    <td><a href="${item.file.get(0)}" target="_blank">${item.fileName}</a></td>
                                     <%--<td><iframe src="${item.file.get(0)}"></iframe></td>--%>
                                     <%--<a href="/ViewerJS/#..${item.file.get(0)}">--%>
                                 </c:when>

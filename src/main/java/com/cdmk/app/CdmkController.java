@@ -320,6 +320,12 @@ public class CdmkController implements ServletContextAware {
             ArrayList<Item> queryResult = (ArrayList<Item>) rsp.getBeans(Item.class);
             for(Item item: queryResult)
             {
+            	if(item.file != null && !item.file.isEmpty())
+				{
+					String filePath = item.file.get(0);
+					String[] components = filePath.split("/");
+					item.fileName = components[components.length -1];
+				}
                 item.concepts = new ArrayList<>();
                 String tags = item.tags.get(0);
                 String[] conceptStrings = tags.split(",");
