@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,12 +74,12 @@
                 </li>
                 <li><a href="mailto:javonldavis14@gmail.com?Subject=CDMK">Contact us</a></li>
             </ul>
-            <form class="navbar-form navbar-right" role="search">
+            <form:form class="navbar-form navbar-right" role="search" id="getConceptsForm" action="home" method="POST">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input id="search_field" name="text" type="text" class="form-control" placeholder="Search">
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
-            </form>
+            </form:form>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>

@@ -1,4 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,12 +69,12 @@
                 </li>
                 <li><a href="mailto:javonldavis14@gmail.com?Subject=CDMK">Contact us</a></li>
             </ul>
-            <form class="navbar-form navbar-right" role="search">
+            <form:form class="navbar-form navbar-right" role="search" id="getConceptsForm" action="home" method="POST">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input id="search_field" name="text" type="text" class="form-control" placeholder="Search">
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
-            </form>
+            </form:form>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
@@ -90,7 +92,7 @@
                     </thead>
                     <c:forEach items="${concepts}" var="concept">
                         <tr>
-                            <td><a href="/search?q=${concept.prefLabel}">${concept.prefLabel}</a></td><td><meter value="${concept.score/100}">${concept.score}%</meter></td>
+                            <td><a href="/home?q=${concept.prefLabel}">${concept.prefLabel}</a></td><td><meter value="${concept.score/100}">${concept.score}%</meter></td>
                         </tr>
                     </c:forEach>
                 </table>

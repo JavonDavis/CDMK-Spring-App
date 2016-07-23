@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,12 +76,12 @@
                 </li>
                 <li><a href="mailto:javonldavis14@gmail.com?Subject=CDMK">Contact us</a></li>
             </ul>
-            <form class="navbar-form navbar-right" role="search">
+            <form:form class="navbar-form navbar-right" role="search" id="getConceptsForm" action="home" method="POST">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input id="search_field" name="text" type="text" class="form-control" placeholder="Search">
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
-            </form>
+            </form:form>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
@@ -92,7 +95,7 @@
             <div class="inner-text text-center">
                 <h3><strong>DISCOVERING WHAT WE KNOW ABOUT</strong></h3>
                 <h2>COMPREHENSIVE DISASTER MANAGEMENT IN THE CARIBBEAN</h2>
-                <a href="search"><button class="btn btn-default search-btn">SEARCH</button></a>
+                <a href="#" onclick="focus_on_search();return false;"><button class="btn btn-default search-btn">Search the Index</button></a>
             </div>
         </div>
     </div>
@@ -214,6 +217,12 @@
         }
 
     </script>
+
+<script>
+    function focus_on_search() {
+        document.getElementById('search_field').focus();
+    }
+</script>
 
 </body>
 

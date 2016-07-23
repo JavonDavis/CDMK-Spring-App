@@ -76,10 +76,27 @@ public class CdmkController implements ServletContextAware {
 		this.context = servletContext;
 	}
 
-	@RequestMapping("/home")
-	public String home(HttpServletRequest request) {
-		return "home";
-	}
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public ModelAndView search(HttpServletRequest request) {
+        if(request.getParameterMap().containsKey("q"))
+        {
+            String concept = request.getParameter("q");
+            request.setAttribute("concept", concept);
+            request.setAttribute("items", searchForConcept(concept));
+            return new ModelAndView("results");
+        }
+        return new ModelAndView("home");
+    }
+
+    @RequestMapping(value = "/home", method = RequestMethod.POST)
+    public ModelAndView searchPage(@RequestParam(value="text", required=false) String text,
+                                   HttpServletRequest request,
+                                   HttpServletResponse response) {
+
+        request.setAttribute("items", searchForConcept(text));
+        request.setAttribute("concept", text);
+        return new ModelAndView("results");
+    }
 
 	@RequestMapping(value = "/share", method = RequestMethod.GET)
 	public String shareForm(HttpServletRequest request) {
@@ -91,27 +108,6 @@ public class CdmkController implements ServletContextAware {
         return "api";
     }
 
-    @RequestMapping(value = "/search", method = RequestMethod.POST)
-    public ModelAndView searchPage(@RequestParam(value="text", required=false) String text,
-                             HttpServletRequest request,
-                             HttpServletResponse response) {
-
-        request.setAttribute("items", searchForConcept(text));
-        request.setAttribute("concept", text);
-        return new ModelAndView("results");
-    }
-
-    @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public ModelAndView search(HttpServletRequest request) {
-        if(request.getParameterMap().containsKey("q"))
-        {
-            String concept = request.getParameter("q");
-            request.setAttribute("concept", concept);
-            request.setAttribute("items", searchForConcept(concept));
-            return new ModelAndView("results");
-        }
-        return new ModelAndView("search");
-    }
 
 	@RequestMapping(value = "/share", method = RequestMethod.POST) 
 	public ModelAndView share(
