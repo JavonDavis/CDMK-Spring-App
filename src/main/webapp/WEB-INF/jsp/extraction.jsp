@@ -23,46 +23,60 @@
 
 <body>
 
-    <div class="wrapper">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home">CDMK</a>
+        </div>
 
-    <!-- Page Content -->
-    <div class="container">
-        <div class="row bottom-buffer">
-            <div class="col-xs-3">
-                <div class="dropdown">
-                    <button class="btn nav-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">ABOUT CDMK <span class="caret"></span></button>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About CDMK <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="">CDMK Background</a></li>
                         <li><a href="">CDMK Use-Cases</a></li>
                         <li><a href="">CDMK Brochure</a></li>
                     </ul>
-                </div>
-            </div>
-            <div class="col-xs-3">
-                <div class="dropdown">
-                    <button class="btn nav-btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">CDMK TOOLS <span class="caret"></span></button>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CDMK Tools<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="http://cdmk.poolparty.biz/CDMK.html">CDMK Thesaurus</a></li>
                         <li><a href="api">CDMK API</a></li>
                         <li><a href="http://skos.cdmk-caribbean.net/">CDMK Tree View</a></li>
+                        <li role="separator" class="divider"></li>
                         <li><a href="share">Share Your Knowledge</a></li>
-                        <li><a href="search">Search the Index</a></li>
+                        <%--<li><a href="search">Search the Index</a></li>--%>
                     </ul>
-                </div>
-            </div>
-            <div class="col-xs-3">
-                <div class="dropdown">
-                    <button class="btn nav-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown">PARTNERS &amp CONTRIBUTORS <span class="caret"></span></button>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Partners <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="">Partners &amp Stakeholders</a></li>
                         <li><a href="">Contribute to CDMK</a></li>
                     </ul>
+                </li>
+                <li><a href="mailto:javonldavis14@gmail.com?Subject=CDMK">Contact us</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
                 </div>
-            </div>
-            <div class="col-xs-3">
-                <button class="btn nav-btn"><a href="">CONTACT US</a></button>
-            </div>
-        </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+    <div class="wrapper">
 
         <div class="row">
             <div class="col-xs-6">
