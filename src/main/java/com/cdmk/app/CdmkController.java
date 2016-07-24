@@ -33,9 +33,13 @@ import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
+import org.apache.solr.client.solrj.request.ContentStreamUpdateRequest;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.SolrInputDocument;
+import org.apache.solr.common.params.ModifiableSolrParams;
+import org.apache.solr.common.params.SolrParams;
+import org.apache.solr.common.util.NamedList;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -120,8 +124,19 @@ public class CdmkController implements ServletContextAware {
 
 		//request.setAttribute("concepts", mauiExtractor(text));
         Concept[] concepts = poolPartyExtractor(text.trim(), file, url);
-        String filePath = "/cdmk/"+file.getOriginalFilename();
 
+        String filePath = "";
+        if(file != null) {
+            filePath = "/cdmk/" + file.getOriginalFilename();
+            ContentStreamUpdateRequest req = new ContentStreamUpdateRequest("/update/extract");
+            try {
+                req.addFile(new File(filePath));
+                NamedList<Object> result = server.request(req);
+                System.out.println("Result: " + result);
+            } catch (IOException | SolrServerException e) {
+                e.printStackTrace();
+            }
+        }
         if(concepts.length > 0)
             addToIndex(text, filePath, url, concepts);
 
@@ -387,6 +402,16 @@ public class CdmkController implements ServletContextAware {
     private Set<Item> searchForConcept(String concept)
     {
         List<Item> results = new ArrayList<>();
+        Set<Item> resultSet = new TreeSet<>(new Comparator<Item>() {
+            @Override
+            public int compare(Item item1, Item item2) {
+                if (item1.equals(item2)) {
+                    return 0;
+                }
+                return 1;
+            }
+        });
+
         try {
 
             SolrQuery query = new SolrQuery();
@@ -397,12 +422,30 @@ public class CdmkController implements ServletContextAware {
             ArrayList<Item> queryResult = (ArrayList<Item>) rsp.getBeans(Item.class);
             for(Item item: queryResult)
             {
+
+                // under the premise that anything in the index with a file tag must have tags!
+                if(item.tags == null)
+                {
+                    String filePath = item.getId();
+                    Set<Item> unTaggedSearchItems = searchForConcept("file:"+filePath);
+                    if(unTaggedSearchItems.isEmpty())
+                    {
+                        item.file = new ArrayList<>();
+                        item.file.add(filePath);
+                    }
+                    else {
+                        resultSet.addAll(unTaggedSearchItems);
+                        continue;
+                    }
+                }
+
             	if(item.file != null && !item.file.isEmpty())
 				{
 					String filePath = item.file.get(0);
 					String[] components = filePath.split("/");
 					item.fileName = components[components.length -1];
 				}
+
                 item.concepts = new ArrayList<>();
                 String tags = item.tags.get(0);
                 String[] conceptStrings = tags.split(",");
@@ -420,16 +463,6 @@ public class CdmkController implements ServletContextAware {
         } catch (SolrServerException e) {
             e.printStackTrace();
         }
-
-        Set<Item> resultSet = new TreeSet<>(new Comparator<Item>() {
-            @Override
-            public int compare(Item item1, Item item2) {
-                if (item1.equals(item2)) {
-                    return 0;
-                }
-                return 1;
-            }
-        });
         resultSet.addAll(results);
         return resultSet;
     }
