@@ -92,16 +92,22 @@ public class Item {
             if(this.url != null) {
                 if(((Item) obj).url == null)
                     return false;
-                return this.url.get(0).equals(((Item) obj).url.get(0));
+                return this.url.get(0).trim().equals(((Item) obj).url.get(0).trim());
+            } else if(this.fileName != null)
+            {
+                if(((Item) obj).fileName == null)
+                    return false;
+                return this.fileName.trim().equals(((Item) obj).fileName.trim());
             } else if(this.file != null)
             {
                 if(((Item) obj).file == null)
                     return false;
-                return this.file.get(0).equals(((Item) obj).file.get(0));
-            } else {
+                return this.file.get(0).trim().equals(((Item) obj).file.get(0).trim());
+            }
+            else {
                 if(this.text == null || ((Item) obj).text == null)
                     return false;
-                return this.text.get(0).equals(((Item) obj).text.get(0));
+                return this.text.get(0).trim().equals(((Item) obj).text.get(0).trim());
             }
 
         }

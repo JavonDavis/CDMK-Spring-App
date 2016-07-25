@@ -7,6 +7,7 @@ public class Concept {
 
     public String prefLabel;
     public int score;
+    public boolean checked = false;
 
     public Concept()
     {
@@ -16,6 +17,10 @@ public class Concept {
     public Concept(String title, int score) {
         this.prefLabel = title;
         this.score = score;
+    }
+
+    public Concept(String title) {
+        this.prefLabel = title;
     }
 
     public String getPrefLabel() {
@@ -32,5 +37,23 @@ public class Concept {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void toggle() {
+        this.checked = !this.checked;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Concept)
+        {
+
+            return this.prefLabel.equals(((Concept) obj).getPrefLabel());
+        }
+        return false;
     }
 }

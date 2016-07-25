@@ -15,11 +15,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.stream.MalformedJsonException;
 import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
@@ -28,17 +25,13 @@ import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
 import org.apache.solr.client.solrj.request.ContentStreamUpdateRequest;
 import org.apache.solr.client.solrj.response.QueryResponse;
-import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.SolrInputDocument;
-import org.apache.solr.common.params.ModifiableSolrParams;
-import org.apache.solr.common.params.SolrParams;
 import org.apache.solr.common.util.NamedList;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
@@ -46,15 +39,11 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.stereotype.Controller;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.entopix.maui.filters.MauiFilter.MauiFilterException;
-import com.entopix.maui.main.MauiModelBuilder;
-import com.entopix.maui.main.MauiTopicExtractor;
 import com.entopix.maui.main.MauiWrapper;
 import com.entopix.maui.stemmers.PorterStemmer;
 import com.entopix.maui.util.Topic;
@@ -67,6 +56,26 @@ public class CdmkController implements ServletContextAware {
     //private static String SOLR_URL = "http://cdmk-caribbean.net:8983/solr/cdmk";
     private static SolrServer server;
     private Logger log = LoggerFactory.getLogger(this.getClass().getName());
+
+    private String searchConcept;
+    // Search variables
+    private Set<Concept> filterConceptSet = new TreeSet<>(new Comparator<Concept>() {
+        @Override
+        public int compare(Concept o1, Concept o2) {
+            if(o1.equals(o2))
+                return 0;
+            return 1;
+        }
+    });
+    private static Set<Item> searchResults = new TreeSet<>(new Comparator<Item>() {
+        @Override
+        public int compare(Item item1, Item item2) {
+            if (item1.equals(item2)) {
+                return 0;
+            }
+            return 1;
+        }
+    });
 
     static {
         try {
@@ -85,8 +94,48 @@ public class CdmkController implements ServletContextAware {
         if(request.getParameterMap().containsKey("q"))
         {
             String concept = request.getParameter("q");
+            searchConcept = concept;
             request.setAttribute("concept", concept);
-            request.setAttribute("items", searchForConcept("\""+concept+"\""));
+
+            Set<Item> results = searchForConcept("\""+concept+"\"");
+
+            for(Item item : results)
+            {
+                if(item.getConcepts() != null)
+                    filterConceptSet.addAll(item.getConcepts());
+            }
+            request.setAttribute("filters", filterConceptSet);
+            request.setAttribute("items", results);
+            return new ModelAndView("results");
+        }
+        else if(request.getParameterMap().containsKey("filter"))
+        {
+            String filterConcept = request.getParameter("filter");
+            List<Item> filteredSearchResults = new ArrayList<>();
+
+            // The following operation could become very timely if concepts in vocabulary becomes > 10000 but not likely
+            // at the time of writing
+            for (Concept concept : filterConceptSet) {
+                if (concept.equals(new Concept(filterConcept)))
+                    concept.toggle();
+
+                if(concept.isChecked())
+                {
+                    for(Item item: searchResults)
+                    {
+                        if(!filteredSearchResults.contains(item))
+                        {
+                            if(item.getConcepts().contains(concept))
+                            {
+                                filteredSearchResults.add(item);
+                            }
+                        }
+                    }
+                }
+            }
+            request.setAttribute("concept", searchConcept);
+            request.setAttribute("filters", filterConceptSet);
+            request.setAttribute("items", filteredSearchResults);
             return new ModelAndView("results");
         }
         return new ModelAndView("home");
@@ -97,7 +146,19 @@ public class CdmkController implements ServletContextAware {
                                    HttpServletRequest request,
                                    HttpServletResponse response) {
 
-        request.setAttribute("items", searchForConcept("\""+text+"\""));
+        searchConcept = text;
+
+        Set<Item> results = searchForConcept("\""+text+"\"");
+
+        searchResults.addAll(results);
+        for(Item item : results)
+        {
+            if(item.getConcepts() != null)
+                filterConceptSet.addAll(item.getConcepts());
+        }
+        request.setAttribute("filters", filterConceptSet);
+        request.setAttribute("items", results);
+
         request.setAttribute("concept", text);
         return new ModelAndView("results");
     }
@@ -402,7 +463,6 @@ public class CdmkController implements ServletContextAware {
 
     private Set<Item> searchForConcept(String concept)
     {
-        List<Item> results = new ArrayList<>();
         Set<Item> resultSet = new TreeSet<>(new Comparator<Item>() {
             @Override
             public int compare(Item item1, Item item2) {
@@ -412,6 +472,7 @@ public class CdmkController implements ServletContextAware {
                 return 1;
             }
         });
+        List<Item> results = new ArrayList<>();
 
         try {
 

@@ -83,6 +83,24 @@
 </nav>
 <div class="wrapper">
 
+    <c:choose>
+        <c:when test="${filters != null}">
+            <c:forEach items="${filters}" var="concept">
+                <c:choose>
+                    <c:when test="${concept.checked}">
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="" checked>${concept.prefLabel}</label>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="">${concept.prefLabel}</label>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+        </c:when>
+    </c:choose>
     <!-- Page Content -->
         <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
