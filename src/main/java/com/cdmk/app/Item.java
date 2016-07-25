@@ -107,4 +107,22 @@ public class Item {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+
+        // TODO: Use StringBuilder
+        String result = "";
+        result += "id:"+this.id;
+        result += "\n";
+        result += "url:"+this.url;
+        result += "\n";
+        result += "text:"+this.text;
+        result += "\n";
+        result += "file:"+this.file;
+        result += "\n";
+        result += "tags"+this.tags;
+        result += "\n";
+        return result;
+    }
 }

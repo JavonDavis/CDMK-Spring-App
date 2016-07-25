@@ -63,8 +63,8 @@ import com.entopix.maui.util.Topic;
 public class CdmkController implements ServletContextAware {
 
 	protected ServletContext context;
-   // private static String SOLR_URL = "http://localhost:8983/solr/cdmk-test";
-    private static String SOLR_URL = "http://cdmk-caribbean.net:8983/solr/cdmk";
+    private static String SOLR_URL = "http://localhost:8983/solr/cdmk-test";
+    //private static String SOLR_URL = "http://cdmk-caribbean.net:8983/solr/cdmk";
     private static SolrServer server;
     private Logger log = LoggerFactory.getLogger(this.getClass().getName());
 
@@ -86,7 +86,7 @@ public class CdmkController implements ServletContextAware {
         {
             String concept = request.getParameter("q");
             request.setAttribute("concept", concept);
-            request.setAttribute("items", searchForConcept(concept));
+            request.setAttribute("items", searchForConcept("\""+concept+"\""));
             return new ModelAndView("results");
         }
         return new ModelAndView("home");
@@ -97,7 +97,7 @@ public class CdmkController implements ServletContextAware {
                                    HttpServletRequest request,
                                    HttpServletResponse response) {
 
-        request.setAttribute("items", searchForConcept(text));
+        request.setAttribute("items", searchForConcept("\""+text+"\""));
         request.setAttribute("concept", text);
         return new ModelAndView("results");
     }
@@ -131,6 +131,7 @@ public class CdmkController implements ServletContextAware {
             ContentStreamUpdateRequest req = new ContentStreamUpdateRequest("/update/extract");
             try {
                 req.addFile(new File(filePath));
+                req.setParam("literal.id",filePath);
                 NamedList<Object> result = server.request(req);
                 System.out.println("Result: " + result);
             } catch (IOException | SolrServerException e) {
@@ -427,23 +428,25 @@ public class CdmkController implements ServletContextAware {
                 if(item.tags == null)
                 {
                     String filePath = item.getId();
-                    Set<Item> unTaggedSearchItems = searchForConcept("file:"+filePath);
+                    Set<Item> unTaggedSearchItems = searchForConcept("file:(\""+filePath+"\")");
                     if(unTaggedSearchItems.isEmpty())
                     {
                         item.file = new ArrayList<>();
+                        item.fileName = getFileNameFromPath(filePath);
                         item.file.add(filePath);
+                        results.add(item);
+                        System.out.print(item);
                     }
                     else {
                         resultSet.addAll(unTaggedSearchItems);
-                        continue;
                     }
+                    continue;
                 }
 
             	if(item.file != null && !item.file.isEmpty())
 				{
 					String filePath = item.file.get(0);
-					String[] components = filePath.split("/");
-					item.fileName = components[components.length -1];
+					item.fileName = getFileNameFromPath(filePath);
 				}
 
                 item.concepts = new ArrayList<>();
@@ -465,6 +468,12 @@ public class CdmkController implements ServletContextAware {
         }
         resultSet.addAll(results);
         return resultSet;
+    }
+
+    private String getFileNameFromPath(String filePath)
+    {
+        String[] components = filePath.split("/");
+        return components[components.length -1];
     }
 
 }
