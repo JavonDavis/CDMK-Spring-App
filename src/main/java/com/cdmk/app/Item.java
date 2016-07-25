@@ -11,6 +11,9 @@ import java.util.Objects;
 public class Item {
 
     @Field
+    public String id;
+
+    @Field
     public List<String> url;
 
     @Field
@@ -25,6 +28,14 @@ public class Item {
     public List<Concept> concepts;
 
     public String fileName;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public List<String> getUrl() {
         return url;
@@ -95,5 +106,23 @@ public class Item {
 
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+
+        // TODO: Use StringBuilder
+        String result = "";
+        result += "id:"+this.id;
+        result += "\n";
+        result += "url:"+this.url;
+        result += "\n";
+        result += "text:"+this.text;
+        result += "\n";
+        result += "file:"+this.file;
+        result += "\n";
+        result += "tags"+this.tags;
+        result += "\n";
+        return result;
     }
 }

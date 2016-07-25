@@ -113,20 +113,26 @@
                                 </c:otherwise>
                             </c:choose>
                             <td>
-
-                            <table class="table table-condensed">
-                                <thead>
-                                <tr>
-                                    <th>Concept</th>
-                                    <th>Strength</th>
-                                </tr>
-                                </thead>
-                                <c:forEach items="${item.concepts}" var="concept">
-                                    <tr>
-                                        <td><a href="/home?q=${concept.prefLabel}">${concept.prefLabel}</a></td><td><meter value="${concept.score/100}">${concept.score}%</meter></td>
-                                    </tr>
-                                </c:forEach>
-                            </table>
+                                <c:choose>
+                                    <c:when test="${item.concepts!=null}">
+                                        <table class="table table-condensed">
+                                        <thead>
+                                        <tr>
+                                            <th>Concept</th>
+                                            <th>Strength</th>
+                                        </tr>
+                                        </thead>
+                                        <c:forEach items="${item.concepts}" var="concept">
+                                            <tr>
+                                                <td><a href="/home?q=${concept.prefLabel}">${concept.prefLabel}</a></td><td><meter value="${concept.score/100}">${concept.score}%</meter></td>
+                                            </tr>
+                                        </c:forEach>
+                                    </table>
+                                    </c:when>
+                                    <c:otherwise>
+                                        Resource not tagged
+                                    </c:otherwise>
+                                </c:choose>
                             </td>
                         </tr>
                     </c:forEach>
