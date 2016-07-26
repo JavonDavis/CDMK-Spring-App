@@ -3,7 +3,6 @@ package com.cdmk.app;
 import org.apache.solr.client.solrj.beans.Field;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by javon on 20/07/2016.
@@ -28,6 +27,7 @@ public class Item {
     public List<Concept> concepts;
 
     public String fileName;
+
 
     public String getId() {
         return id;
@@ -90,24 +90,14 @@ public class Item {
         if(obj instanceof Item)
         {
             if(this.url != null) {
-                if(((Item) obj).url == null)
-                    return false;
-                return this.url.get(0).trim().equals(((Item) obj).url.get(0).trim());
-            } else if(this.fileName != null)
-            {
-                if(((Item) obj).fileName == null)
-                    return false;
-                return this.fileName.trim().equals(((Item) obj).fileName.trim());
-            } else if(this.file != null)
-            {
-                if(((Item) obj).file == null)
-                    return false;
-                return this.file.get(0).trim().equals(((Item) obj).file.get(0).trim());
+                return ((Item) obj).url != null && this.url.get(0).trim().equals(((Item) obj).url.get(0).trim());
+            } else if(this.fileName != null) {
+                return ((Item) obj).fileName != null && this.fileName.trim().equals(((Item) obj).fileName.trim());
+            } else if(this.file != null) {
+                return ((Item) obj).file != null && this.file.get(0).trim().equals(((Item) obj).file.get(0).trim());
             }
             else {
-                if(this.text == null || ((Item) obj).text == null)
-                    return false;
-                return this.text.get(0).trim().equals(((Item) obj).text.get(0).trim());
+                return !(this.text == null || ((Item) obj).text == null) && this.text.get(0).trim().equals(((Item) obj).text.get(0).trim());
             }
 
         }

@@ -43,15 +43,14 @@ public class Concept {
         return checked;
     }
 
-    public void toggle() {
-        this.checked = !this.checked;
+    public void setChecked(boolean checked) {
+        this.checked = checked;
     }
 
     @Override
     public boolean equals(Object obj) {
         if(obj instanceof Concept)
         {
-
             return this.prefLabel.equals(((Concept) obj).getPrefLabel());
         }
         return false;

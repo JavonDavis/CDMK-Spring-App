@@ -59,23 +59,8 @@ public class CdmkController implements ServletContextAware {
 
     private String searchConcept;
     // Search variables
-    private Set<Concept> filterConceptSet = new TreeSet<>(new Comparator<Concept>() {
-        @Override
-        public int compare(Concept o1, Concept o2) {
-            if(o1.equals(o2))
-                return 0;
-            return 1;
-        }
-    });
-    private static Set<Item> searchResults = new TreeSet<>(new Comparator<Item>() {
-        @Override
-        public int compare(Item item1, Item item2) {
-            if (item1.equals(item2)) {
-                return 0;
-            }
-            return 1;
-        }
-    });
+    private List<Concept> filterConcepts = new ArrayList<>();
+    private List<Item> searchResults = new ArrayList<>();
 
     static {
         try {
@@ -99,42 +84,55 @@ public class CdmkController implements ServletContextAware {
 
             Set<Item> results = searchForConcept("\""+concept+"\"");
 
-            for(Item item : results)
-            {
-                if(item.getConcepts() != null)
-                    filterConceptSet.addAll(item.getConcepts());
-            }
-            request.setAttribute("filters", filterConceptSet);
-            request.setAttribute("items", results);
+            populateSearchResults(results);
+            populateFilterConcepts(results);
+
+            request.setAttribute("filters", filterConcepts);
+            request.setAttribute("items", searchResults);
             return new ModelAndView("results");
         }
-        else if(request.getParameterMap().containsKey("filter"))
+        else if(request.getParameterMap().containsKey("filter") || request.getParameterMap().containsKey("expand"))
         {
-            String filterConcept = request.getParameter("filter");
+            String filterConcept;
+            boolean check = request.getParameterMap().containsKey("filter");
+            if(request.getParameterMap().containsKey("filter"))
+                filterConcept = request.getParameter("filter");
+            else
+                filterConcept = request.getParameter("expand");
             List<Item> filteredSearchResults = new ArrayList<>();
+
+            filteredSearchResults.addAll(searchResults);
+            boolean conceptChecked = false;
+            for (Concept concept : filterConcepts) {
+                if (concept.equals(new Concept(filterConcept))) {
+                    concept.setChecked(check);
+                }
+                if(concept.isChecked())
+                    conceptChecked = true;
+            }
 
             // The following operation could become very timely if concepts in vocabulary becomes > 10000 but not likely
             // at the time of writing
-            for (Concept concept : filterConceptSet) {
-                if (concept.equals(new Concept(filterConcept)))
-                    concept.toggle();
+            for(Item item: searchResults)
+            {
+                if(conceptChecked) {
+                    if (item.getConcepts() != null) {
+                        for (Concept concept : filterConcepts) {
 
-                if(concept.isChecked())
-                {
-                    for(Item item: searchResults)
-                    {
-                        if(!filteredSearchResults.contains(item))
-                        {
-                            if(item.getConcepts().contains(concept))
-                            {
-                                filteredSearchResults.add(item);
+                            if (concept.isChecked()) {
+                                if (!item.getConcepts().contains(concept)) {
+                                    filteredSearchResults.remove(item);
+                                }
                             }
                         }
+                    } else {
+                        filteredSearchResults.remove(item);
                     }
                 }
             }
+
             request.setAttribute("concept", searchConcept);
-            request.setAttribute("filters", filterConceptSet);
+            request.setAttribute("filters", filterConcepts);
             request.setAttribute("items", filteredSearchResults);
             return new ModelAndView("results");
         }
@@ -150,14 +148,13 @@ public class CdmkController implements ServletContextAware {
 
         Set<Item> results = searchForConcept("\""+text+"\"");
 
-        searchResults.addAll(results);
-        for(Item item : results)
-        {
-            if(item.getConcepts() != null)
-                filterConceptSet.addAll(item.getConcepts());
-        }
-        request.setAttribute("filters", filterConceptSet);
-        request.setAttribute("items", results);
+
+
+        populateFilterConcepts(results);
+        populateSearchResults(results);
+
+        request.setAttribute("filters", filterConcepts);
+        request.setAttribute("items", searchResults);
 
         request.setAttribute("concept", text);
         return new ModelAndView("results");
@@ -535,6 +532,40 @@ public class CdmkController implements ServletContextAware {
     {
         String[] components = filePath.split("/");
         return components[components.length -1];
+    }
+
+    private void populateFilterConcepts(Set<Item> items)
+    {
+        for(Item item : items)
+        {
+            if(item.getConcepts() != null) {
+                for (Concept mConcept : item.getConcepts()) {
+                    boolean add = true;
+                    for (Concept nConcept : filterConcepts) {
+                        if (mConcept.equals(nConcept)) {
+                            add = false;
+                            break;
+                        }
+                    }
+                    if (add)
+                        filterConcepts.add(mConcept);
+                }
+            }
+        }
+    }
+
+    private void populateSearchResults(Set<Item> results)
+    {
+        searchResults.clear();
+        searchResults.addAll(results);
+        for(int i = 0; i<searchResults.size(); i++)
+        {
+            for(int j = 0; j<searchResults.size(); j++)
+            {
+                if(i != j && searchResults.get(i).equals(searchResults.get(j)))
+                    searchResults.remove(j);
+            }
+        }
     }
 
 }
