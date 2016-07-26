@@ -15,11 +15,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.stream.MalformedJsonException;
 import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
@@ -28,17 +25,13 @@ import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
 import org.apache.solr.client.solrj.request.ContentStreamUpdateRequest;
 import org.apache.solr.client.solrj.response.QueryResponse;
-import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.SolrInputDocument;
-import org.apache.solr.common.params.ModifiableSolrParams;
-import org.apache.solr.common.params.SolrParams;
 import org.apache.solr.common.util.NamedList;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
@@ -46,15 +39,11 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.stereotype.Controller;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.entopix.maui.filters.MauiFilter.MauiFilterException;
-import com.entopix.maui.main.MauiModelBuilder;
-import com.entopix.maui.main.MauiTopicExtractor;
 import com.entopix.maui.main.MauiWrapper;
 import com.entopix.maui.stemmers.PorterStemmer;
 import com.entopix.maui.util.Topic;
@@ -67,6 +56,11 @@ public class CdmkController implements ServletContextAware {
     //private static String SOLR_URL = "http://cdmk-caribbean.net:8983/solr/cdmk";
     private static SolrServer server;
     private Logger log = LoggerFactory.getLogger(this.getClass().getName());
+
+    private String searchConcept;
+    // Search variables
+    private List<Concept> filterConcepts = new ArrayList<>();
+    private List<Item> searchResults = new ArrayList<>();
 
     static {
         try {
@@ -85,8 +79,61 @@ public class CdmkController implements ServletContextAware {
         if(request.getParameterMap().containsKey("q"))
         {
             String concept = request.getParameter("q");
+            searchConcept = concept;
             request.setAttribute("concept", concept);
-            request.setAttribute("items", searchForConcept("\""+concept+"\""));
+
+            Set<Item> results = searchForConcept("\""+concept+"\"");
+
+            populateSearchResults(results);
+            populateFilterConcepts(results);
+
+            request.setAttribute("filters", filterConcepts);
+            request.setAttribute("items", searchResults);
+            return new ModelAndView("results");
+        }
+        else if(request.getParameterMap().containsKey("filter") || request.getParameterMap().containsKey("expand"))
+        {
+            String filterConcept;
+            boolean check = request.getParameterMap().containsKey("filter");
+            if(request.getParameterMap().containsKey("filter"))
+                filterConcept = request.getParameter("filter");
+            else
+                filterConcept = request.getParameter("expand");
+            List<Item> filteredSearchResults = new ArrayList<>();
+
+            filteredSearchResults.addAll(searchResults);
+            boolean conceptChecked = false;
+            for (Concept concept : filterConcepts) {
+                if (concept.equals(new Concept(filterConcept))) {
+                    concept.setChecked(check);
+                }
+                if(concept.isChecked())
+                    conceptChecked = true;
+            }
+
+            // The following operation could become very timely if concepts in vocabulary becomes > 10000 but not likely
+            // at the time of writing
+            for(Item item: searchResults)
+            {
+                if(conceptChecked) {
+                    if (item.getConcepts() != null) {
+                        for (Concept concept : filterConcepts) {
+
+                            if (concept.isChecked()) {
+                                if (!item.getConcepts().contains(concept)) {
+                                    filteredSearchResults.remove(item);
+                                }
+                            }
+                        }
+                    } else {
+                        filteredSearchResults.remove(item);
+                    }
+                }
+            }
+
+            request.setAttribute("concept", searchConcept);
+            request.setAttribute("filters", filterConcepts);
+            request.setAttribute("items", filteredSearchResults);
             return new ModelAndView("results");
         }
         return new ModelAndView("home");
@@ -97,7 +144,18 @@ public class CdmkController implements ServletContextAware {
                                    HttpServletRequest request,
                                    HttpServletResponse response) {
 
-        request.setAttribute("items", searchForConcept("\""+text+"\""));
+        searchConcept = text;
+
+        Set<Item> results = searchForConcept("\""+text+"\"");
+
+
+
+        populateFilterConcepts(results);
+        populateSearchResults(results);
+
+        request.setAttribute("filters", filterConcepts);
+        request.setAttribute("items", searchResults);
+
         request.setAttribute("concept", text);
         return new ModelAndView("results");
     }
@@ -402,7 +460,6 @@ public class CdmkController implements ServletContextAware {
 
     private Set<Item> searchForConcept(String concept)
     {
-        List<Item> results = new ArrayList<>();
         Set<Item> resultSet = new TreeSet<>(new Comparator<Item>() {
             @Override
             public int compare(Item item1, Item item2) {
@@ -412,6 +469,7 @@ public class CdmkController implements ServletContextAware {
                 return 1;
             }
         });
+        List<Item> results = new ArrayList<>();
 
         try {
 
@@ -474,6 +532,40 @@ public class CdmkController implements ServletContextAware {
     {
         String[] components = filePath.split("/");
         return components[components.length -1];
+    }
+
+    private void populateFilterConcepts(Set<Item> items)
+    {
+        for(Item item : items)
+        {
+            if(item.getConcepts() != null) {
+                for (Concept mConcept : item.getConcepts()) {
+                    boolean add = true;
+                    for (Concept nConcept : filterConcepts) {
+                        if (mConcept.equals(nConcept)) {
+                            add = false;
+                            break;
+                        }
+                    }
+                    if (add)
+                        filterConcepts.add(mConcept);
+                }
+            }
+        }
+    }
+
+    private void populateSearchResults(Set<Item> results)
+    {
+        searchResults.clear();
+        searchResults.addAll(results);
+        for(int i = 0; i<searchResults.size(); i++)
+        {
+            for(int j = 0; j<searchResults.size(); j++)
+            {
+                if(i != j && searchResults.get(i).equals(searchResults.get(j)))
+                    searchResults.remove(j);
+            }
+        }
     }
 
 }

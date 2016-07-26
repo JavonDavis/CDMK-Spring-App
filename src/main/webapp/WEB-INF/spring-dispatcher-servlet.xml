@@ -48,7 +48,7 @@
     <bean id="multipartResolver"  
         class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
     </bean>
-    
+
     <mvc:interceptors>
 		<bean class="org.springframework.web.servlet.mvc.WebContentInterceptor" p:cacheSeconds="86400" p:alwaysUseFullPath="true" >
 		    <property name="cacheMappings">
@@ -58,6 +58,20 @@
 		        </props>
 		    </property>
 		</bean>
+	</mvc:interceptors>
+
+	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="lang"/>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<mvc:exclude-mapping path="/resources/**"/>
+			<bean id="webContentInterceptor" class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+				<property name="cacheSeconds" value="0"/>
+				<property name="useExpiresHeader" value="true"/>
+				<property name="useCacheControlHeader" value="true"/>
+				<property name="useCacheControlNoStore" value="true"/>
+			</bean>
+		</mvc:interceptor>
 	</mvc:interceptors>
 
 </beans>
