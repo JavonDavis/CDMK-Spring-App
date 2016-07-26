@@ -5,6 +5,8 @@ import java.net.*;
 import java.nio.charset.Charset;
 import java.util.*;
 import java.text.DecimalFormat;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
@@ -184,17 +186,27 @@ public class CdmkController implements ServletContextAware {
         Concept[] concepts = poolPartyExtractor(text.trim(), file, url);
 
         String filePath = "";
-        if(file != null) {
+        if(file != null)
+        {
             filePath = "/cdmk/" + file.getOriginalFilename();
-            ContentStreamUpdateRequest req = new ContentStreamUpdateRequest("/update/extract");
-            try {
-                req.addFile(new File(filePath));
-                req.setParam("literal.id",filePath);
-                NamedList<Object> result = server.request(req);
-                System.out.println("Result: " + result);
-            } catch (IOException | SolrServerException e) {
-                e.printStackTrace();
-            }
+            final String finalFilePath = filePath;
+
+            Runnable documentUploaderTask = new Runnable() {
+                public void run() {
+                    ContentStreamUpdateRequest req = new ContentStreamUpdateRequest("/update/extract");
+                    try {
+                        req.addFile(new File(finalFilePath));
+                        req.setParam("literal.id", finalFilePath);
+                        NamedList<Object> result = server.request(req);
+                        System.out.println("Result: " + result);
+                    } catch (IOException | SolrServerException e) {
+                        e.printStackTrace();
+                    }
+                }
+            };
+
+            ExecutorService executor = Executors.newCachedThreadPool();
+            executor.submit(documentUploaderTask);
         }
         if(concepts.length > 0)
             addToIndex(text, filePath, url, concepts);
