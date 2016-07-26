@@ -186,8 +186,7 @@ public class CdmkController implements ServletContextAware {
         Concept[] concepts = poolPartyExtractor(text.trim(), file, url);
 
         String filePath = "";
-        if(file != null)
-        {
+        if(file != null) {
             filePath = "/cdmk/" + file.getOriginalFilename();
             final String finalFilePath = filePath;
 
