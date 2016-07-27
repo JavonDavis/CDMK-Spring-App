@@ -84,7 +84,7 @@ public class CdmkController implements ServletContextAware {
             searchConcept = concept;
             request.setAttribute("concept", concept);
 
-            Set<Item> results = searchForConcept("\""+concept+"\"");
+            Set<Item> results = searchForConcept(new String[]{concept});
 
             populateSearchResults(results);
             populateFilterConcepts(results);
@@ -146,11 +146,11 @@ public class CdmkController implements ServletContextAware {
                                    HttpServletRequest request,
                                    HttpServletResponse response) {
 
-        searchConcept = text;
+        String[] concepts = text.split(",");
+        if(concepts.length > 0)
+            searchConcept = concepts[0];
 
-        Set<Item> results = searchForConcept("\""+text+"\"");
-
-
+        Set<Item> results = searchForConcept(concepts);
 
         populateFilterConcepts(results);
         populateSearchResults(results);
@@ -221,7 +221,6 @@ public class CdmkController implements ServletContextAware {
 
         if(!file.exists()){
             String errorMessage = "Sorry. The file you are looking for does not exist in the index";
-            System.out.println(errorMessage);
             OutputStream outputStream = response.getOutputStream();
             outputStream.write(errorMessage.getBytes(Charset.forName("UTF-8")));
             outputStream.close();
@@ -469,7 +468,7 @@ public class CdmkController implements ServletContextAware {
 		return concepts;
 	}
 
-    private Set<Item> searchForConcept(String concept)
+    private Set<Item> searchForConcept(String[] conceptQueries)
     {
         Set<Item> resultSet = new TreeSet<>(new Comparator<Item>() {
             @Override
@@ -484,8 +483,25 @@ public class CdmkController implements ServletContextAware {
 
         try {
 
+            String queryString = "";
+
+            if(conceptQueries.length == 1)
+            {
+                if(!conceptQueries[0].contains("file"))
+                    queryString = "\""+conceptQueries[0]+"\"";
+                else
+                    queryString = conceptQueries[0];
+            }
+            else if(conceptQueries.length >1) {
+                queryString = "\""+conceptQueries[0]+"\"";
+                for (int i =1; i<conceptQueries.length; i++) {
+                    String conceptString = conceptQueries[i];
+                    String conceptStringComponent = "OR \"" + conceptString + "\"";
+                    queryString += conceptStringComponent;
+                }
+            }
             SolrQuery query = new SolrQuery();
-            query.setQuery(concept);
+            query.setQuery(queryString);
 
             QueryResponse rsp = server.query( query );
 
@@ -493,11 +509,11 @@ public class CdmkController implements ServletContextAware {
             for(Item item: queryResult)
             {
 
-                // under the premise that anything in the index with a file tag must have tags!
+                // under the premise that anything in the index with a file tag must have concepts in the tags field!
                 if(item.tags == null)
                 {
                     String filePath = item.getId();
-                    Set<Item> unTaggedSearchItems = searchForConcept("file:(\""+filePath+"\")");
+                    Set<Item> unTaggedSearchItems = searchForConcept(new String[]{"file:(\""+filePath+"\")"});
                     if(unTaggedSearchItems.isEmpty())
                     {
                         item.file = new ArrayList<>();
