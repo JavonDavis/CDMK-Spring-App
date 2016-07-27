@@ -51,7 +51,7 @@ public class Concept {
     public boolean equals(Object obj) {
         if(obj instanceof Concept)
         {
-            return this.prefLabel.equals(((Concept) obj).getPrefLabel());
+            return this.prefLabel.toLowerCase().equals(((Concept) obj).getPrefLabel().toLowerCase());
         }
         return false;
     }

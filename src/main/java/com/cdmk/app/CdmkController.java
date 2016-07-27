@@ -565,10 +565,69 @@ public class CdmkController implements ServletContextAware {
         }
     }
 
+    /**
+     * Search results populated in the following order.
+     * Results with the concept searched for ordered by the value of the strength first
+     * Results that have concepts i.e have been tagged but showed up as a result of a full text search shown next
+     * Results that came from full text search but don't have concepts are shown next
+     * @param results
+     */
     private void populateSearchResults(Set<Item> results)
     {
         searchResults.clear();
-        searchResults.addAll(results);
+
+        List<Item> resultsList = new ArrayList<>();
+        resultsList.addAll(results);
+
+        // sort results by concept strength/existence/existence
+        for (Item item : resultsList) {
+            if (searchResults.isEmpty()) {
+                searchResults.add(item);
+            } else {
+                if (item.getConcepts() == null) {
+                    searchResults.add(item);
+                } else {
+                    int resultsSize = searchResults.size();
+                    for (int j = 0; j < resultsSize; j++) {
+                        Item mItem = searchResults.get(j);
+
+                        Concept searchConceptObject = new Concept(searchConcept);
+                        // null checks and full text result case checks
+                        if (mItem.getConcepts() == null) {
+                            searchResults.add(j, item);
+                            break;
+                        } else if (item.getConcepts().contains(searchConceptObject) && !mItem.getConcepts().contains(searchConceptObject)) {
+                            searchResults.add(j, item);
+                            break;
+                        } else if (!item.getConcepts().contains(searchConceptObject) && !mItem.getConcepts().contains(searchConceptObject)) {
+                            searchResults.add(j, item);
+                            break;
+                        } else if (!item.getConcepts().contains(searchConceptObject) && (mItem.getConcepts() == null || j == resultsSize - 1)) {
+                            searchResults.add(j, item);
+                            break;
+                        } else if ((!item.getConcepts().contains(searchConceptObject) && mItem.getConcepts().contains(searchConceptObject))) {
+                            continue;
+                        }
+
+
+                        int index = item.getConcepts().indexOf(searchConceptObject);
+                        int mIndex = mItem.getConcepts().indexOf(searchConceptObject);
+
+                        Concept concept = item.getConcepts().get(index);
+                        Concept mConcept = mItem.getConcepts().get(mIndex);
+
+                        if (concept.getScore() > mConcept.getScore()) {
+                            searchResults.add(j, item);
+                            break;
+                        } else if (j == resultsSize - 1) {
+                            searchResults.add(item);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Remove duplicates
         for(int i = 0; i<searchResults.size(); i++)
         {
             for(int j = 0; j<searchResults.size(); j++)
