@@ -563,19 +563,21 @@ public class CdmkController implements ServletContextAware {
 
     private void populateFilterConcepts(Set<Item> items)
     {
-        for(Item item : items)
-        {
-            if(item.getConcepts() != null) {
-                for (Concept mConcept : item.getConcepts()) {
-                    boolean add = true;
-                    for (Concept nConcept : filterConcepts) {
-                        if (mConcept.equals(nConcept)) {
-                            add = false;
-                            break;
+        filterConcepts.clear();
+        if(items.size() >1) {
+            for (Item item : items) {
+                if (item.getConcepts() != null) {
+                    for (Concept mConcept : item.getConcepts()) {
+                        boolean add = true;
+                        for (Concept nConcept : filterConcepts) {
+                            if (mConcept.equals(nConcept)) {
+                                add = false;
+                                break;
+                            }
                         }
+                        if (add)
+                            filterConcepts.add(mConcept);
                     }
-                    if (add)
-                        filterConcepts.add(mConcept);
                 }
             }
         }
