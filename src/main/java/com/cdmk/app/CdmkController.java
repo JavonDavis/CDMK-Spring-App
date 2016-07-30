@@ -186,7 +186,7 @@ public class CdmkController implements ServletContextAware {
         Concept[] concepts = poolPartyExtractor(text.trim(), file, url);
 
         String filePath = "";
-        if(file != null) {
+        if(file.getSize() > 0) {
             filePath = "/cdmk/" + file.getOriginalFilename();
             final String finalFilePath = filePath;
 
@@ -353,7 +353,6 @@ public class CdmkController implements ServletContextAware {
             } else {
                 builder.addParameter("text",text);
             }
-            builder.addParameter("url",text);
             builder.addParameter("numberOfConcepts",Integer.toString(10));
             builder.addParameter("language","en");
             builder.addParameter("numberOfTerms",Integer.toString(10));
