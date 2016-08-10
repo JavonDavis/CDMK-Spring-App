@@ -171,7 +171,7 @@
             <div class="col-xs-5">
                 <img src="images/IDRC_Canada.png" alt="IDRC Canada">
             </div>
-            <div class="col-xs-2">
+            <div class="col-xs-1">
                 <img src="images/ukaid.png" alt="UK aid">
             </div>
             <div class="col-xs-2">

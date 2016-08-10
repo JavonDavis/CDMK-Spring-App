@@ -160,7 +160,7 @@
                 <li>Provide a platform for the development of value-added knwoeldge-based applications and services for the Caribbean Disaster Management community</li>
                 <li>Facilitate research and analysis of the Caribbean Disaster Management knowledge ecosystem.</li>
             </ul>
-            <p>The Caribbean Disaster Management Knowledge Broker is supported by funding through the Open &amp Collaborative Science in Development Network (OCSDNet) research project, supported by Canada's International Development Research Centre and the UK Government's Department for International Development. Find out more at www.ocsdnet.org.</p>
+            <p>The Caribbean Disaster Management Knowledge Broker is supported by funding through the Open &amp Collaborative Science in Development Network (OCSDNet) research project, supported by Canada's International Development Research Centre and the UK Government's Department for International Development. Find out more at <a href="www.ocsdnet.org">OCSD.</a></p>
             <h4 class="blue-title text-center">CDMK PARTNERS</h4>
             <p>The CDMK Thesaurus is an Open Access Public Good that benefits from the voluntry contributions of the Comprehensive Disaster Management community across the Caribbean, coordinated in partnership with the Caribbean Disaster and Energy Management Association - CDEMA</p>
         </div>
@@ -178,16 +178,16 @@
     <div class="footer footer-logos">
         <div class="container">
             <div class="row">
-                <div class="col-xs-5">
+                <div class="col-sm-5">
                     <img src="images/IDRC_Canada.png" alt="IDRC Canada">
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-1">
                     <img src="images/ukaid.png" alt="UK aid">
                 </div>
-                <div class="col-xs-2">
+                <div class="col-sm-2">
                     <img src="images/MSBM_logo.png" alt="">
                 </div>
-                <div class="col-xs-3">
+                <div class="col-sm-3">
                     <h4><a href="www.ocsdnet.org">www.ocsdnet.org</a></h4>
                     <h4><a href="http://twitter.com/ocsdnet">http://twitter.com/ocsdnet</a></h4>
                     <h4><a href="https://facebook.com/OCSDNet">https://facebook.com/OCSDNet</a></h4>
