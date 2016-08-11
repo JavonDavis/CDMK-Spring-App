@@ -178,16 +178,16 @@
     <div class="footer footer-logos">
         <div class="container">
             <div class="row">
-                <div class="col-sm-5">
+                <div class="col-xs-5">
                     <img src="images/IDRC_Canada.png" alt="IDRC Canada">
                 </div>
                 <div class="col-xs-1">
                     <img src="images/ukaid.png" alt="UK aid">
                 </div>
-                <div class="col-sm-2">
+                <div class="col-xs-2">
                     <img src="images/MSBM_logo.png" alt="">
                 </div>
-                <div class="col-sm-3">
+                <div class="col-xs-3">
                     <h4><a href="www.ocsdnet.org">www.ocsdnet.org</a></h4>
                     <h4><a href="http://twitter.com/ocsdnet">http://twitter.com/ocsdnet</a></h4>
                     <h4><a href="https://facebook.com/OCSDNet">https://facebook.com/OCSDNet</a></h4>
