@@ -99,7 +99,18 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <form:form id="getConceptsForm" role="form" action="share" method="POST" enctype="multipart/form-data">
+                <form:form name="extractionForm" id="getConceptsForm" role="form" action="share" method="POST" onsubmit="return validateForm()" enctype="multipart/form-data">
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="title">Title</label> <br>
+                                <input id="title" name="title" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
                     <div class="row">
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="filebutton">Upload a File</label>
@@ -159,6 +170,16 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        function validateForm() {
+            var title = document.forms["extractionForm"]["title"].value;
+            if (title == null || title == "") {
+                alert("Please give submission a title");
+                return false;
+            }
+        }
+    </script>
 
 </body>
 

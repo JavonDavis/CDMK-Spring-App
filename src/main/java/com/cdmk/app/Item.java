@@ -13,10 +13,10 @@ public class Item {
     public String id;
 
     @Field
-    public List<String> url;
+    public List<String> title;
 
     @Field
-    public List<String> text;
+    public List<String> url;
 
     @Field
     public List<String> file;
@@ -37,20 +37,20 @@ public class Item {
         this.id = id;
     }
 
+    public List<String> getTitle() {
+        return title;
+    }
+
+    public void setTitle(List<String> title) {
+        this.title = title;
+    }
+
     public List<String> getUrl() {
         return url;
     }
 
     public void setUrl(List<String> url) {
         this.url = url;
-    }
-
-    public List<String> getText() {
-        return text;
-    }
-
-    public void setText(List<String> text) {
-        this.text = text;
     }
 
     public List<String> getFile() {
@@ -96,10 +96,6 @@ public class Item {
             } else if(this.file != null) {
                 return ((Item) obj).file != null && this.file.get(0).trim().equals(((Item) obj).file.get(0).trim());
             }
-            else {
-                return !(this.text == null || ((Item) obj).text == null) && this.text.get(0).trim().equals(((Item) obj).text.get(0).trim());
-            }
-
         }
         return false;
     }
@@ -108,17 +104,12 @@ public class Item {
     public String toString() {
 
         // TODO: Use StringBuilder
-        String result = "";
-        result += "id:"+this.id;
-        result += "\n";
-        result += "url:"+this.url;
-        result += "\n";
-        result += "text:"+this.text;
-        result += "\n";
-        result += "file:"+this.file;
-        result += "\n";
-        result += "tags"+this.tags;
-        result += "\n";
-        return result;
+        StringBuilder builder = new StringBuilder()
+                                    .append(id)
+                                    .append(title == null ? "No title":title.get(0))
+                                    .append(url == null ? "No url":url.get(0))
+                                    .append(file == null ? "No File":file.get(0))
+                                    .append(tags == null ? "No tags":tags.get(0));
+        return builder.toString();
     }
 }

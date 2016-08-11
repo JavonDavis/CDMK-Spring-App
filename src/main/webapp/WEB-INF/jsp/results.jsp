@@ -83,82 +83,98 @@
 </nav>
 <div class="container">
     <!-- Page Content -->
-        <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+    <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+            <h3>Resources related to '${concept}' from the CDM Content Pool:</h3>
 
-        <div class="row">
-            <div class="col-xs-6">
-                <h2>Resources related to '${concept}' from the CDM Content Pool:</h2>
-
-                <c:choose>
-                    <c:when test="${filters != null}">
-                        <c:forEach items="${filters}" var="concept">
-                            <c:choose>
-                                <c:when test="${concept.checked}">
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" onchange="window.location.href='/home?expand=${concept.prefLabel}'" checked>${concept.prefLabel}</label>
-                                    </div>
-                                </c:when>
-                                <c:otherwise>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" onchange="window.location.href='/home?filter=${concept.prefLabel}'">${concept.prefLabel}</label>
-                                    </div>
-                                </c:otherwise>
-                            </c:choose>
-                        </c:forEach>
-                    </c:when>
-                </c:choose>
-                <table class="table table-condensed">
-                    <thead>
+            <c:choose>
+                <c:when test="${filters != null}">
+                    <c:forEach items="${filters}" var="concept">
+                        <c:choose>
+                            <c:when test="${concept.checked}">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" onchange="window.location.href='/home?expand=${concept.prefLabel}'" checked>${concept.prefLabel}</label>
+                                </div>
+                            </c:when>
+                            <c:otherwise>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" onchange="window.location.href='/home?filter=${concept.prefLabel}'">${concept.prefLabel}</label>
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </c:when>
+            </c:choose>
+            <table class="table table-condensed">
+                <thead>
+                <tr>
+                    <th>Resource</th>
+                    <th>Concepts</th>
+                </tr>
+                </thead>
+                <c:forEach items="${items}" var="item">
                     <tr>
-                        <th>Resource</th>
-                        <th>Concepts</th>
-                    </tr>
-                    </thead>
-                    <c:forEach items="${items}" var="item">
-                        <tr>
-                            <c:choose>
-                                <c:when test="${item.url!=null}">
-                                    <td><a href="${item.url.get(0)}">${item.url.get(0)}</a></td>
-                                </c:when>
-                                <c:when test="${item.file!=null}">
-                                    <td><a href="<c:url value="/cdmk${item.file.get(0)}"/>">${item.fileName}</a></td>
-                                    <%--<td><iframe src="${item.file.get(0)}"></iframe></td>--%>
-                                    <%--<a href="/ViewerJS/#..${item.file.get(0)}">--%>
-                                </c:when>
-                                <c:otherwise>
-                                    <td>ERROR LOADING RESULT</td>
-                                    <br />
-                                </c:otherwise>
-                            </c:choose>
-                            <td>
+                        <c:choose>
+                            <c:when test="${item.title!=null}">
                                 <c:choose>
-                                    <c:when test="${item.concepts!=null}">
-                                        <table class="table table-condensed">
-                                        <thead>
-                                        <tr>
-                                            <th>Concept</th>
-                                            <th>Strength</th>
-                                        </tr>
-                                        </thead>
-                                        <c:forEach items="${item.concepts}" var="concept">
-                                            <tr>
-                                                <td><a href="/home?q=${concept.prefLabel}">${concept.prefLabel}</a></td><td><meter value="${concept.score/100}">${concept.score}%</meter></td>
-                                            </tr>
-                                        </c:forEach>
-                                    </table>
+                                    <c:when test="${item.url!=null}">
+                                        <td><a href="${item.url.get(0)}">${item.title.get(0)}</a></td>
+                                    </c:when>
+                                    <c:when test="${item.file!=null}">
+                                        <td><a href="<c:url value="/cdmk${item.file.get(0)}"/>">${item.title.get(0)}</a></td>
+                                        <%--<td><iframe src="${item.file.get(0)}"></iframe></td>--%>
+                                        <%--<a href="/ViewerJS/#..${item.file.get(0)}">--%>
                                     </c:when>
                                     <c:otherwise>
-                                        Resource not tagged
+                                        <td>ERROR LOADING RESULT</td>
+                                        <br />
                                     </c:otherwise>
                                 </c:choose>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                </table>
+                            </c:when>
+                            <c:otherwise>
+                                <c:choose>
+                                    <c:when test="${item.url!=null}">
+                                        <td><a href="${item.url.get(0)}">ERROR LOADING TITLE FOR URL</a></td>
+                                    </c:when>
+                                    <c:when test="${item.file!=null}">
+                                        <td><a href="<c:url value="/cdmk${item.file.get(0)}"/>">ERROR LOADING TITLE FOR FILE</a></td>
+                                        <%--<td><iframe src="${item.file.get(0)}"></iframe></td>--%>
+                                        <%--<a href="/ViewerJS/#..${item.file.get(0)}">--%>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <td>ERROR LOADING RESULT</td>
+                                        <br />
+                                    </c:otherwise>
+                                </c:choose>
+                                <br />
+                            </c:otherwise>
+                        </c:choose>
+                        <td>
+                            <c:choose>
+                                <c:when test="${item.concepts!=null}">
+                                    <table class="table table-condensed">
+                                    <thead>
+                                    <tr>
+                                        <th>Concept</th>
+                                        <th>Strength</th>
+                                    </tr>
+                                    </thead>
+                                    <c:forEach items="${item.concepts}" var="concept">
+                                        <tr>
+                                            <td><a href="/home?q=${concept.prefLabel}">${concept.prefLabel}</a></td><td><meter value="${concept.score/100}">${concept.score}%</meter></td>
+                                        </tr>
+                                    </c:forEach>
+                                </table>
+                                </c:when>
+                                <c:otherwise>
+                                    Resource not tagged
+                                </c:otherwise>
+                            </c:choose>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
 
-            </div>
         </div>
-    </div>
 
     <div class="push"></div>
 
