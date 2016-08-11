@@ -175,7 +175,6 @@ public class CdmkController implements ServletContextAware {
 
 	@RequestMapping(value = "/share", method = RequestMethod.POST) 
 	public ModelAndView share(
-			@RequestParam(value="text", required=false) String text,
 			@RequestParam(value="file", required = false) MultipartFile file,
 			@RequestParam(value="url", required = false) String url,
 			HttpServletRequest request,
@@ -183,7 +182,7 @@ public class CdmkController implements ServletContextAware {
 		) {
 
 		//request.setAttribute("concepts", mauiExtractor(text));
-        Concept[] concepts = poolPartyExtractor(text.trim(), file, url);
+        Concept[] concepts = poolPartyExtractor(file, url);
 
         String filePath = "";
         if(file.getSize() > 0) {
@@ -208,7 +207,7 @@ public class CdmkController implements ServletContextAware {
             executor.submit(documentUploaderTask);
         }
         if(concepts.length > 0)
-            addToIndex(text, filePath, url, concepts);
+            addToIndex(filePath, url, concepts);
 
 		request.setAttribute("concepts", concepts);
 		return new ModelAndView("extraction");
@@ -253,10 +252,9 @@ public class CdmkController implements ServletContextAware {
         FileCopyUtils.copy(inputStream, response.getOutputStream());
     }
 
-	private void addToIndex(String text, String filePath, String url, Concept[] concepts)
+	private void addToIndex(String filePath, String url, Concept[] concepts)
     {
         SolrInputDocument document = new SolrInputDocument();
-        document.addField( "text", text);
         document.addField( "url", url );
         document.addField( "file", filePath );
 
@@ -325,34 +323,28 @@ public class CdmkController implements ServletContextAware {
 		return (Concept[]) concepts.toArray();
 	}
 
-	private Concept[] poolPartyExtractor(String text, MultipartFile file, String urlToExtract)
+	private Concept[] poolPartyExtractor(MultipartFile file, String urlToExtract)
 	{
 		String projectId = "1DDFC367-E4BD-0001-E4F4-483115961E7F";
 		String url = "https://cdmk.poolparty.biz/extractor/api/extract";
 
-		if(text != null && !text.isEmpty())
-			return poolPartyExtractFromText(text,projectId, url, false);
-		else if (urlToExtract != null && !urlToExtract.isEmpty())
-			return poolPartyExtractFromText(urlToExtract,projectId, url, true);
+		if (urlToExtract != null && !urlToExtract.isEmpty())
+			return poolPartyExtractFromURL(urlToExtract,projectId, url);
 		else
 			return poolPartyExtractFromFile(file, projectId, url);
 	}
 
-	private Concept[] poolPartyExtractFromText(String text, String projectId, String url, boolean isURL)
+	private Concept[] poolPartyExtractFromURL(String url, String projectId, String extractorURL)
 	{
 		Concept[] concepts = null;
 
 		HttpClient httpClient = HttpClientBuilder.create().build();
 
         try {
-            URIBuilder builder = new URIBuilder(url);
+            URIBuilder builder = new URIBuilder(extractorURL);
             builder.addParameter("projectId",projectId);
 
-            if(isURL) {
-                builder.addParameter("url",text);
-            } else {
-                builder.addParameter("text",text);
-            }
+            builder.addParameter("url",url);
             builder.addParameter("numberOfConcepts",Integer.toString(10));
             builder.addParameter("language","en");
             builder.addParameter("numberOfTerms",Integer.toString(10));

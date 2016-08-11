@@ -81,7 +81,7 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<div class="wrapper">
+<div class="container">
     <!-- Page Content -->
         <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
@@ -126,7 +126,7 @@
                                     <%--<a href="/ViewerJS/#..${item.file.get(0)}">--%>
                                 </c:when>
                                 <c:otherwise>
-                                    <td>${item.text.get(0)}</td>
+                                    <td>ERROR LOADING RESULT</td>
                                     <br />
                                 </c:otherwise>
                             </c:choose>

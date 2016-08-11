@@ -83,7 +83,7 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-    <div class="wrapper">
+    <div class="container">
 
     <!-- Page Content -->
 
@@ -91,23 +91,15 @@
             <div class="col-xs-12">
                 <h2>Share Your Knowledge</h2>
                 <h4>Demo</h4>
-                <p>Input some text in the form below. The Caribbean Disaster Knowledge Broker will match the concepts in your text to concepts in the vocabulary.</p>
+                <p>The Caribbean Disaster Knowledge Broker can be used to extract concepts from either a URL or an uploaded file.</p>
             </div>
         </div>
+
+        <br />
 
         <div class="row">
             <div class="col-xs-12">
                 <form:form id="getConceptsForm" role="form" action="share" method="POST" enctype="multipart/form-data">
-                    <div class="row">
-                        <div class="col-xs-12">
-                          <div class="form-group">
-                                <label for="text">Text</label> <br>
-                                <textarea class="form-control" name="text" id="text" rows="10"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h4>OR</h4>
                     <div class="row">
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="filebutton">Upload a File</label>

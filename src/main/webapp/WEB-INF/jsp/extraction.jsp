@@ -78,7 +78,7 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-    <div class="wrapper">
+    <div class="container">
 
         <div class="row">
             <div class="col-xs-6">
