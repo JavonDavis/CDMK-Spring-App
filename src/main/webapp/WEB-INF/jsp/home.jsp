@@ -76,12 +76,6 @@
                 </li>
                 <li><a href="mailto:javonldavis14@gmail.com?Subject=CDMK">Contact us</a></li>
             </ul>
-            <form:form class="navbar-form navbar-right" role="search" id="getConceptsForm" action="home" method="POST">
-                <div class="form-group">
-                    <input id="search_field" name="text" type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form:form>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
@@ -95,7 +89,11 @@
             <div class="inner-text text-center">
                 <h3><strong>DISCOVERING WHAT WE KNOW ABOUT</strong></h3>
                 <h2>COMPREHENSIVE DISASTER MANAGEMENT IN THE CARIBBEAN</h2>
-                <a href="#" onclick="focus_on_search();return false;"><button class="btn btn-default search-btn">Search the Index</button></a>
+                <form:form role="search" id="getConceptsForm" action="home" method="POST">
+                    <div class="form-group">
+                        <input id="search_field" name="text" type="text" class="input-lg" placeholder="Search the CDM Index...">
+                    </div>
+                </form:form>
             </div>
         </div>
     </div>
