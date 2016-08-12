@@ -24,6 +24,12 @@
 
     <link href="css/business-frontpage.css" rel="stylesheet">
 
+    <style>
+        .noBorder {
+            border:none ! important;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -113,41 +119,63 @@
                 </thead>
                 <c:forEach items="${items}" var="item">
                     <tr>
-                        <c:choose>
-                            <c:when test="${item.title!=null}">
+                        <td>
+                            <table class="
+                            noBorder" >
                                 <c:choose>
-                                    <c:when test="${item.url!=null}">
-                                        <td><a href="${item.url.get(0)}">${item.title.get(0)}</a></td>
-                                    </c:when>
-                                    <c:when test="${item.file!=null}">
-                                        <td><a href="<c:url value="/cdmk${item.file.get(0)}"/>">${item.title.get(0)}</a></td>
-                                        <%--<td><iframe src="${item.file.get(0)}"></iframe></td>--%>
-                                        <%--<a href="/ViewerJS/#..${item.file.get(0)}">--%>
+                                    <c:when test="${item.title!=null}">
+                                        <c:choose>
+                                            <c:when test="${item.url!=null}">
+                                                <tr><td><a href="${item.url.get(0)}">${item.title.get(0)}</a></td></tr>
+                                            </c:when>
+                                            <c:when test="${item.file!=null}">
+                                                <tr><td><a href="<c:url value="/cdmk${item.file.get(0)}"/>">${item.title.get(0)}</a></td></tr>
+                                                <%--<td><iframe src="${item.file.get(0)}"></iframe></td>--%>
+                                                <%--<a href="/ViewerJS/#..${item.file.get(0)}">--%>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <tr><td>ERROR FINDING URL OR FILE</td></tr>
+                                            </c:otherwise>
+                                        </c:choose>
+                                        <c:choose>
+                                            <c:when test="${item.source!=null}">
+                                                <tr><td>Source or Author:${item.source.get(0)}</td></tr>
+                                            </c:when>
+                                        </c:choose>
+                                        <c:choose>
+                                            <c:when test="${item.email!=null}">
+                                                <tr><td><a href="mailto:${item.email.get(0)}">Contact</a></td></tr>
+                                            </c:when>
+                                        </c:choose>
                                     </c:when>
                                     <c:otherwise>
-                                        <td>ERROR LOADING RESULT</td>
-                                        <br />
+                                        <c:choose>
+                                            <c:when test="${item.url!=null}">
+                                                <tr><td><a href="${item.url.get(0)}">ERROR LOADING TITLE FOR URL</a></td></tr>
+                                            </c:when>
+                                            <c:when test="${item.file!=null}">
+                                                <tr><td><a href="<c:url value="/cdmk${item.file.get(0)}"/>">ERROR LOADING TITLE FOR FILE</a></td></tr>
+                                                <%--<td><iframe src="${item.file.get(0)}"></iframe></td>--%>
+                                                <%--<a href="/ViewerJS/#..${item.file.get(0)}">--%>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <tr><td>ERROR LOADING RESULT</td></tr>
+                                            </c:otherwise>
+                                        </c:choose>
+                                        <c:choose>
+                                            <c:when test="${item.source!=null}">
+                                                <tr><td>${item.source.get(0)}</td></tr>
+                                            </c:when>
+                                        </c:choose>
+                                        <c:choose>
+                                            <c:when test="${item.email!=null}">
+                                                <tr><td><a href="mailto:${item.email.get(0)}">Contact</a></td></tr>
+                                            </c:when>
+                                        </c:choose>
                                     </c:otherwise>
                                 </c:choose>
-                            </c:when>
-                            <c:otherwise>
-                                <c:choose>
-                                    <c:when test="${item.url!=null}">
-                                        <td><a href="${item.url.get(0)}">ERROR LOADING TITLE FOR URL</a></td>
-                                    </c:when>
-                                    <c:when test="${item.file!=null}">
-                                        <td><a href="<c:url value="/cdmk${item.file.get(0)}"/>">ERROR LOADING TITLE FOR FILE</a></td>
-                                        <%--<td><iframe src="${item.file.get(0)}"></iframe></td>--%>
-                                        <%--<a href="/ViewerJS/#..${item.file.get(0)}">--%>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <td>ERROR LOADING RESULT</td>
-                                        <br />
-                                    </c:otherwise>
-                                </c:choose>
-                                <br />
-                            </c:otherwise>
-                        </c:choose>
+                            </table>
+                        </td>
                         <td>
                             <c:choose>
                                 <c:when test="${item.concepts!=null}">

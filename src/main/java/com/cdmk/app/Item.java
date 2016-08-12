@@ -16,6 +16,12 @@ public class Item {
     public List<String> title;
 
     @Field
+    public List<String> source;
+
+    @Field
+    public List<String> email;
+
+    @Field
     public List<String> url;
 
     @Field
@@ -85,6 +91,22 @@ public class Item {
         this.fileName = fileName;
     }
 
+    public List<String> getSource() {
+        return source;
+    }
+
+    public void setSource(List<String> source) {
+        this.source = source;
+    }
+
+    public List<String> getEmail() {
+        return email;
+    }
+
+    public void setEmail(List<String> email) {
+        this.email = email;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if(obj instanceof Item)
@@ -107,6 +129,8 @@ public class Item {
         StringBuilder builder = new StringBuilder()
                                     .append(id)
                                     .append(title == null ? "No title":title.get(0))
+                                    .append(source == null ? "No source":source.get(0))
+                                    .append(email == null ? "No email":email.get(0))
                                     .append(url == null ? "No url":url.get(0))
                                     .append(file == null ? "No File":file.get(0))
                                     .append(tags == null ? "No tags":tags.get(0));

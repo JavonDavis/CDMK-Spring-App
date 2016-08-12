@@ -110,6 +110,24 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="source">Source or Author</label> <br>
+                                <input id="source" name="source" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="email">Contact Email</label> <br>
+                                <input id="email" name="email" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+
                     <br />
                     <div class="row">
                         <div class="form-group">

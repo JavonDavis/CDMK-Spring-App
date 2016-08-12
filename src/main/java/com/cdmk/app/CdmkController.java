@@ -176,6 +176,8 @@ public class CdmkController implements ServletContextAware {
 	@RequestMapping(value = "/share", method = RequestMethod.POST) 
 	public ModelAndView share(
 	        @RequestParam(value="title") String title,
+            @RequestParam(value="source", required = false) String source,
+            @RequestParam(value="email", required = false) String email,
 			@RequestParam(value="file", required = false) MultipartFile file,
 			@RequestParam(value="url", required = false) String url,
 			HttpServletRequest request,
@@ -189,7 +191,7 @@ public class CdmkController implements ServletContextAware {
 
         if(file.getSize() <= 0 && url.isEmpty())
         {
-            return new ModelAndView("error");
+            return new ModelAndView("nosubmission");
         }
         if(file.getSize() > 0) {
             filePath = "/cdmk/" + file.getOriginalFilename();
@@ -213,7 +215,7 @@ public class CdmkController implements ServletContextAware {
             executor.submit(documentUploaderTask);
         }
         if(concepts.length > 0)
-            addToIndex(title, filePath, url, concepts);
+            addToIndex(title, source, email, filePath, url, concepts);
 
 		request.setAttribute("concepts", concepts);
 		return new ModelAndView("extraction");
@@ -258,12 +260,14 @@ public class CdmkController implements ServletContextAware {
         FileCopyUtils.copy(inputStream, response.getOutputStream());
     }
 
-	private void addToIndex(String title, String filePath, String url, Concept[] concepts)
+	private void addToIndex(String title, String source, String email, String filePath, String url, Concept[] concepts)
     {
         SolrInputDocument document = new SolrInputDocument();
-        document.addField( "title", title );
-        document.addField( "url", url );
-        document.addField( "file", filePath );
+        document.addField("title", title);
+        document.addField("source", source);
+        document.addField("email", email);
+        document.addField("url", url);
+        document.addField("file", filePath);
 
         String tags = "";
 
