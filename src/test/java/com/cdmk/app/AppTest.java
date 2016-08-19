@@ -1,8 +1,6 @@
 package com.cdmk.app;
 
-import club.caliope.udc.DocumentConverter;
-import club.caliope.udc.InputFormat;
-import club.caliope.udc.OutputFormat;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -62,14 +60,22 @@ public class AppTest extends TestCase
         assertTrue( true );
     }
 
-    public void testParse()
-    {
-        new DocumentConverter()
-                .fromFile(new File("structure.docx"), InputFormat.DOCX)
-                .toFile(new File("demo.md"), OutputFormat.MARKDOWN)
-                .convert();
+    public void testParse() throws IOException, RuntimeException, InterruptedException {
+        String command = "pandoc \"structure.docx\" --from=docx --to=markdown  --output=\"demo.md\"";
+        Process p = Runtime.getRuntime().exec(new String[]{"sh","-c",command});
+        p.waitFor();
+
+        BufferedReader reader =
+                new BufferedReader(new InputStreamReader(p.getInputStream()));
+
+        String line = "";
+        StringBuilder sb = new StringBuilder();
+        while ((line = reader.readLine())!= null) {
+            sb.append(line + "\n");
+        }
+        System.out.print(sb);
         assertTrue(new File("demo.md").exists());
-       // new File("demo.md").delete();
+        new File("demo.md").delete();
     }
 
     public void testPoolPartyAuth()
