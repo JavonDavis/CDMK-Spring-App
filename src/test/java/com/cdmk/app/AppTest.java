@@ -1,5 +1,8 @@
 package com.cdmk.app;
 
+import club.caliope.udc.DocumentConverter;
+import club.caliope.udc.InputFormat;
+import club.caliope.udc.OutputFormat;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -57,6 +60,16 @@ public class AppTest extends TestCase
     public void testApp()
     {
         assertTrue( true );
+    }
+
+    public void testParse()
+    {
+        new DocumentConverter()
+                .fromFile(new File("structure.docx"), InputFormat.DOCX)
+                .toFile(new File("demo.md"), OutputFormat.MARKDOWN)
+                .convert();
+        assertTrue(new File("demo.md").exists());
+       // new File("demo.md").delete();
     }
 
     public void testPoolPartyAuth()
