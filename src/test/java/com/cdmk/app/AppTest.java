@@ -27,6 +27,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -112,30 +113,24 @@ public class AppTest extends TestCase
 
         String resultString = result.toString();
 
-        // Recommended preliminaries for a DRP
-        findHeader("Foreword", resultString);
-        findHeader("Executive Summary", resultString);
-        findHeader("Acknowledgements", resultString);
-        findHeader("Glossary of Terms", resultString);
+        ArrayList<String> headers = new ArrayList<>(Arrays.asList("Foreword"
+                , "Executive Summary"
+                , "Acknowledgements"
+                , "Glossary of Terms"
+                , "Introduction"
+                , "Authority"
+                , "Critical Assumptions"
+                , "Institutional Framework"
+                , "Concepts of Operations"
+                , "Emergency Operations"
+                , "Trans – Island/country Threats or Incidents"
+                , "(Appendices|Appendix)"));
 
-        // Recommended sections for a DRP
-        findHeader("Introduction", resultString);
-
-        findHeader("Authority",resultString);
-
-        findHeader("Critical Assumptions", resultString);
-
-        findHeader("Institutional Framework", resultString);
-
-        findHeader("Concepts of Operations", resultString);
-
-        findHeader("Emergency Operations", resultString);
-
-        findHeader("Trans – Island/country Threats or Incidents", resultString);
-
-        findHeader("Appendices", resultString);
-
-        new File("demo.md").delete();
+        for(String header: headers)
+        {
+            findHeader(header, resultString);
+        }
+        assertTrue(new File("demo.md").delete());
     }
 
     public void testPoolPartyAuth()
