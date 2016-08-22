@@ -18,8 +18,6 @@ public class DocumentItem {
     public boolean inCorrectPosition;
     public String tag;
 
-    public List<Concept> concepts;
-
     public static String EXPRESSION_FOREWORD = "Foreword";
     public static String EXPRESSION_EXECUTIVE_SUMMARY = "Executive Summary";
     public static String EXPRESSION_ACKNOWLEDGEMENTS = "Acknowledgements";
@@ -254,13 +252,6 @@ public class DocumentItem {
         return titleMap;
     }
 
-    public List<Concept> getConcepts() {
-        return concepts;
-    }
-
-    public void setConcepts(List<Concept> concepts) {
-        this.concepts = concepts;
-    }
 
     public boolean isPresentInDocument() {
         return presentInDocument;

@@ -43,7 +43,6 @@
                         <th class="text-center">Missing?</th>
                         <th class="text-center">Misplaced?</th>
                         <th class="text-center">Recommendation?</th>
-                        <th class="text-center">Concepts</th>
                     </tr>
                     </thead>
                     <c:choose>
@@ -87,28 +86,6 @@
                                             <c:otherwise>
                                                 <strong>This section is present and in it's recommended position.</strong>
                                                  ${item.descriptionMap.get(item.tag)}
-                                            </c:otherwise>
-                                        </c:choose>
-                                    </td>
-                                    <td>
-                                        <c:choose>
-                                            <c:when test="${item.concepts!=null}">
-                                                <table class="table table-condensed">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>Concept</th>
-                                                        <th>Strength</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <c:forEach items="${item.concepts}" var="concept">
-                                                        <tr>
-                                                            <td><a href="/home?q=${concept.prefLabel}">${concept.prefLabel}</a></td><td><meter value="${concept.score/100}">${concept.score}%</meter></td>
-                                                        </tr>
-                                                    </c:forEach>
-                                                </table>
-                                            </c:when>
-                                            <c:otherwise>
-                                                Could not tag this section.
                                             </c:otherwise>
                                         </c:choose>
                                     </td>

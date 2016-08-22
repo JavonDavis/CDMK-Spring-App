@@ -372,8 +372,6 @@ public class CdmkController implements ServletContextAware {
     }
 
     private void getMissingItems(List<DocumentItem> items){
-        ArrayList<DocumentItem> missingItems = new ArrayList<>();
-
         for(DocumentItem item: items)
         {
             if(!item.isPresentInDocument()) {
@@ -388,7 +386,6 @@ public class CdmkController implements ServletContextAware {
     }
 
     private void getMisplacedItems(List<DocumentItem> items){
-        ArrayList<DocumentItem> misplacedItems = new ArrayList<>();
 
         ArrayList<String> tags = DocumentItem.getTags();
 
