@@ -207,7 +207,7 @@ public class DocumentItem {
 
     static String getSectionRegularExpression(String section)
     {
-        return "(['*']['*']([^'*']*)[' ']*"+section+"[' ']*['*']['*'])|([' ']*"+section+"[' ']*['=']+)|([' ']*"+section+"[' ']*(\n)?[-]+)";
+        return "(['*']['*']([^'*']*)[' ']*"+section+"[' ']*['*']['*'])|([' ']*"+section+"[' ']*(\n)?['=']+)|([' ']*"+section+"[' ']*(\n)?[-]+)";
     }
 
     public int getStartIndex() {
