@@ -51,7 +51,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <form:form name="extractionForm" id="getConceptsForm" role="form" action="analysis" method="POST" onsubmit="return validateForm()" enctype="multipart/form-data">
+            <form:form name="extractionForm" id="getConceptsForm" role="form" action="submit" method="POST" onsubmit="return validateForm()" enctype="multipart/form-data">
                 <div class="row">
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="filebutton">Upload a File</label>

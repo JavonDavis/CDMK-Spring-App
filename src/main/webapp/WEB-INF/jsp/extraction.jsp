@@ -16,22 +16,22 @@
     <title>Extraction Results</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
 
-    <link href="css/business-frontpage.css" rel="stylesheet">
+    <link href="/css/business-frontpage.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-<%@include file="includes/nav.jsp" %>
+    <%@include file="includes/nav.jsp" %>
     <div class="container">
 
         <div class="row">
             <div class="col-xs-6">
                 <h2>Concepts from the CDM Knowledge Base:</h2>
-                <table class="table table-condensed">
+                <table class="table">
                     <thead>
                     <tr>
                         <th>Concept</th>

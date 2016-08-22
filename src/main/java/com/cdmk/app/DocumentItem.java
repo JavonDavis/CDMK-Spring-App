@@ -3,6 +3,7 @@ package com.cdmk.app;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by javon on 19/08/2016.
@@ -13,9 +14,11 @@ public class DocumentItem {
     private int endIndex;
     private String content;
 
-    private boolean presentInDocument;
-    private boolean inCorrectPosition;
-    private String tag;
+    public boolean presentInDocument;
+    public boolean inCorrectPosition;
+    public String tag;
+
+    public List<Concept> concepts;
 
     public static String EXPRESSION_FOREWORD = "Foreword";
     public static String EXPRESSION_EXECUTIVE_SUMMARY = "Executive Summary";
@@ -30,11 +33,13 @@ public class DocumentItem {
     public static String EXPRESSION_THREATS_INCIDENTS = "Trans – Island/country Threats or Incidents";
     public static String EXPRESSION_APPENDIX = "(Appendices|Appendix)";
 
-    private static HashMap<String, String> correctionMap = new HashMap<>(); // map to hold message when item is
+    public HashMap<String, String> correctionMap = new HashMap<>(); // map to hold message when item is
     // incorrectly placed in document
-    private static HashMap<String, String> descriptionMap = new HashMap<>(); // map to hold message describing
+
+    public HashMap<String, String> descriptionMap = new HashMap<>(); // map to hold message describing
     // the purpose of the section
-    private static HashMap<String, String> titleMap = new HashMap<>(); // map to hold the user friendly titles of
+
+    public HashMap<String, String> titleMap = new HashMap<>(); // map to hold the user friendly titles of
     // the regex used to identify the sections in a document
 
 
@@ -52,7 +57,7 @@ public class DocumentItem {
             , DocumentItem.EXPRESSION_THREATS_INCIDENTS
             , DocumentItem.EXPRESSION_APPENDIX));
 
-    static {
+     {
         // Foreward
         correctionMap.put(EXPRESSION_FOREWORD, "Recommended to be the first of the 8 suggested preliminaries that " +
                 "a DRP should consist of.");
@@ -237,16 +242,24 @@ public class DocumentItem {
         return titleMap.get(section);
     }
 
-    public static HashMap<String, String> getCorrectionMap() {
+    public HashMap<String, String> getCorrectionMap() {
         return correctionMap;
     }
 
-    public static HashMap<String, String> getDescriptionMap() {
+    public HashMap<String, String> getDescriptionMap() {
         return descriptionMap;
     }
 
-    public static HashMap<String, String> getTitleMap() {
+    public HashMap<String, String> getTitleMap() {
         return titleMap;
+    }
+
+    public List<Concept> getConcepts() {
+        return concepts;
+    }
+
+    public void setConcepts(List<Concept> concepts) {
+        this.concepts = concepts;
     }
 
     public boolean isPresentInDocument() {
