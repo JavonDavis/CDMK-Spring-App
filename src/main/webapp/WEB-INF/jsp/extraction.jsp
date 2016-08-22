@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Caribbean Disaster Management Knowledge Broker - Share your knowledge</title>
+    <title>Extraction Results</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -25,59 +25,7 @@
 
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="home">CDMK</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About CDMK <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="">CDMK Background</a></li>
-                        <li><a href="">CDMK Use-Cases</a></li>
-                        <li><a href="">CDMK Brochure</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CDMK Tools<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="http://cdmk.poolparty.biz/CDMK.html">CDMK Thesaurus</a></li>
-                        <li><a href="api">CDMK API</a></li>
-                        <li><a href="http://skos.cdmk-caribbean.net/">CDMK Tree View</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="share">Share Your Knowledge</a></li>
-                        <%--<li><a href="search">Search the Index</a></li>--%>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Partners <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="">Partners &amp Stakeholders</a></li>
-                        <li><a href="">Contribute to CDMK</a></li>
-                    </ul>
-                </li>
-                <li><a href="mailto:javonldavis14@gmail.com?Subject=CDMK">Contact us</a></li>
-            </ul>
-            <form:form class="navbar-form navbar-right" role="search" id="getConceptsForm" action="home" method="POST">
-                <div class="form-group">
-                    <input id="search_field" name="text" type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form:form>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
+<%@include file="includes/nav.jsp" %>
     <div class="container">
 
         <div class="row">

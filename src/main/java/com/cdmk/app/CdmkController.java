@@ -54,8 +54,8 @@ import com.entopix.maui.util.Topic;
 public class CdmkController implements ServletContextAware {
 
 	protected ServletContext context;
-//    private static String SOLR_URL = "http://localhost:8983/solr/cdmk-test";
-    private static String SOLR_URL = "http://cdmk-caribbean.net:8983/solr/cdmk";
+    private static String SOLR_URL = "http://localhost:8983/solr/cdmk-test";
+//    private static String SOLR_URL = "http://cdmk-caribbean.net:8983/solr/cdmk";
     private static SolrServer server;
     private Logger log = LoggerFactory.getLogger(this.getClass().getName());
 
@@ -172,6 +172,10 @@ public class CdmkController implements ServletContextAware {
         return "api";
     }
 
+    @RequestMapping(value = "/submit", method = RequestMethod.GET)
+    public String submitPage(HttpServletRequest request) {
+        return "submit";
+    }
 
 	@RequestMapping(value = "/share", method = RequestMethod.POST) 
 	public ModelAndView share(
@@ -246,7 +250,7 @@ public class CdmkController implements ServletContextAware {
 
         /* "Content-Disposition : inline" will show viewable types [like images/text/pdf/anything viewable by browser] right on browser
             while others(zip e.g) will be directly downloaded [may provide save as popup, based on your browser setting.]*/
-        response.setHeader("Content-Disposition", String.format("inline; filename=\"" + file.getName() +"\""));
+        response.setHeader("Content-Disposition", "inline; filename=\"" + file.getName() +"\"");
 
 
         /* "Content-Disposition : attachment" will be directly download, may provide save as popup, based on your browser setting*/

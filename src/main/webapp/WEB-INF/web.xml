@@ -25,6 +25,7 @@
     <servlet-mapping>
         <servlet-name>spring-dispatcher</servlet-name>
         <url-pattern>/home</url-pattern>
+        <url-pattern>/submit</url-pattern>
         <url-pattern>/api</url-pattern>
         <url-pattern>/share</url-pattern>
         <url-pattern>/cdmk/*</url-pattern>
