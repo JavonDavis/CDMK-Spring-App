@@ -113,10 +113,10 @@ public class AppTest extends TestCase
 
         String resultString = result.toString();
 
-        ArrayList<String> headers = new ArrayList<>(Arrays.asList("Foreword"
+        ArrayList<String> headerExpressions = new ArrayList<>(Arrays.asList("Foreword"
                 , "Executive Summary"
                 , "Acknowledgements"
-                , "Glossary of Terms"
+                , "(Glossary of Terms|Glossary)"
                 , "Introduction"
                 , "Authority"
                 , "Critical Assumptions"
@@ -126,7 +126,7 @@ public class AppTest extends TestCase
                 , "Trans – Island/country Threats or Incidents"
                 , "(Appendices|Appendix)"));
 
-        for(String header: headers)
+        for(String header: headerExpressions)
         {
             findHeader(header, resultString);
         }
