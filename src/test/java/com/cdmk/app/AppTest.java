@@ -1,5 +1,6 @@
 package com.cdmk.app;
 
+
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -26,6 +27,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Unit test for simple App.
@@ -51,12 +54,141 @@ public class AppTest extends TestCase
         return new TestSuite( AppTest.class );
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
+
+    private DocumentItem findHeader(String needle, String haystack)
     {
-        assertTrue( true );
+
+        // Recommended preliminaries for a DRP
+        String headerRegex = DocumentItem.getSectionRegularExpression(needle);
+
+        Pattern pattern = Pattern.compile(headerRegex);
+        Matcher matcher = pattern.matcher(haystack);
+
+        if (matcher.find()) {
+            DocumentItem item = new DocumentItem(needle,matcher.start(),matcher.end(),matcher.group());
+            System.out.println(item);
+            return item;
+        }
+        return new DocumentItem(needle);
+    }
+
+    private ArrayList<DocumentItem> getMissingItems(List<DocumentItem> items){
+        ArrayList<DocumentItem> missingItems = new ArrayList<>();
+
+        for(DocumentItem item: items)
+        {
+            if(!item.isPresentInDocument()) {
+                System.out.print("Not Present:"+item.getTag()+"\n");
+                missingItems.add(item);
+            }
+        }
+
+        return missingItems;
+    }
+
+    private ArrayList<DocumentItem> getMisplacedItems(List<DocumentItem> items){
+        ArrayList<DocumentItem> misplacedItems = new ArrayList<>();
+
+        ArrayList<String> tags = DocumentItem.getTags();
+
+        for(int i = 0; i < tags.size() ; i ++)
+        {
+            String tag = tags.get(i);
+            int itemIndex = getItemIndexByTag(tag, items);
+
+            if(itemIndex > -1) {
+                DocumentItem item = items.get(itemIndex);
+                if (item.isPresentInDocument() && !inValidPosition(i, item, items,tags)) {
+                    System.out.println("Misplaced:"+item.getTag());
+                    misplacedItems.add(item);
+                }
+            }
+        }
+
+        return misplacedItems;
+    }
+
+    private int getItemIndexByTag(String tag, List<DocumentItem> items)
+    {
+        for(int i = 0; i< items.size(); i++)
+        {
+            DocumentItem item = items.get(i);
+            if(item.getTag().equals(tag))
+                return i;
+        }
+        return -1;
+    }
+
+    private boolean inValidPosition(int tagIndex, DocumentItem item, List<DocumentItem> items, List<String> tags)
+    {
+        for(int i = 0; i < tags.size(); i ++)
+        {
+            String tag = tags.get(i);
+            int itemIndex = getItemIndexByTag(tag, items);
+
+            if(itemIndex > -1) {
+                DocumentItem itemToCheck = items.get(itemIndex);
+                if(itemToCheck.isPresentInDocument()) {
+                    if (i < tagIndex && item.getStartIndex() < itemToCheck.getEndIndex())
+                        return false;
+                    else if (i > tagIndex && item.getEndIndex() > itemToCheck.getStartIndex())
+                        return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public void testDocumentStructure() throws IOException, RuntimeException, InterruptedException {
+        String command = "pandoc \"structure.docx\" --from=docx --to=markdown  --output=\"demo.md\"";
+        Process p = Runtime.getRuntime().exec(new String[]{"sh","-c",command});
+        p.waitFor();
+
+        BufferedReader reader =
+                new BufferedReader(new InputStreamReader(p.getInputStream()));
+
+        String line;
+        StringBuilder stringBuilder = new StringBuilder();
+        while ((line = reader.readLine())!= null) {
+            stringBuilder.append(line).append("\n");
+        }
+        System.out.print(stringBuilder);
+        assertTrue(new File("demo.md").exists());
+
+        BufferedReader br = null;
+
+        StringBuilder result = new StringBuilder();
+        try {
+
+            br = new BufferedReader(new FileReader("demo.md"));
+
+            while ((line = br.readLine()) != null) {
+                result.append(line);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (br != null)br.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+
+        String resultString = result.toString();
+
+        ArrayList<String> headerExpressions = DocumentItem.getTags();
+
+        ArrayList<DocumentItem> documentItems = new ArrayList<>();
+        for(String header: headerExpressions)
+        {
+            documentItems.add(findHeader(header, resultString));
+        }
+
+        assertTrue(getMissingItems(documentItems).size() == 0);
+        assertTrue(getMisplacedItems(documentItems).size() == 0);
+        assertTrue(new File("demo.md").delete());
     }
 
     public void testPoolPartyAuth()
