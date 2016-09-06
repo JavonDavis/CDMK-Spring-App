@@ -169,6 +169,21 @@ public class CdmkController implements ServletContextAware {
 		return "share";
 	}
 
+    @RequestMapping(value = "/partners", method = RequestMethod.GET)
+    public String partnersPage(HttpServletRequest request) {
+        return "partners";
+    }
+
+    @RequestMapping(value = "/background", method = RequestMethod.GET)
+    public String backgroundPage(HttpServletRequest request) {
+        return "background";
+    }
+
+    @RequestMapping(value = "/usecases", method = RequestMethod.GET)
+    public String useCasesPage(HttpServletRequest request) {
+        return "usecases";
+    }
+
 	@RequestMapping(value = "/api", method = RequestMethod.GET)
     public String apiPage(HttpServletRequest request) {
         return "api";

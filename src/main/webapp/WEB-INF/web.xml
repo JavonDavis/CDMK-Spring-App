@@ -28,6 +28,9 @@
         <url-pattern>/submit</url-pattern>
         <url-pattern>/api</url-pattern>
         <url-pattern>/share</url-pattern>
+        <url-pattern>/partners</url-pattern>
+        <url-pattern>/usecases</url-pattern>
+        <url-pattern>/background</url-pattern>
         <url-pattern>/cdmk/*</url-pattern>
     </servlet-mapping>
 

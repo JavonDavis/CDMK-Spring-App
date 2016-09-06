@@ -21,8 +21,8 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About CDMK <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="">CDMK Background</a></li>
-                        <li><a href="">CDMK Use-Cases</a></li>
+                        <li><a href="background">CDMK Background</a></li>
+                        <li><a href="usecases">CDMK Use-Cases</a></li>
                         <li><a href="">CDMK Brochure</a></li>
                     </ul>
                 </li>
@@ -41,8 +41,8 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Partners <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="">Partners &amp Stakeholders</a></li>
-                        <li><a href="">Contribute to CDMK</a></li>
+                        <li><a href="partners">Partners &amp Stakeholders</a></li>
+                        <li><a href="api">Contribute to CDMK</a></li>
                     </ul>
                 </li>
                 <li><a href="mailto:javonldavis14@gmail.com?Subject=CDMK">Contact us</a></li>

@@ -74,16 +74,16 @@
         </div>
 
         <div class="row text-center bottom-buffer">
-                  <div class="col-xs-4">
-                    <a href="submit"><button class="btn btn-default">Submit</button></a>
-                  </div>
-                  <div class="col-xs-4">
-                    <a href="share"><button class="btn btn-default">Share</button></a>
-                  </div>
-                  <div class="col-xs-4">
-                    <a href="api"><button class="btn btn-default">Get the API</button></a>
-                  </div>
+              <div class="col-xs-4">
+                <a href="submit"><button class="btn btn-default">Submit</button></a>
               </div>
+              <div class="col-xs-4">
+                <a href="share"><button class="btn btn-default">Share</button></a>
+              </div>
+              <div class="col-xs-4">
+                <a href="api"><button class="btn btn-default">Get the API</button></a>
+              </div>
+          </div>
 
         <div class="row text-center top-buffer bottom-buffer">
             <div class="col-xs-12 text-center">
@@ -107,17 +107,7 @@
 
         <div class="row">
             <h4 class="blue-title text-center">About CDMK</h4>
-            <p>CDMK, The Caribbean Disaster Management Knowledge Broker is an online, interactive vocabulary for the integration of silos of knowledge relating to disaster management/recovery wich is currently dispersed throughout the region. This knowledge broker approach is inspired by the well-known Climate Tagger, that is widely used in the international Climate Knowledge community. CDMK provides a common semantic reference for distributed knowledge resources and in particularly, facilitates a shared, collaborative approach to addressing disaster recovery planning. This can be best summed up as "How do we know what we know?"</p>
-            <p>The CDMK Thesaurus is intended to:</p>
-            <ul>
-                <li>Enable the Discovery and indexing of key knowledge resources in the Caribbean Disaster Management community.</li>
-                <li>Support the Development and validation of comprehensive consistent Disaster Recovery Plans</li>
-                <li>Provide a platform for the development of value-added knwoeldge-based applications and services for the Caribbean Disaster Management community</li>
-                <li>Facilitate research and analysis of the Caribbean Disaster Management knowledge ecosystem.</li>
-            </ul>
-            <p>The Caribbean Disaster Management Knowledge Broker is supported by funding through the Open &amp Collaborative Science in Development Network (OCSDNet) research project, supported by Canada's International Development Research Centre and the UK Government's Department for International Development. Find out more at <a href="www.ocsdnet.org">OCSD.</a></p>
-            <h4 class="blue-title text-center">CDMK PARTNERS</h4>
-            <p>The CDMK Thesaurus is an Open Access Public Good that benefits from the voluntry contributions of the Comprehensive Disaster Management community across the Caribbean, coordinated in partnership with the Caribbean Disaster and Energy Management Association - CDEMA</p>
+            <p>Many Small Island Developing States of the Caribbean are susceptible to natural disasters yet they may not have the resources needed to develop comprehensive and effective Disaster Recovery Plans (DRP). Many of these states are susceptible to the same types of disasters and have similar institutional structures and procedures in place for responding to them. However, although there are many resources available for DRP they currently exist as disparate silos. If these states collaborated and shared their existing resources and the cost of developing these plans it would lead to a more efficient development methodology, more complete DRPs, and more effective recovery coordination. The CDMK system provides a solution for the integration of these silos of resources, an important component of which is a common, online, open and interactive DRP vocabulary.</p>
         </div>
     </div>
     <hr>
