@@ -97,6 +97,11 @@
                     </div>
 
                     <br />
+
+                    <input type="checkbox" name="DRP" value="DRP"/> Check if this submission can be classified as a Disaster Recovery plan
+
+                    <br />
+                    <br />
                     <button class="btn btn-default" type="submit">Extract Concepts</button>
                 </form:form>
             </div>

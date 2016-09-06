@@ -56,8 +56,8 @@ import com.entopix.maui.util.Topic;
 public class CdmkController implements ServletContextAware {
 
 	protected ServletContext context;
-//    private static String SOLR_URL = "http://localhost:8983/solr/cdmk-test";
-    private static String SOLR_URL = "http://cdmk-caribbean.net:8983/solr/cdmk";
+    private static String SOLR_URL = "http://localhost:8983/solr/cdmk-test";
+//    private static String SOLR_URL = "http://cdmk-caribbean.net:8983/solr/cdmk";
     private static SolrServer server;
     private Logger log = LoggerFactory.getLogger(this.getClass().getName());
 
@@ -197,12 +197,15 @@ public class CdmkController implements ServletContextAware {
             @RequestParam(value="email", required = false) String email,
 			@RequestParam(value="file", required = false) MultipartFile file,
 			@RequestParam(value="url", required = false) String url,
+            @RequestParam(value = "DRP", required = false) String checked,
 			HttpServletRequest request,
 			HttpServletResponse response
 		) {
 
 		//request.setAttribute("concepts", mauiExtractor(text));
         Concept[] concepts = poolPartyExtractor(file, url);
+
+        boolean isDRP = checked != null;
 
         String filePath = "";
 
@@ -232,7 +235,7 @@ public class CdmkController implements ServletContextAware {
             executor.submit(documentUploaderTask);
         }
         if(concepts.length > 0)
-            addToIndex(title, source, email, filePath, url, concepts);
+            addToIndex(title, source, email, filePath, url, concepts, isDRP);
 
 		request.setAttribute("concepts", concepts);
 		return new ModelAndView("extraction");
@@ -312,14 +315,14 @@ public class CdmkController implements ServletContextAware {
             }
             System.out.print(stringBuilder);
 
-            BufferedReader br = null;
+            BufferedReader bufferedReader = null;
 
             StringBuilder result = new StringBuilder();
             try {
 
-                br = new BufferedReader(new FileReader(outputFilename));
+                bufferedReader = new BufferedReader(new FileReader(outputFilename));
 
-                while ((line = br.readLine()) != null) {
+                while ((line = bufferedReader.readLine()) != null) {
                     result.append(line);
                 }
 
@@ -327,7 +330,7 @@ public class CdmkController implements ServletContextAware {
                 e.printStackTrace();
             } finally {
                 try {
-                    if (br != null)br.close();
+                    if (bufferedReader != null)bufferedReader.close();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -440,7 +443,7 @@ public class CdmkController implements ServletContextAware {
         return true;
     }
 
-	private void addToIndex(String title, String source, String email, String filePath, String url, Concept[] concepts)
+	private void addToIndex(String title, String source, String email, String filePath, String url, Concept[] concepts, boolean isDRP)
     {
         SolrInputDocument document = new SolrInputDocument();
         document.addField("title", title);
@@ -448,6 +451,7 @@ public class CdmkController implements ServletContextAware {
         document.addField("email", email);
         document.addField("url", url);
         document.addField("file", filePath);
+        document.addField("isdrp", isDRP);
 
         String tags = "";
 
