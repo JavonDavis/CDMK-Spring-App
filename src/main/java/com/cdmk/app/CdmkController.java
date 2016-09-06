@@ -235,7 +235,7 @@ public class CdmkController implements ServletContextAware {
             executor.submit(documentUploaderTask);
         }
         if(concepts.length > 0)
-            addToIndex(title, source, email, filePath, url, concepts);
+            addToIndex(title, source, email, filePath, url, concepts, isDRP);
 
 		request.setAttribute("concepts", concepts);
 		return new ModelAndView("extraction");
@@ -443,7 +443,7 @@ public class CdmkController implements ServletContextAware {
         return true;
     }
 
-	private void addToIndex(String title, String source, String email, String filePath, String url, Concept[] concepts)
+	private void addToIndex(String title, String source, String email, String filePath, String url, Concept[] concepts, boolean isDRP)
     {
         SolrInputDocument document = new SolrInputDocument();
         document.addField("title", title);
@@ -451,6 +451,7 @@ public class CdmkController implements ServletContextAware {
         document.addField("email", email);
         document.addField("url", url);
         document.addField("file", filePath);
+        document.addField("isdrp", isDRP);
 
         String tags = "";
 

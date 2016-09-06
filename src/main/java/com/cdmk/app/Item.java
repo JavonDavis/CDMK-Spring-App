@@ -30,6 +30,9 @@ public class Item {
     @Field
     public List<String> tags;
 
+    @Field
+    public boolean isdrp;
+
     public List<Concept> concepts;
 
     public String fileName;
@@ -69,6 +72,14 @@ public class Item {
 
     public List<String> getTags() {
         return tags;
+    }
+
+    public boolean isdrp() {
+        return isdrp;
+    }
+
+    public void setIsdrp(boolean isdrp) {
+        this.isdrp = isdrp;
     }
 
     public void setTags(List<String> tags) {
