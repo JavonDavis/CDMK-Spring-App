@@ -37,15 +37,16 @@
         <div class="row">
             <div class="col-xs-6">
                 <h3>SPARQL</h3>
-                <p>The SPARQL endpoint is provided using <a href="https://jena.apache.org/documentation/serving_data/">Apache Jena - Fuseki</a> and supports JSON, XML, CSV and TSV</p>
-                <p>The CDMK SPARQL endpoint is located at <a href="http://cdmk-caribbean.net:3030/cdmk/sparql">http://cdmk-caribbean.net:3030/cdmk/sparql.</a>
+                <p>The SPARQL endpoint is provided using the <a href="https://www.poolparty.biz/">PoolParty Service.</a></p>
+                <p>The CDMK SPARQL endpoint is located at <a href="https://cdmk.poolparty.biz/PoolParty/sparql/cdmk">https://cdmk.poolparty.biz/PoolParty/sparql/cdmk</a>
                 </p>
             </div>
 
             <div class="col-xs-6">
                 <h3>REST</h3>
-                <p>The REST API is provided by Skosmos and supports JSON and JSONP callbacks. For a full reference, visit the: <a href="https://github.com/NatLibFi/Skosmos/wiki/REST-API">Skosmos documentation.</a></p>
-                <p>The CDMK Skosmos page is located at <a href="http://thesaurus.cdmk-caribbean.net/">http://thesaurus.cdmk-caribbean.net/</a></p>
+                <p>The REST API is also provided by the <a href="https://www.poolparty.biz/">PoolParty Service</a> and a complete documentation on how to access the various
+                    of the CDMK Knowledge base can be found
+                    <a href="https://help.poolparty.biz/doc/developer-guide/basic-advanced-server-apis/poolparty-api-guide">here.</a></p>
             </div>
         </div>
     </div>

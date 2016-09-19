@@ -56,34 +56,22 @@
         <div class="row top-buffer text-center">
             <h4 class="blue-title bottom-buffer">Help Map the CDM Knowledge Ecosystem</h4>
             <div class="col-xs-4">
-                <img src="images/submit.jpg" class="thumbnail img-responsive" alt="Submit your Document" >
+                <a href="submit"><img src="images/submit.jpg" class="thumbnail img-responsive" alt="Submit your Document" ></a>
                 <h4>Submit Your Document</h4>
                 <p>Do you have an important document about any aspect of Caribbean Disaster Recovery Planning
                 that you want to be evaluated? Submit your document to be tagged and validated by the CDMK.</p>
             </div>
             <div class="col-xs-4">
-                <img src="images/share.jpg" class="thumbnail" alt="Share Your Knowledge" >
+                <a href="share"><img src="images/share.jpg" class="thumbnail" alt="Share Your Knowledge" ></a>
                 <h4>Share Your Knowledge</h4>
                 <p>Do you want to share documents or websites about any aspects of Comprehensive Disaster management in the Caribbean? Share it with the CDMK Knowledge Broker</p>
             </div>
             <div class="col-xs-4">
-                <img src="images/api.png" class="thumbnail" alt="API" >
+                <a href="api"><img src="images/api.png" class="thumbnail" alt="API" ></a>
                 <h4>Contribute an App</h4>
                 <p>Do you want to create a Learning App about Caribbean Disaster Management? Use the CDMK API!</p>
             </div>
         </div>
-
-        <div class="row text-center bottom-buffer">
-              <div class="col-xs-4">
-                <a href="submit"><button class="btn btn-default">Submit</button></a>
-              </div>
-              <div class="col-xs-4">
-                <a href="share"><button class="btn btn-default">Share</button></a>
-              </div>
-              <div class="col-xs-4">
-                <a href="api"><button class="btn btn-default">Get the API</button></a>
-              </div>
-          </div>
 
         <div class="row text-center top-buffer bottom-buffer">
             <div class="col-xs-12 text-center">
