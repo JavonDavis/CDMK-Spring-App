@@ -3,6 +3,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib uri="http://cdmk-caribbean.net/functions" prefix="f" %>
 <html>
 <head>
 
@@ -85,7 +86,7 @@
                                             </c:when>
                                             <c:otherwise>
                                                 <strong>This section is present and in it's recommended position.</strong>
-                                                 ${item.descriptionMap.get(item.tag)}
+                                                 ${f:format(item.descriptionMap.get(item.tag))}
                                             </c:otherwise>
                                         </c:choose>
                                     </td>

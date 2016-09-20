@@ -87,31 +87,25 @@ public class DocumentItem {
         correctionMap.put(EXPRESSION_INTRODUCTION, "Recommended to be the first section following the preliminaries.");
         descriptionMap.put(EXPRESSION_INTRODUCTION, "The introduction will comprise of the following four elements:\n" +
                 "\n" +
-                "\tBackground\n" +
+                "1. Background\n" +
                 "\n" +
-                "Will provide a general synopsis of the Ministry/Agency/Department as it relates to " +
+                "- Will provide a general synopsis of the Ministry/Agency/Department as it relates to " +
                 "Disaster Management in [COUNTRY]\n" +
                 "\n" +
+                "2. Purpose of the plan\n" +
                 "\n" +
-                "Purpose of the plan\n" +
-                "\t\n" +
-                "Describes the purpose of the plan\n" +
+                "- Describes the purpose of the plan\n" +
                 "\n" +
-                "Scope\n" +
+                "3. Scope\n" +
                 "\n" +
-                "•\tExtent of the coverage of the plan: island-wide (country-wide) coverage \n" +
+                "•Extent of the coverage of the plan: island-wide (country-wide) coverage \n" +
+                "•Establishes timeframe\n" +
+                "•It will be executed in tandem with (what other plans)\n" +
+                "•This plan is multi-hazard in scope\n" +
                 "\n" +
-                "•\tEstablishes timeframe\n" +
+                "4. Mission Statement\n" +
                 "\n" +
-                "•\tIt will be executed in tandem with (what other plans)\n" +
-                "\n" +
-                "•\tThis plan is multi-hazard in scope\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "Mission Statement\n" +
-                "\n" +
-                "Describe the mission statement as determined by the Disaster Management Advisory Committee " +
+                "5. Describe the mission statement as determined by the Disaster Management Advisory Committee " +
                 "or Legislation\n");
         titleMap.put(EXPRESSION_INTRODUCTION, "Introduction");
 
@@ -153,20 +147,23 @@ public class DocumentItem {
         // Emergency Operations
         correctionMap.put(EXPRESSION_EMERGENCY_OPERATIONS, "Recommended to follow the Concepts of Operations and " +
                 "precede the Trans – Island/country Threats or Incidents.");
-        descriptionMap.put(EXPRESSION_EMERGENCY_OPERATIONS, "This section will detail the following:\n" +
+        descriptionMap.put(EXPRESSION_EMERGENCY_OPERATIONS, "This section will detail the following:" +
                 "\n" +
-                "Alert and Warning Mechanism, \n" +
-                "Notification of an Incident, \n" +
-                "Response Operations: \n" +
-                "•\tMobilization and deployment of emergency agencies\n" +
-                "•\tResource mobilization, access and deployment\n" +
-                "•\tInteragency coordination and interoperability \n" +
-                "•\tMonitoring and evaluation of the incident, \n" +
-                "•\tLinkages with supporting plans and SOPS, \n" +
-                "•\tStandard Operations governing key Emergency Response Functions (ERF) - Telecoms,\n" +
+                "1. Alert and Warning Mechanism, \n" +
                 "\n" +
-                "Activation and Deactivation\n" +
-                "Recovery Operations\n");
+                "2. Notification of an Incident, \n" +
+                "\n" +
+                "3. Response Operations: \n" +
+                "• Mobilization and deployment of emergency agencies\n" +
+                "• Resource mobilization, access and deployment\n" +
+                "• Interagency coordination and interoperability \n" +
+                "• Monitoring and evaluation of the incident, \n" +
+                "• Linkages with supporting plans and SOPS, \n" +
+                "• Standard Operations governing key Emergency Response Functions (ERF) - Telecoms,\n" +
+                "\n" +
+                "4. Activation and Deactivation\n" +
+                "\n" +
+                "5. Recovery Operations\n");
         titleMap.put(EXPRESSION_EMERGENCY_OPERATIONS, "Emergency Operations");
 
         // Trans – Island/country Threats or Incidents
@@ -181,13 +178,13 @@ public class DocumentItem {
         correctionMap.put(EXPRESSION_APPENDIX, "Recommended to be the last section of a DRP preceding " +
                 "any 'Other Considerations' if they exist.");
         descriptionMap.put(EXPRESSION_APPENDIX, "This section will contain the following:\n" +
-                "•\tLinkages with other plans\n" +
-                "•\tChecklists\n" +
-                "•\tNotification /Call Out Procedures\n" +
-                "•\tContact Information\n" +
-                "•\tList of resource requirements\n" +
-                "•\tJob Aid (Status Boards etc)\n" +
-                "•\tMaps – emergency routes, procedures\n");
+                "•Linkages with other plans\n" +
+                "•Checklists\n" +
+                "•Notification /Call Out Procedures\n" +
+                "•Contact Information\n" +
+                "•List of resource requirements\n" +
+                "•Job Aid (Status Boards etc)\n" +
+                "•Maps – emergency routes, procedures\n");
         titleMap.put(EXPRESSION_APPENDIX, "Appendix");
     }
 

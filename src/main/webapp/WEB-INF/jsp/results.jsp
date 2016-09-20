@@ -127,7 +127,7 @@
                                     <c:when test="${item.isdrp!=null}">
                                         <c:choose>
                                             <c:when test="${item.isdrp.get(0)}">
-                                                <tr><td><h4>This resource can be classified as a Disaster Recovery Plan</h4></td></tr>
+                                                <tr><td><h4>Tagged as: Disaster Recovery Plan</h4></td></tr>
                                             </c:when>
                                         </c:choose>
                                     </c:when>
