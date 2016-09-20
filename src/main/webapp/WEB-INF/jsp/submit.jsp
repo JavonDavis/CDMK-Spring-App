@@ -45,7 +45,7 @@
             <p>The Caribbean Disaster Knowledge Broker can be used to analyse the content and structure of a
                 DRP and make any necessary recommendations. Submit a docx document below to demonstrate this feature,
                 at the moment only docx files are supported. We are working hard to support more of the commonly
-            used file formats such as pdf and doc</p>
+            used file formats such as pdf and doc.</p>
         </div>
     </div>
 
