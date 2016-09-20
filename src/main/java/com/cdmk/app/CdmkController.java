@@ -314,8 +314,12 @@ public class CdmkController implements ServletContextAware {
                 outputStream.write(bytes, 0, read);
             }
 
-            String outputFilename = filename.split("\\.")[0]+".md";
-            String command = "pandoc \""+filename+"\" --from=docx --to=markdown  --output=\""+outputFilename+"\"";
+            String[] fileNameComponents = filename.split("\\.");
+
+            String outputFilename = fileNameComponents[0]+".md";
+            String extension = fileNameComponents[1];
+
+            String command = "pandoc \""+filename+"\" --from="+extension+" --to=markdown  --output=\""+outputFilename+"\"";
 
             Process p = Runtime.getRuntime().exec(new String[]{"sh","-c",command});
             p.waitFor();

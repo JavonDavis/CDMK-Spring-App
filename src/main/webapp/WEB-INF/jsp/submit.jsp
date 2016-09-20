@@ -40,10 +40,12 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <h2>Share Your Knowledge</h2>
+            <h2>Submit your document</h2>
             <h4>Demo</h4>
             <p>The Caribbean Disaster Knowledge Broker can be used to analyse the content and structure of a
-                DRP and make any necessary recommendations. Submit a word document below to demonstrate this feature.</p>
+                DRP and make any necessary recommendations. Submit a docx document below to demonstrate this feature,
+                at the moment only docx files are supported. We are working hard to support more of the commonly
+            used file formats such as pdf and doc</p>
         </div>
     </div>
 
