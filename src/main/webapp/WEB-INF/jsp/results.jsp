@@ -70,6 +70,7 @@
                         <td>
                             <table class="
                             noBorder" >
+
                                 <c:choose>
                                     <c:when test="${item.title!=null}">
                                         <c:choose>
@@ -121,6 +122,15 @@
                                             </c:when>
                                         </c:choose>
                                     </c:otherwise>
+                                </c:choose>
+                                <c:choose>
+                                    <c:when test="${item.isdrp!=null}">
+                                        <c:choose>
+                                            <c:when test="${item.isdrp.get(0)}">
+                                                <tr><td><h4>This resource can be classified as a Disaster Recovery Plan</h4></td></tr>
+                                            </c:when>
+                                        </c:choose>
+                                    </c:when>
                                 </c:choose>
                             </table>
                         </td>

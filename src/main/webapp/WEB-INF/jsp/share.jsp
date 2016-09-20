@@ -98,7 +98,7 @@
 
                     <br />
 
-                    <input type="checkbox" name="DRP" value="DRP"/> Check if this submission can be classified as a Disaster Recovery plan
+                    <input type="checkbox" name="DRP" value="DRP"/> Check if this submission can be classified as a Disaster Recovery Plan
 
                     <br />
                     <br />

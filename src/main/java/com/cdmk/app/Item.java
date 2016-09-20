@@ -31,7 +31,7 @@ public class Item {
     public List<String> tags;
 
     @Field
-    public boolean isdrp;
+    public List<Boolean> isdrp;
 
     public List<Concept> concepts;
 
@@ -74,16 +74,16 @@ public class Item {
         return tags;
     }
 
-    public boolean isdrp() {
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
+    public List<Boolean> getIsdrp() {
         return isdrp;
     }
 
-    public void setIsdrp(boolean isdrp) {
+    public void setIsdrp(List<Boolean> isdrp) {
         this.isdrp = isdrp;
-    }
-
-    public void setTags(List<String> tags) {
-        this.tags = tags;
     }
 
     public List<Concept> getConcepts() {

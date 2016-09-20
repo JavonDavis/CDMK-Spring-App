@@ -482,9 +482,7 @@ public class CdmkController implements ServletContextAware {
         try {
             server.add(document);
             server.commit();
-        } catch (SolrServerException e) {
-            log.error(e.getClass().getName() + ": " + e.getMessage());
-        } catch (IOException e) {
+        } catch (SolrServerException | IOException e) {
             log.error(e.getClass().getName() + ": " + e.getMessage());
         }
     }
