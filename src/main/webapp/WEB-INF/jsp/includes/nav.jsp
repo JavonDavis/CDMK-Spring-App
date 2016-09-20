@@ -45,7 +45,7 @@
                         <li><a href="api">Contribute to CDMK</a></li>
                     </ul>
                 </li>
-                <li><a href="mailto:javonldavis14@gmail.com?Subject=CDMK">Contact us</a></li>
+                <li><a href="mailto:lila.rao@uwimona.edu.jm?Subject=CDMK">Contact us</a></li>
             </ul>
             <form:form class="navbar-form navbar-right" role="search" id="getConceptsForm" action="home" method="POST">
                 <div class="form-group">

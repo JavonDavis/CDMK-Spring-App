@@ -45,7 +45,7 @@
                         <li><a href="api">Contribute to CDMK</a></li>
                     </ul>
                 </li>
-                <li><a href="mailto:javonldavis14@gmail.com?Subject=CDMK">Contact us</a></li>
+                <li><a href="lila.rao@uwimona.edu.jm?Subject=CDMK">Contact us</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
