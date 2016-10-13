@@ -56,8 +56,8 @@ import com.entopix.maui.util.Topic;
 public class CdmkController implements ServletContextAware {
 
 	protected ServletContext context;
-//    private static String SOLR_URL = "http://localhost:8983/solr/cdmk-test";
-    private static String SOLR_URL = "http://cdmk-caribbean.net:8983/solr/cdmk";
+    private static String SOLR_URL = "http://localhost:8983/solr/cdmk-test";
+//    private static String SOLR_URL = "http://cdmk-caribbean.net:8983/solr/cdmk";
     private static SolrServer server;
     private Logger log = LoggerFactory.getLogger(this.getClass().getName());
 
