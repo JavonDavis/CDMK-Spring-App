@@ -205,6 +205,51 @@ public class CdmkController implements ServletContextAware {
         return new ModelAndView("analysis");
     }
 
+    @RequestMapping(value = "/results", method = RequestMethod.GET)
+    public ModelAndView clear(
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) {
+
+        request.setAttribute("concept", searchConcept);
+        request.setAttribute("items", searchResults);
+        return new ModelAndView("results");
+    }
+
+    @RequestMapping(value = "/results", method = RequestMethod.POST)
+    public ModelAndView filter(
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) {
+
+        HashMap values = (HashMap) request.getParameterMap();
+        String[] results = (String[]) values.get("filters");
+
+        List<Item> filteredSearchResults = new ArrayList<>();
+
+        filteredSearchResults.addAll(searchResults);
+        // The following operation could become very timely if concepts in vocabulary becomes > 10000 but not likely
+        // at the time of writing
+        for(Item item: searchResults)
+        {
+            if (item.getConcepts() != null) {
+                for (String result: results) {
+
+                    if (!item.getConcepts().contains(new Concept(result))) {
+                        filteredSearchResults.remove(item);
+                    }
+                }
+            } else {
+                filteredSearchResults.remove(item);
+            }
+        }
+
+        request.setAttribute("concept", searchConcept);
+        request.setAttribute("filters", filterConcepts);
+        request.setAttribute("items", filteredSearchResults);
+        return new ModelAndView("results");
+    }
+
 	@RequestMapping(value = "/share", method = RequestMethod.POST) 
 	public ModelAndView share(
 	        @RequestParam(value="title") String title,

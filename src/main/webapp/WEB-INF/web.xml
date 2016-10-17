@@ -30,6 +30,7 @@
         <url-pattern>/share</url-pattern>
         <url-pattern>/partners</url-pattern>
         <url-pattern>/usecases</url-pattern>
+        <url-pattern>/results</url-pattern>
         <url-pattern>/background</url-pattern>
         <url-pattern>/cdmk/*</url-pattern>
     </servlet-mapping>
