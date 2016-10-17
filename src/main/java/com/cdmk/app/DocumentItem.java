@@ -28,7 +28,7 @@ public class DocumentItem {
     public static String EXPRESSION_INSTITUTIONAL_FRAMEWORK = "Institutional Framework";
     public static String EXPRESSION_CONCEPTS_OPERATIONS = "Concepts of Operations";
     public static String EXPRESSION_EMERGENCY_OPERATIONS = "Emergency Operations";
-    public static String EXPRESSION_THREATS_INCIDENTS = "Trans - Island/country Threats or Incidents";
+    public static String EXPRESSION_THREATS_INCIDENTS = "Trans – Island/country Threats or Incidents";
     public static String EXPRESSION_APPENDIX = "(Appendices|Appendix)";
 
     public HashMap<String, String> correctionMap = new HashMap<>(); // map to hold message when item is
@@ -146,7 +146,7 @@ public class DocumentItem {
 
         // Emergency Operations
         correctionMap.put(EXPRESSION_EMERGENCY_OPERATIONS, "Recommended to follow the Concepts of Operations and " +
-                "precede the Trans - Island/country Threats or Incidents.");
+                "precede the Trans – Island/country Threats or Incidents.");
         descriptionMap.put(EXPRESSION_EMERGENCY_OPERATIONS, "This section will detail the following:" +
                 "\n" +
                 "1. Alert and Warning Mechanism, \n" +
@@ -166,13 +166,13 @@ public class DocumentItem {
                 "5. Recovery Operations\n");
         titleMap.put(EXPRESSION_EMERGENCY_OPERATIONS, "Emergency Operations");
 
-        // Trans - Island/country Threats or Incidents
+        // Trans – Island/country Threats or Incidents
         correctionMap.put(EXPRESSION_THREATS_INCIDENTS, "Recommended to follow the Emergency Operations and " +
                 "precede the Appendix/Appendices.");
         descriptionMap.put(EXPRESSION_THREATS_INCIDENTS, "This section will outline arrangements and response " +
                 "mechanism in event that the national emergency services had to respond to incidents or threats " +
                 "within the other CDEMA PS.\n");
-        titleMap.put(EXPRESSION_THREATS_INCIDENTS, "Trans - Island/country Threats or Incidents");
+        titleMap.put(EXPRESSION_THREATS_INCIDENTS, "Trans – Island/country Threats or Incidents");
 
         // Executive Summary
         correctionMap.put(EXPRESSION_APPENDIX, "Recommended to be the last section of a DRP preceding " +
@@ -184,7 +184,7 @@ public class DocumentItem {
                 "*Contact Information\n" +
                 "*List of resource requirements\n" +
                 "*Job Aid (Status Boards etc)\n" +
-                "*Maps - emergency routes, procedures\n");
+                "*Maps – emergency routes, procedures\n");
         titleMap.put(EXPRESSION_APPENDIX, "Appendix");
     }
 
