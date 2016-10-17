@@ -98,10 +98,10 @@ public class DocumentItem {
                 "\n" +
                 "3. Scope\n" +
                 "\n" +
-                "•Extent of the coverage of the plan: island-wide (country-wide) coverage \n" +
-                "•Establishes timeframe\n" +
-                "•It will be executed in tandem with (what other plans)\n" +
-                "•This plan is multi-hazard in scope\n" +
+                "*Extent of the coverage of the plan: island-wide (country-wide) coverage \n" +
+                "*Establishes timeframe\n" +
+                "*It will be executed in tandem with (what other plans)\n" +
+                "*This plan is multi-hazard in scope\n" +
                 "\n" +
                 "4. Mission Statement\n" +
                 "\n" +
@@ -154,12 +154,12 @@ public class DocumentItem {
                 "2. Notification of an Incident, \n" +
                 "\n" +
                 "3. Response Operations: \n" +
-                "• Mobilization and deployment of emergency agencies\n" +
-                "• Resource mobilization, access and deployment\n" +
-                "• Interagency coordination and interoperability \n" +
-                "• Monitoring and evaluation of the incident, \n" +
-                "• Linkages with supporting plans and SOPS, \n" +
-                "• Standard Operations governing key Emergency Response Functions (ERF) - Telecoms,\n" +
+                "* Mobilization and deployment of emergency agencies\n" +
+                "* Resource mobilization, access and deployment\n" +
+                "* Interagency coordination and interoperability \n" +
+                "* Monitoring and evaluation of the incident, \n" +
+                "* Linkages with supporting plans and SOPS, \n" +
+                "* Standard Operations governing key Emergency Response Functions (ERF) - Telecoms,\n" +
                 "\n" +
                 "4. Activation and Deactivation\n" +
                 "\n" +
@@ -178,13 +178,13 @@ public class DocumentItem {
         correctionMap.put(EXPRESSION_APPENDIX, "Recommended to be the last section of a DRP preceding " +
                 "any 'Other Considerations' if they exist.");
         descriptionMap.put(EXPRESSION_APPENDIX, "This section will contain the following:\n" +
-                "•Linkages with other plans\n" +
-                "•Checklists\n" +
-                "•Notification /Call Out Procedures\n" +
-                "•Contact Information\n" +
-                "•List of resource requirements\n" +
-                "•Job Aid (Status Boards etc)\n" +
-                "•Maps – emergency routes, procedures\n");
+                "*Linkages with other plans\n" +
+                "*Checklists\n" +
+                "*Notification /Call Out Procedures\n" +
+                "*Contact Information\n" +
+                "*List of resource requirements\n" +
+                "*Job Aid (Status Boards etc)\n" +
+                "*Maps – emergency routes, procedures\n");
         titleMap.put(EXPRESSION_APPENDIX, "Appendix");
     }
 
