@@ -40,7 +40,35 @@
     <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
             <h3>Resources related to '${concept}' from the CDM Content Pool:</h3>
 
+
+    <form action="/results" method="post">
+        Choose one or more concepts to filter by:
+
+        <br />
+
+        <select name="filters" class="form-control" multiple>
             <c:choose>
+                <c:when test="${filters != null}">
+                    <c:forEach items="${filters}" var="concept">
+                        <c:choose>
+                            <c:when test="${concept.checked}">
+                                <option>${concept.prefLabel}</option>
+                            </c:when>
+                            <c:otherwise>
+                                <option>${concept.prefLabel}</option>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </c:when>
+            </c:choose>
+        </select>
+
+        <br />
+        <input type="submit" value="Apply Filter"/>
+    </form>
+    <br />
+        <input type="button" value="Clear Filter" onclick="window.location.href='/results'">
+           <%-- <c:choose>
                 <c:when test="${filters != null}">
                     <c:forEach items="${filters}" var="concept">
                         <c:choose>
@@ -57,7 +85,7 @@
                         </c:choose>
                     </c:forEach>
                 </c:when>
-            </c:choose>
+            </c:choose>--%>
             <table class="table table-condensed">
                 <thead>
                 <tr>

@@ -78,16 +78,13 @@
                 <div>
                     Share:
                     <span class="social-icon">
-                        <a class="twitter-share-button" href="#"><i class="fa fa-twitter"></i></a>
+                        <a class="twitter-share-button" href="http://twitter.com/ocsdnet"><i class="fa fa-twitter"></i></a>
                     </span>
                     <span class="social-icon">
-                        <a href="#" class="unimplemented"><i class="fa fa-facebook"></i></a>
+                        <a href="https://facebook.com/OCSDNet"><i class="fa fa-facebook"></i></a>
                     </span>
                     <span class="social-icon">
-                        <a href="#" class="unimplemented"><i class="fa fa-linkedin"></i></a>
-                    </span>
-                    <span class="social-icon">
-                        <a href="#" class="unimplemented"><i class="fa fa-envelope"></i></a>
+                        <a href="mailto:lila.rao@uwimona.edu.jm?Subject=CDMK"><i class="fa fa-envelope"></i></a>
                     </span>
                 </div>
             </div>
